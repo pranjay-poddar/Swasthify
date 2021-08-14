@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+  /* ANIMATION  */
+  
+  .grow2 {
+      transition: all .01s ease-in-out;
+  }
+  
+  .grow2:hover {
+      transform: scale(1.03);
+  }
+  
+  .grow {
+      transition: all 0.2s ease-in-out !important;
+  }
+  
+  .grow:hover {
+      transform: scale(1.1) !important;
+  }
+  
+  .rotate {
+      transition: transform .5s ease-in-out;
+  }
+  
+  .rotate:hover {
+      transform: rotate(360deg);
+  }
+  
+  .object {
+      animation: MoveUpDown 3s linear infinite;
+      position: absolute;
+  }
+  
+  $blue: #7DA0FA;
+  $purple:#4747A1;
+  $lpurple:#7978E9;
+  $pink:#F3797E;
+  html,
+  body {
+      height: 100%;
+  }
+  
+  body {
+      margin: 0;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
