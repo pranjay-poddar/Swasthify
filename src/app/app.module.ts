@@ -12,7 +12,14 @@ import { HomeComponent } from './Home/home/home.component';
 import { SignupPatientComponent } from './Patients/signup-patient/signup-patient.component';
 import { LoginPatientComponent } from './Patients/login-patient/login-patient.component';
 import { DashboardPatientComponent } from './Patients/dashboard-patient/dashboard-patient.component';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+import { ReactiveFormsModule } from '@angular/forms';
+import 'hammerjs';
+import { AlertmsgComponent } from './Utilities/alertmsg/alertmsg.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +31,18 @@ import { DashboardPatientComponent } from './Patients/dashboard-patient/dashboar
     HomeComponent,
     SignupPatientComponent,
     LoginPatientComponent,
-    DashboardPatientComponent
+    DashboardPatientComponent,
+    AlertmsgComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    ReactiveFormsModule ,
     BrowserAnimationsModule
   ],
   providers: [],
