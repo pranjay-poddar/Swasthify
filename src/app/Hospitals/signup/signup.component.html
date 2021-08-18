@@ -46,7 +46,7 @@
 
                         <mat-form-field>
                             <input matInput type="password" placeholder="Password" formControlName="password">
-                            <mat-hint align="end">Must have atleast one uppercase letter, one number, special character and atleast 8 characters long</mat-hint>
+                            <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
                             <mat-error *ngIf="password?.invalid && password?.touched">
                                 Please enter Password in correct format
                             </mat-error>

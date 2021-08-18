@@ -8,8 +8,8 @@ $pink:#F3797E;
 }
 
 .hospital-signup {
-    height: 110vh;
     background-color: #242424;
+    position: relative;
 }
 
 .card {
@@ -31,7 +31,6 @@ $pink:#F3797E;
         padding: 10px;
     }
     .hospital-signup {
-        height: 100vh;
         background-color: #242424;
     }
 }

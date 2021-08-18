@@ -1,0 +1,37 @@
+$blue: #7DA0FA;
+$purple:#4747A1;
+$lpurple:#7978E9;
+$pink:#F3797E;
+.mat-form-field {
+    width: 100%;
+    padding: 10px;
+}
+
+.patient-signup {
+    background-color: #242424;
+    position: relative;
+}
+
+.card {
+    padding: 5%;
+    background-color: #e4e4e4;
+    box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
+}
+
+#ps_heading {
+    margin-top: 2%;
+    font-size: 200%;
+    font-weight: 500;
+    color: aliceblue;
+}
+
+@media (max-width:576px) {
+    .mat-form-field {
+        border-top: 1.9em !important;
+        padding: 10px;
+    }
+    .hospital-signup {
+        height: 100vh;
+        background-color: #242424;
+    }
+}

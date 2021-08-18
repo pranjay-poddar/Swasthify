@@ -5,9 +5,11 @@
  $lpurple:#7978E9;
  $pink:#F3797E;
  footer {
-     background: #15152c;
+     background: #242452;
      color: white;
      padding: 0;
+     position: relative;
+     bottom: 0;
  }
  
  hr.light {
@@ -79,10 +81,6 @@
  }
  
  #nav-bars {
-     display: none;
- }
- 
- .nav-mobile-logo {
      display: none;
  }
  /*--- Bootstrap Padding Fix --*/
