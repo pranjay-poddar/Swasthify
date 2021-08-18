@@ -7,24 +7,54 @@ $pink:#F3797E;
     padding: 10px;
 }
 
+.mobile_view {
+    display: none;
+}
+
 .hospital-login {
-    background-color: #242424;
+    background-color: #f8f8f8;
     position: relative;
 }
 
+.image {
+    margin-top: 3%;
+    height: 23vw;
+    width: 36vw;
+}
+
 .card {
-    padding: 5%;
-    margin-bottom: 15%;
-    background-color: #e4e4e4;
+    padding: 1%;
+    margin: 25vh 0;
+    background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
 }
 
 #hlogin_heading {
-    margin-top: 3%;
-    font-size: 200%;
-    font-weight: 500;
-    color: aliceblue;
-    margin-bottom: 8%;
+    margin-top: 5%;
+    font-size: 300%;
+    font-weight: 550;
+    color: rgb(43, 43, 43);
+}
+
+@media (max-width:768px) {
+    .mobile_view {
+        display: block;
+    }
+    .hlogin_heading {
+        display: none;
+    }
+}
+
+@media (max-width:996px) {
+    .image {
+        margin-top: 5vh;
+        height: 27vw;
+        width: 37vw;
+    }
+    .card {
+        padding: 1%;
+        margin: 15vh 0;
+    }
 }
 
 @media (max-width:576px) {
@@ -32,14 +62,18 @@ $pink:#F3797E;
         border-top: 1.9em !important;
         padding: 10px;
     }
-    .hospital-signup {
-        background-color: #242424;
-    }
     #hlogin_heading {
-        margin-top: 8vh;
-        margin-bottom: 15vh;
+        margin-top: 5%;
+        font-size: 260%;
+        font-weight: 550;
+        color: rgb(43, 43, 43);
+    }
+    .image {
+        margin-top: 3%;
+        height: 60vw;
+        width: 75vw;
     }
     .card {
-        margin-bottom: 20vh;
+        margin: 7vh 0;
     }
 }

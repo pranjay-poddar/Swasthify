@@ -1,16 +1,13 @@
 <div class="hospital-login">
     <div class="container">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 d-flex justify-content-center ">
-            <h1 id="hlogin_heading">Hospital Login</h1>
-        </div>
         <div class="row d-flex justify-content-center">
 
-            <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8  ">
+            <div class="col-md-6 col-lg-5 col-sm-11 col-xs-8">
+                <div class="col-md-12 col-12 text-center">
+                    <h1 id="hlogin_heading" class="mobile_view">Hospital Login</h1>
+                </div>
                 <div class="card">
                     <form [formGroup]="HLoginForm">
-
-
-
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="email">
                             <mat-error *ngIf="email?.invalid && email?.touched">
@@ -25,20 +22,23 @@
                                 Please enter Password in correct format
                             </mat-error>
                         </mat-form-field>
-
-
-
                         <br>
-
                         <button mat-raised-button type="submit" (click)="submit()" [disabled]="HLoginForm.invalid" color="primary">Login</button>
-
                     </form>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg 7 col-sm-12 d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-md-12 col-12 text-center">
+                        <h1 id="hlogin_heading" class="hlogin_heading">Hospital Login</h1>
+                    </div>
+                    <div class="col-md-12 col-12 text-center">
+                        <img class="image grow2" src="../../../assets/images/Home.png">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <br>
 </div>
-
-
 <app-footer></app-footer>

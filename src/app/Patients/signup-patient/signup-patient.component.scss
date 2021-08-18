@@ -8,21 +8,37 @@ $pink:#F3797E;
 }
 
 .patient-signup {
-    background-color: #242424;
+    background-color: #f8f8f8;
     position: relative;
 }
 
+.image {
+    margin-top: 3%;
+    height: 26vw;
+    width: 36vw;
+}
+
 .card {
-    padding: 5%;
-    background-color: #e4e4e4;
+    padding: 1%;
+    margin: 5% 0;
+    background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
 }
 
 #ps_heading {
-    margin-top: 2%;
-    font-size: 200%;
-    font-weight: 500;
-    color: aliceblue;
+    margin-top: 5%;
+    font-size: 300%;
+    font-weight: 550;
+    color: rgb(43, 43, 43);
+}
+
+@media (max-width:996px) {
+    .image {
+        margin-top: 3%;
+        height: 30vw;
+        width: 40vw;
+        margin-bottom: 10vh;
+    }
 }
 
 @media (max-width:576px) {
@@ -30,8 +46,15 @@ $pink:#F3797E;
         border-top: 1.9em !important;
         padding: 10px;
     }
-    .hospital-signup {
-        height: 100vh;
-        background-color: #242424;
+    .image {
+        margin-top: 3%;
+        height: 65vw;
+        width: 80vw;
+    }
+    #ps_heading {
+        margin-top: 5%;
+        font-size: 260%;
+        font-weight: 550;
+        color: rgb(43, 43, 43);
     }
 }
