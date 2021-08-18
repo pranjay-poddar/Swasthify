@@ -7,17 +7,22 @@ $pink:#F3797E;
 }
 
 li :hover {
-    background-color: #d9fff3 !important;
+    background-color: $blue !important;
     border-radius: 4px;
     transition: 0.1s ease;
 }
 
+.navbar {
+    position: relative;
+    z-index: 2;
+}
+
 .bg-light {
-    background-color: #d9fff3 !important;
+    background-color: $blue !important;
 }
 
 .itemActive {
-    background-color: #dadada !important;
+    background-color: #ffffff !important;
     border-radius: 4px;
     transition: 0.1s ease;
 }
