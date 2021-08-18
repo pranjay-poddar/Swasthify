@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signup-patient',
@@ -91,7 +92,22 @@ return this.PSForm.get('contact');
 
   submit(){
     console.log(this.PSForm.value);
-    Swal.fire('Thank You...', 'Information Submitted Succesfully!', 'success') 
+
+      Swal.fire({  
+        icon: 'success',  
+        title: 'Thank You...',  
+        text: 'Information Submitted Succesfully!',  
+        footer: '<a href="patient-login">Login</a>'  
+      
+  });
+    this.PSForm.reset({
+      name: '',
+      email: '',
+      contact: '',
+      password: '',
+      cpassword: ''
+    });
+   
   }
 
 }

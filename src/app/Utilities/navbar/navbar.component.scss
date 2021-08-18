@@ -12,6 +12,11 @@ li :hover {
     transition: 0.1s ease;
 }
 
+.navbar {
+    position: relative;
+    z-index: 2;
+}
+
 .bg-light {
     background-color: $blue !important;
 }

@@ -93,7 +93,22 @@ return this.HSForm.get('contact');
 
   submit(){
     console.log(this.HSForm.value);
-    Swal.fire('Thank You...', 'Information Submitted Succesfully!', 'success') 
+    Swal.fire({  
+      icon: 'success',  
+      title: 'Thank You...',  
+      text: 'Information Submitted Succesfully!',  
+      footer: '<a href="hospital-login">Login</a>'  
+    
+});
+  this.HSForm.reset({
+    name: '',
+    email: '',
+    contact: '',
+    password: '',
+    cpassword: ''
+  });
+ 
+}
   }
 
-}
+
