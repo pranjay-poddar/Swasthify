@@ -7,6 +7,8 @@ import { HomeComponent } from './Home/home/home.component';
 import { SignupPatientComponent } from './Patients/signup-patient/signup-patient.component';
 import { LoginPatientComponent } from './Patients/login-patient/login-patient.component';
 import { DashboardPatientComponent } from './Patients/dashboard-patient/dashboard-patient.component';
+import { ForgetPasComponent } from './Hospitals/forget-pas/forget-pas.component';
+import { ForgetPasPatientComponent } from './Patients/forget-pas-patient/forget-pas-patient.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,6 +19,8 @@ const routes: Routes = [
 {path: 'patient-signup', component: SignupPatientComponent},
 {path: 'patient-dashboard', component: DashboardPatientComponent},
 {path: 'home', component: HomeComponent},
+{path: 'h-forget-pas', component: ForgetPasComponent},
+{path: 'p-forget-pas', component: ForgetPasPatientComponent},
 ];
 
 @NgModule({

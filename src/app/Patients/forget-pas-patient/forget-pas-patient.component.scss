@@ -11,7 +11,7 @@ $pink:#F3797E;
     display: none;
 }
 
-.hospital-login {
+.patient-forgot {
     background-color: #f8f8f8;
     position: relative;
 }
@@ -23,12 +23,12 @@ $pink:#F3797E;
 
 .card {
     padding: 1%;
-    margin: 25vh 0;
+    margin: 15vh 0;
     background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
 }
 
-#hlogin_heading {
+#plogin_heading {
     margin-top: 5%;
     font-size: 300%;
     font-weight: 550;
@@ -43,7 +43,7 @@ $pink:#F3797E;
     }
     .card {
         padding: 1%;
-        margin: 15vh 0;
+        margin: 10vh 0;
     }
 }
 
@@ -51,7 +51,7 @@ $pink:#F3797E;
     .mobile_view {
         display: block;
     }
-    .hlogin_heading {
+    .plogin_heading {
         display: none;
     }
     .image {
@@ -66,7 +66,7 @@ $pink:#F3797E;
         border-top: 1.9em !important;
         padding: 10px;
     }
-    #hlogin_heading {
+    #plogin_heading {
         margin-top: 5%;
         font-size: 260%;
         font-weight: 550;

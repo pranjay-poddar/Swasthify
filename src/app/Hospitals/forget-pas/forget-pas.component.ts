@@ -4,9 +4,9 @@ import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: 'app-forget-pas',
+  templateUrl: './forget-pas.component.html',
+  styleUrls: ['./forget-pas.component.scss'],
   host: {
     '[@flyInOut]': 'true',
     'style': 'display: block;'
@@ -16,9 +16,8 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
       expand()
     ]
 })
-export class SignupComponent implements OnInit {
-
-  HSForm !: FormGroup;
+export class ForgetPasComponent implements OnInit {
+  HForgotForm !: FormGroup;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -36,22 +35,14 @@ export class SignupComponent implements OnInit {
           }
       }
   }
-    this.HSForm = this.fb.group({
-      name: ['',[
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(46)
-      ]],
+    this.HForgotForm = this.fb.group({
+    
       email: ['',[
         Validators.required,
         Validators.email,
         Validators.maxLength(40)
       ]],
-      contact: ['',[
-        Validators.required,
-        Validators.min(999999999),
-        Validators.max(99999999999)
-      ]],
+      
       password:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
@@ -60,62 +51,45 @@ export class SignupComponent implements OnInit {
       cpassword:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
-        Validators.minLength(8),
+        Validators.minLength(8)
       ]],
       agree:[false,[
         Validators.requiredTrue
-      ]]
-    }, { 
-      validator: ConfirmedValidator('password', 'cpassword')
-    });
-    
+      ]]}, { 
+        validator: ConfirmedValidator('password', 'cpassword')
+      });
     
   }
 
 
-
-  get name(){
-    return this.HSForm.get('name');
-  }
 
   get email(){
-    return this.HSForm.get('email');
-  }
-
-  get contact(){
-return this.HSForm.get('contact');
+    return this.HForgotForm.get('email');
   }
 
   get password(){
-    return this.HSForm.get('password');
+    return this.HForgotForm.get('password');
   }
-
   get cpassword(){
-    return this.HSForm.get('cpassword');
+    return this.HForgotForm.get('cpassword');
+  }
+  get agree(){
+    return this.HForgotForm.get('agree');
   }
 
-  get agree(){
-    return this.HSForm.get('agree');
-  }
 
   submit(){
-    console.log(this.HSForm.value);
+    console.log(this.HForgotForm.value);
     Swal.fire({  
       icon: 'success',  
       title: 'Thank You...',  
-      text: 'Information Submitted Succesfully!',  
-      footer: '<a href="hospital-login">Login</a>'  
-    
+      text: 'Login Succesfull!',  
 });
-  this.HSForm.reset({
-    name: '',
+  this.HForgotForm.reset({
     email: '',
-    contact: '',
     password: '',
-    cpassword: ''
   });
  
 }
-  }
 
-
+}
