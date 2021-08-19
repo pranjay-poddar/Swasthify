@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { flyInOut , expand} from '../../Utilities/animations/animation';
 @Component({
   selector: 'app-login-patient',
   templateUrl: './login-patient.component.html',
-  styleUrls: ['./login-patient.component.scss']
+  styleUrls: ['./login-patient.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
+    animations: [
+      flyInOut(),
+      expand()
+    ]
 })
 export class LoginPatientComponent implements OnInit {
-
   PLoginForm !: FormGroup;
   constructor(private fb: FormBuilder) { }
 
