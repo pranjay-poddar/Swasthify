@@ -65,7 +65,7 @@
                                 Please enter Password in correct format
                             </mat-error>
                             <mat-error *ngIf="cpassword?.errors?.confirmedValidator">
-                                Password and Confirm Password does not match
+                                Passwords does not match
                             </mat-error>
                         </mat-form-field>
                         <small class="form-text text-muted">We'll never share your details with anyone else.</small>
@@ -76,7 +76,7 @@
                     </form>
                 </div>
                 <div class="col-md-12 col-12 ">
-                    <h3 class="text-center">Already Regestered? <a href="/patient-login">Login</a></h3>
+                    <h3 class="text-center">Already Regestered? <a routerLink="/patient-login">Login</a></h3>
                 </div>
             </div>
         </div>

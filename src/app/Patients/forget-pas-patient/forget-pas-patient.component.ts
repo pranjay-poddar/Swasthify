@@ -17,13 +17,26 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
     ]
 })
 export class ForgetPasPatientComponent implements OnInit {
-
-  HLoginForm !: FormGroup;
+  
+  PForgotForm !: FormGroup;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-  
-    this.HLoginForm = this.fb.group({
+    function ConfirmedValidator(controlName: string, matchingControlName: string){
+      return (formGroup: FormGroup) => {
+          const control = formGroup.controls[controlName];
+          const matchingControl = formGroup.controls[matchingControlName];
+          if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+              return;
+          }
+          if (control.value !== matchingControl.value) {
+              matchingControl.setErrors({ confirmedValidator: true });
+          } else {
+              matchingControl.setErrors(null);
+          }
+      }
+  }
+    this.PForgotForm = this.fb.group({
     
       email: ['',[
         Validators.required,
@@ -36,33 +49,44 @@ export class ForgetPasPatientComponent implements OnInit {
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8)
       ]],
-      
-     
-    });
-    
+      cpassword:['',[
+        Validators.required,
+        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
+        Validators.minLength(8)
+      ]],
+      agree:[false,[
+        Validators.requiredTrue
+      ]]}, { 
+        validator: ConfirmedValidator('password', 'cpassword')
+      });
     
   }
 
 
 
   get email(){
-    return this.HLoginForm.get('email');
+    return this.PForgotForm.get('email');
   }
 
   get password(){
-    return this.HLoginForm.get('password');
+    return this.PForgotForm.get('password');
+  }
+  get cpassword(){
+    return this.PForgotForm.get('cpassword');
+  }
+  get agree(){
+    return this.PForgotForm.get('agree');
   }
 
 
-
   submit(){
-    console.log(this.HLoginForm.value);
+    console.log(this.PForgotForm.value);
     Swal.fire({  
       icon: 'success',  
       title: 'Thank You...',  
       text: 'Login Succesfull!',  
 });
-  this.HLoginForm.reset({
+  this.PForgotForm.reset({
     email: '',
     password: '',
   });
