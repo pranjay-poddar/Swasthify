@@ -7,7 +7,7 @@
                     <h1 id="hlogin_heading" class="mobile_view">Hospital Login</h1>
                 </div>
                 <div class="card">
-                    <form [formGroup]="HLoginForm">
+                    <form [formGroup]="HLoginForm" [@expand]>
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="email">
                             <mat-error *ngIf="email?.invalid && email?.touched">
@@ -27,13 +27,13 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6 col-lg 7 col-sm-12 d-flex justify-content-center">
+            <div class="col-md-6 col-lg 7 col-sm-12 d-flex justify-content-center" [@expand]>
                 <div class="row">
                     <div class="col-md-12 col-12 text-center">
                         <h1 id="hlogin_heading" class="hlogin_heading">Hospital Login</h1>
                     </div>
                     <div class="col-md-12 col-12 text-center">
-                        <img class="image grow2" src="../../../assets/images/Home.png">
+                        <img class="image grow2" src="../../../assets/images/hospital-login.svg">
                     </div>
                 </div>
             </div>

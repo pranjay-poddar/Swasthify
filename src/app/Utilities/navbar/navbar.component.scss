@@ -18,11 +18,11 @@ li :hover {
 }
 
 .bg-light {
-    background-color: $blue !important;
+    background-color: #f3f3f3 !important;
 }
 
 .itemActive {
-    background-color: #ffffff !important;
+    background-color: $blue !important;
     border-radius: 4px;
     transition: 0.1s ease;
 }
