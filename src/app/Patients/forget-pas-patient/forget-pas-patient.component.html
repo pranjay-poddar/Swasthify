@@ -1,13 +1,13 @@
-<div class="patient-login">
+<div class="hospital-login">
     <div class="container">
         <div class="row d-flex justify-content-center">
 
             <div class="col-md-6 col-lg-5 col-sm-11 col-xs-8">
                 <div class="col-md-12 col-12 text-center">
-                    <h1 id="plogin_heading" class="mobile_view">Patient Login</h1>
+                    <h1 id="hlogin_heading" class="mobile_view">Forgot Password</h1>
                 </div>
-                <div class="card" [@expand]>
-                    <form [formGroup]="PLoginForm">
+                <div class="card">
+                    <form [formGroup]="HLoginForm" [@expand]>
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="email">
                             <mat-error *ngIf="email?.invalid && email?.touched">
@@ -23,23 +23,18 @@
                             </mat-error>
                         </mat-form-field>
                         <br>
-                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PLoginForm.invalid" color="primary">Login</button>
-                        <a style="float:right ;margin-right: 5%;" href="/p-forget-pas">Forgot Password</a>
+                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="HLoginForm.invalid" color="primary">Login</button>
                     </form>
                 </div>
-                <div class="col-md-12 col-12 ">
 
-                    <h3 class="text-center">Don't have an accout? <a href="/patient-signup">Signup</a></h3>
-
-                </div>
             </div>
             <div class="col-md-6 col-lg 7 col-sm-12 d-flex justify-content-center" [@expand]>
                 <div class="row">
                     <div class="col-md-12 col-12 text-center">
-                        <h1 id="plogin_heading" class="plogin_heading">Patient Login</h1>
+                        <h1 id="hlogin_heading" class="hlogin_heading">Forgot Password</h1>
                     </div>
                     <div class="col-md-12 col-12 text-center">
-                        <img class="image grow2" src="../../../assets/images/patient2.png">
+                        <img class="image grow2" src="../../../assets/images/Forgot-password.svg">
                     </div>
                 </div>
             </div>
@@ -47,6 +42,4 @@
     </div>
     <br>
 </div>
-
-
 <app-footer></app-footer>

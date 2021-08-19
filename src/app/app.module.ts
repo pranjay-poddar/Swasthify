@@ -20,6 +20,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
 import { AlertmsgComponent } from './Utilities/alertmsg/alertmsg.component';
+import { ForgetPasComponent } from './Hospitals/forget-pas/forget-pas.component';
+import { ForgetPasPatientComponent } from './Patients/forget-pas-patient/forget-pas-patient.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { AlertmsgComponent } from './Utilities/alertmsg/alertmsg.component';
     SignupPatientComponent,
     LoginPatientComponent,
     DashboardPatientComponent,
-    AlertmsgComponent
+    AlertmsgComponent,
+    ForgetPasComponent,
+    ForgetPasPatientComponent
   ],
   imports: [
     BrowserModule,
