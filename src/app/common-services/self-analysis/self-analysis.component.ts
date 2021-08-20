@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Option, Question, Quiz, QuizConfig } from '../../models/index';
 import { HelperService } from 'src/app/services/helper.service';
+import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { QuizService } from 'src/app/services/quiz.service';
 let positive = 0;
 @Component({
   selector: 'app-self-analysis',
   templateUrl: './self-analysis.component.html',
   styleUrls: ['./self-analysis.component.scss'],
-  providers: [QuizService]
+  providers: [QuizService],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
+    animations: [
+      flyInOut(),
+      expand()
+    ]
 })
 export class SelfAnalysisComponent implements OnInit {
 

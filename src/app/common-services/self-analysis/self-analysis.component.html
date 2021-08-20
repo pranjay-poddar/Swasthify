@@ -1,13 +1,12 @@
 <div class="home container">
-    <div class="row">
-        <div class="col-6">
-
-        </div>
-        <div class="col-6 text-right">
-            <span class="select"> Select Analysis:</span>
-            <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
+    <div class="row ">
+        <div class="category " [@expand]>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
+                <span class="select badge badge-info"> Select Category:</span>
+                <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
         <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
       </select>
+            </div>
         </div>
     </div>
     <div id="quiz">
@@ -18,11 +17,11 @@
             <div *ngFor="let question of filteredQuestions;">
                 <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div>
                 <div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>
-                <h2 class="font-weight-normal">{{pager.index + 1}}.
+                <h2 class="font-weight-normal" [@flyInOut]>{{pager.index + 1}}.
                     <span [innerHTML]="question.name"></span>
                 </h2>
 
-                <div class="row text-left options">
+                <div class="row text-left options" [@flyInOut]>
                     <div class="col-6" *ngFor="let option of question.options">
                         <div class="option">
                             <label class="font-weight-normal" [attr.for]="option.id">
@@ -57,7 +56,7 @@
             <h2>Analysis Responses</h2>
             <div *ngIf="onPositive()== 1">
                 <h1 id="positive-heading-1">YOU NEED TO TAKE A COVID-19 TEST, CONTACT YOUR NEARBY COVID TESTING CENTER TO GET TESTED FOR COVID-19!</h1>
-                <button class="btn btn-locate-center grow btn-back btn-primary" routerLink="/center">Locate Center</button>
+
             </div>
             <div *ngIf="onPositive()== 0">
                 <h1 id="positive-heading-3">COVID-19 TEST IS NOT REQUIRED! YOU DO NOT HAVE COVID SYMPTOMS</h1>
@@ -76,9 +75,7 @@
                 </div>
             </div>
             <p class="text-muted" style="text-align: center;">All the generated analysis results are tentative and do not carry any guarantee</p>
-            <h4 class="alert alert-info text-center">Click locate Center if you need to take a Covid-19 test
-                <button class="btn btn-locate-center grow btn-back btn-primary" routerLink="/center">Locate Center</button>
-            </h4>
+
 
 
         </div>

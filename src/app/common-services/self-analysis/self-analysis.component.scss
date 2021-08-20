@@ -7,9 +7,14 @@ $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
 .select {
-    font-size: 100%;
+    font-size: 200%;
+    margin: 2vh 1%;
     font-family: regular;
     font-weight: bold;
+}
+
+.category {
+    margin: 3vh;
 }
 
 .grow:hover {
@@ -22,7 +27,7 @@ $pink:#F3797E;
 }
 
 .btn-review {
-    background-color: rgb(0, 58, 112);
+    background-color: $lpurple;
     margin-left: 8%;
 }
 
@@ -74,7 +79,7 @@ body {
 .option {
     background-color: $blue;
     font-size: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     height: 60px;
     padding: 10px;
     margin: 3px;

@@ -18,7 +18,6 @@ export class QuizService {
       { id: 'assets/data/mental.json', name: 'Mental' },
       { id: 'assets/data/physical.json', name: 'Physical' },
       { id: 'assets/data/respiratory.json', name: 'Respiratory' },
-      { id: 'assets/data/cholesterol.json', name: 'Cholesterol' }
     ];
   }
 }
