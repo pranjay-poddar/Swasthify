@@ -199,7 +199,7 @@ button:hover {
   height: 100%;
   background: linear-gradient(#ff469f, #ff6062);
   position: absolute;
-  left: -30px;
+  left: -20px;
   top: 0px;
 }
 .right-side {
@@ -215,13 +215,15 @@ button:hover {
   .rows {
     flex-direction: column-reverse;
     margin: 50px 0;
-    .right-side {
-      flex-basis: 100%;
-      margin-bottom: 50px;
-    }
+  }
+  .right-side {
+    flex-basis: 100%;
+    margin-bottom: 50px;
   }
 }
+
 .card {
+  border: none;
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05) inset -5px -5px 5px
     rgba(255, 255, 255, 0.5) inset 5px 5px 5px rgba(0, 0, 0, 0.05) inset -5px -5px
     5px rgba(255, 255, 255, 0.5);
@@ -278,4 +280,19 @@ button:hover {
 }
 .card:hover .box .content a {
   background: #ff568f;
+}
+.jumbo-margin {
+  margin: 0;
+}
+@media only screen and (max-width: 900px) {
+  .row-about-us {
+    flex-direction: column;
+    margin: 0;
+  }
+}
+.about-img {
+  margin-bottom: 20px;
+}
+.para-padding {
+  padding: 15px;
 }
