@@ -9,6 +9,8 @@ import { LoginPatientComponent } from './Patients/login-patient/login-patient.co
 import { DashboardPatientComponent } from './Patients/dashboard-patient/dashboard-patient.component';
 import { ForgetPasComponent } from './Hospitals/forget-pas/forget-pas.component';
 import { ForgetPasPatientComponent } from './Patients/forget-pas-patient/forget-pas-patient.component';
+import { SelfAnalysisComponent } from './common-services/self-analysis/self-analysis.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -21,6 +23,7 @@ const routes: Routes = [
 {path: 'home', component: HomeComponent},
 {path: 'h-forget-pas', component: ForgetPasComponent},
 {path: 'p-forget-pas', component: ForgetPasPatientComponent},
+{path: 'self-analysis', component: SelfAnalysisComponent}
 ];
 
 @NgModule({
