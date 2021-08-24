@@ -2,18 +2,27 @@ $blue: #7DA0FA;
 $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
+.container {
+    background: $lpurple !important;
+}
+
 li :hover {
-    background-color: #d9fff3 !important;
+    background-color: $blue !important;
     border-radius: 4px;
     transition: 0.1s ease;
 }
 
+.navbar {
+    position: relative;
+    z-index: 2;
+}
+
 .bg-light {
-    background-color: $blue !important;
+    background-color: #f3f3f3 !important;
 }
 
 .itemActive {
-    background-color: $pink !important;
+    background-color: $blue !important;
     border-radius: 4px;
     transition: 0.1s ease;
 }

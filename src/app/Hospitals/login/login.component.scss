@@ -1,0 +1,78 @@
+$blue: #7DA0FA;
+$purple:#4747A1;
+$lpurple:#7978E9;
+$pink:#F3797E;
+.mat-form-field {
+    width: 100%;
+    padding: 10px;
+}
+
+.mobile_view {
+    display: none;
+}
+
+.hospital-login {
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+.image {
+    height: 30vw;
+    width: 46vw;
+}
+
+.card {
+    padding: 1%;
+    margin: 25vh 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
+}
+
+#hlogin_heading {
+    margin-top: 5%;
+    font-size: 300%;
+    font-weight: 550;
+    color: rgb(43, 43, 43);
+}
+
+@media (max-width:996px) {
+    .image {
+        margin-top: -12vh;
+        height: 32vw;
+        width: 40vw;
+    }
+    .card {
+        padding: 1%;
+        margin: 15vh 0;
+    }
+}
+
+@media (max-width:768px) {
+    .mobile_view {
+        display: block;
+    }
+    .hlogin_heading {
+        display: none;
+    }
+    .image {
+        margin-top: 3%;
+        height: 50vw;
+        width: 65vw;
+    }
+}
+
+@media (max-width:576px) {
+    .mat-form-field {
+        border-top: 1.9em !important;
+        padding: 10px;
+    }
+    #hlogin_heading {
+        margin-top: 5%;
+        font-size: 260%;
+        font-weight: 550;
+        color: rgb(43, 43, 43);
+    }
+    .card {
+        margin: 7vh 0;
+    }
+}

@@ -12,7 +12,19 @@ import { HomeComponent } from './Home/home/home.component';
 import { SignupPatientComponent } from './Patients/signup-patient/signup-patient.component';
 import { LoginPatientComponent } from './Patients/login-patient/login-patient.component';
 import { DashboardPatientComponent } from './Patients/dashboard-patient/dashboard-patient.component';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+import { ReactiveFormsModule } from '@angular/forms';
+import 'hammerjs';
+import { AlertmsgComponent } from './Utilities/alertmsg/alertmsg.component';
+import { ForgetPasComponent } from './Hospitals/forget-pas/forget-pas.component';
+import { ForgetPasPatientComponent } from './Patients/forget-pas-patient/forget-pas-patient.component';
+import { SelfAnalysisComponent } from './common-services/self-analysis/self-analysis.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +36,23 @@ import { DashboardPatientComponent } from './Patients/dashboard-patient/dashboar
     HomeComponent,
     SignupPatientComponent,
     LoginPatientComponent,
-    DashboardPatientComponent
+    DashboardPatientComponent,
+    AlertmsgComponent,
+    ForgetPasComponent,
+    ForgetPasPatientComponent,
+    SelfAnalysisComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule ,
     BrowserAnimationsModule
   ],
   providers: [],

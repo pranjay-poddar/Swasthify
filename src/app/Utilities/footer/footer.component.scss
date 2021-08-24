@@ -1,0 +1,91 @@
+ /* footer section start ----------------------- */
+ 
+ $blue: #7DA0FA;
+ $purple:#4747A1;
+ $lpurple:#7978E9;
+ $pink:#F3797E;
+ footer {
+     background: #1b1b1b;
+     color: white;
+     padding: 0;
+     position: relative;
+     bottom: 0;
+ }
+ 
+ hr.light {
+     border-top: 1px solid #d5d5d5;
+     width: 100%;
+     margin-top: .8rem;
+ }
+ 
+ .swasthify {
+     text-align: center;
+     color: #d5d5d5;
+     font-size: 13px;
+ }
+ 
+ .swasthify:hover {
+     color: #7978E9;
+ }
+ 
+ footer a {
+     color: #d5d5d5;
+ }
+ 
+ hr.light-100 {
+     border-top: 1px solid #d5d5d5;
+     width: 100%;
+     margin-top: .8rem;
+     margin-bottom: 1rem;
+ }
+ 
+ li {
+     list-style-type: none;
+ }
+ 
+ .social_icon li a {
+     font-size: 30px;
+     margin-right: 1vw;
+ }
+ 
+ li a:hover {
+     color: #7978E9;
+     text-decoration: none;
+ }
+ 
+ .footer_inner1 {
+     margin-left: 35%;
+ }
+ 
+ .socialresponsive {
+     align-items: center;
+ }
+ 
+ ul.social_icon {
+     align-items: center;
+     margin-left: auto;
+     margin-right: 15px;
+ }
+ 
+ ul.social_icon li {
+     float: left;
+     height: 60px;
+     display: flex;
+     flex-direction: row;
+     margin-left: 2px;
+     padding: 0;
+ }
+ 
+ .about-para-link {
+     margin-bottom: 8vh;
+ }
+ 
+ #nav-bars {
+     display: none;
+ }
+ /*--- Bootstrap Padding Fix --*/
+ 
+ [class*="p1"] {
+     padding: 1rem;
+ }
+ /* footer section end ---------------------------- */
