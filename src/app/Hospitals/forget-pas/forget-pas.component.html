@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="hospital-forgot">
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -6,8 +7,8 @@
                 <div class="col-md-12 col-12 text-center">
                     <h1 id="slogin_heading" class="mobile_view">Forgot Password</h1>
                 </div>
-                <div class="card">
-                    <form [formGroup]="HForgotForm" [@expand]>
+                <div class="card" [@flyInOut]>
+                    <form [formGroup]="HForgotForm">
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="email">
                             <mat-error *ngIf="email?.invalid && email?.touched">

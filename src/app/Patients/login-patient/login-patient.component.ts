@@ -6,10 +6,6 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
   selector: 'app-login-patient',
   templateUrl: './login-patient.component.html',
   styleUrls: ['./login-patient.component.scss'],
-  host: {
-    '[@flyInOut]': 'true',
-    'style': 'display: block;'
-    },
     animations: [
       flyInOut(),
       expand()
