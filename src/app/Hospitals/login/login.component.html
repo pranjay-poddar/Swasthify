@@ -1,13 +1,14 @@
+<app-navbar></app-navbar>
 <div class="hospital-login">
     <div class="container">
         <div class="row d-flex justify-content-center">
 
-            <div class="col-md-6 col-lg-5 col-sm-11 col-xs-8">
+            <div class="col-md-6 col-lg-5 col-sm-11 col-xs-8" [@flyInOut]>
                 <div class="col-md-12 col-12 text-center">
                     <h1 id="hlogin_heading" class="mobile_view">Hospital Login</h1>
                 </div>
                 <div class="card">
-                    <form [formGroup]="HLoginForm" [@expand]>
+                    <form [formGroup]="HLoginForm">
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="email">
                             <mat-error *ngIf="email?.invalid && email?.touched">

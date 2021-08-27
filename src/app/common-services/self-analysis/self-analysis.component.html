@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="home container">
     <div class="row category ">
         <div [@expand]>
@@ -10,7 +11,7 @@
         </div>
     </div>
     <div id="quiz">
-        <h2 class="text-center heading-1 font-weight-normal">{{quiz.name}}</h2>
+        <h2 class="text-center heading-1 font-weight-normal" [@expand]>{{quiz.name}}</h2>
         <hr />
 
         <div *ngIf="mode=='quiz' && quiz">
@@ -35,7 +36,7 @@
                 </div>
             </div>
             <hr />
-            <div class="text-center">
+            <div class="text-center" [@expand]>
                 <!-- <button class="btn grow btn-secondary" *ngIf="config.allowBack" (click)="goTo(0);">First</button> -->
                 <button class="btn grow  btn-primary  mr-2" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
                 <button class="btn grow btn-primary  ml-2" (click)="goTo(pager.index + 1);">Next</button>

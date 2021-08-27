@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 @Component({
   selector: 'app-signup-patient',
   templateUrl: './signup-patient.component.html',
   styleUrls: ['./signup-patient.component.scss'],
-  host: {
-    '[@flyInOut]': 'true',
-    'style': 'display: block;'
-    },
     animations: [
       flyInOut(),
       expand()

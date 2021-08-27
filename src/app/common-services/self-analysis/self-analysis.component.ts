@@ -10,10 +10,7 @@ let positive:number = 0;
   templateUrl: './self-analysis.component.html',
   styleUrls: ['./self-analysis.component.scss'],
   providers: [QuizService],
-  host: {
-    '[@flyInOut]': 'true',
-    'style': 'display: block;'
-    },
+  
     animations: [
       flyInOut(),
       expand()

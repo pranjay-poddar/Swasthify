@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+$n:'Nunito',
+sans-serif;
+$m:'Montserrat',
+sans-serif;
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +27,8 @@ body {
     display: flex;
     position: fixed;
     top: 0px;
+    z-index: 10;
+    box-shadow: 0px 6px 6px -6px rgba(94, 94, 94, 0.5);
 }
 
 .wrapper .top_navbar .hamburger {
@@ -30,6 +37,7 @@ body {
     background: #2e4ead;
     padding: 10px 10px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .wrapper .top_navbar .hamburger div {
@@ -37,10 +45,11 @@ body {
     height: 4px;
     background: #92a6e2;
     margin: 5px 0;
+    z-index: 10;
 }
 
 .wrapper .top_navbar .top_menu {
-    width: calc(100% - 70px);
+    width: calc(100% - 80px);
     height: 100%;
     background: #fff;
     display: flex;
@@ -52,8 +61,9 @@ body {
 
 .wrapper .top_navbar .top_menu .logo {
     color: #2e4ead;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 1000;
+    font-family: 'Nunito', sans-serif;
     letter-spacing: 3px;
 }
 
@@ -89,12 +99,14 @@ body {
     width: 200px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .wrapper .sidebar ul li a {
     display: block;
     padding: 20px;
     color: #fff;
+    text-decoration: none;
     position: relative;
     margin-bottom: 1px;
     color: #92a6e2;
@@ -117,10 +129,6 @@ body {
     display: inline-block;
 }
 
-.wrapper .sidebar ul li a span.title {
-    display: inline-block;
-}
-
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active {
     background: #4360b5;
@@ -133,9 +141,10 @@ body {
 }
 
 .main_container {
-    width: calc(100% - 200px);
+    width: calc(100% - 80px);
     margin-top: 50px;
     margin-left: 200px;
+    position: relative;
     padding: 15px;
     transition: all 0.3s ease;
 }
@@ -152,23 +161,6 @@ body {
     width: 70px;
 }
 
-.wrapper.collapse .sidebar ul li a {
-    text-align: center;
-}
-
-.wrapper.collapse .sidebar ul li a span.icon {
-    margin: 0;
-}
-
-.wrapper.collapse .sidebar ul li a span.title {
-    display: none;
-}
-
-.wrapper.collapse .main_container {
-    width: calc(100% - 70px);
-    margin-left: 70px;
-}
-
 .sidenav2 {
     width: 45px !important;
     display: inline;
@@ -176,4 +168,64 @@ body {
 
 .sidenavTitle2 {
     display: none;
+    text-decoration: none;
+}
+
+.main_container2 {
+    width: 105%;
+    margin-top: 50px;
+    margin-left: 50px;
+    position: relative;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .main_container2 .item {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 22px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width:576px) {
+    .main_container {
+        width: calc(100% - 50px);
+        margin-top: 50px;
+        margin-left: 50px;
+        position: relative;
+        padding: 15px;
+        transition: all 0.3s ease;
+    }
+    .main_container2 {
+        width: 80%;
+        margin-top: 50px;
+        margin-left: 50px;
+        position: relative;
+        padding: 15px;
+        transition: all 0.3s ease;
+    }
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0px;
+        z-index: 10;
+        // background: #2e4ead;
+        width: 45px !important;
+        display: inline;
+        height: calc(100vh - 60px);
+        transition: all 0.3s ease;
+    }
+    .sidenav2 {
+        width: 200px !important;
+        display: inline;
+        z-index: 10;
+        .t {
+            display: inline-block;
+        }
+    }
+    .t {
+        display: none;
+    }
 }
