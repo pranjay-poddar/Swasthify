@@ -7,6 +7,10 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
   selector: 'app-forget-pas',
   templateUrl: './forget-pas.component.html',
   styleUrls: ['./forget-pas.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
     animations: [
       flyInOut(),
       expand()

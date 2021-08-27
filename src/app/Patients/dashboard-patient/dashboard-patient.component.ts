@@ -10,10 +10,6 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
   ]
  
 })
-
-
-
-
 export class DashboardPatientComponent implements OnInit {
   sidenav = "";
   sidenavTitle = "";
@@ -41,11 +37,6 @@ export class DashboardPatientComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
   }
- 
-  
- 
-
 
 }

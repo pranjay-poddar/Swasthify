@@ -1,5 +1,4 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 $blue: #7DA0FA;
 $purple:#4747A1;
 $lpurple:#7978E9;
@@ -94,5 +93,15 @@ body {
 
 body {
     margin: 0;
-    font-family: 'Nunito', sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
