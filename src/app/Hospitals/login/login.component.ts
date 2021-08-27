@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 
@@ -17,20 +19,21 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
     ]
 })
 export class LoginComponent implements OnInit {
+  id ! : number;
   HLoginForm !: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private hospService : HospitalService, private router : Router) { }
 
   ngOnInit(): void {
   
     this.HLoginForm = this.fb.group({
     
-      email: ['',[
+      emailId: ['',[
         Validators.required,
         Validators.email,
         Validators.maxLength(40)
       ]],
       
-      password:['',[
+      pass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8)
@@ -55,12 +58,18 @@ export class LoginComponent implements OnInit {
 
 
   submit(){
-    console.log(this.HLoginForm.value);
-    Swal.fire({  
-      icon: 'success',  
-      title: 'Thank You...',  
-      text: 'Login Succesfull!',  
-});
+    //console.log(this.HLoginForm.value);
+    this.hospService.signInHospital(this.HLoginForm.value).subscribe((data)=>{
+      this.id = data.id;
+      Swal.fire({  
+        icon: 'success',  
+        title: 'Thank You...',  
+        text: 'Login Succesfull!',  
+    });
+      this.router.navigate(['hospital-dashboard',this.id]);
+    },
+    (Error)=>{alert(Error.error.message);
+    });
   this.HLoginForm.reset({
     email: '',
     password: '',
