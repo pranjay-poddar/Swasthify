@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <div class="patient-login">
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -7,7 +6,7 @@
                 <div class="col-md-12 col-12 text-center">
                     <h1 id="plogin_heading" class="mobile_view">Patient Login</h1>
                 </div>
-                <div class="card" [@flyInOut]>
+                <div class="card" [@expand]>
                     <form [formGroup]="PLoginForm">
                         <mat-form-field>
                             <input matInput placeholder="Email" type="email" formControlName="email">
