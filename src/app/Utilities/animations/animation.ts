@@ -10,7 +10,7 @@ export function visibility() {
             transform: 'scale(0.5)',
             opacity: 0
         })),
-        transition('* => *', animate('0.2s ease-in-out'))
+        transition('* => *', animate('0.3s ease'))
     ]);
 }
 
@@ -32,7 +32,7 @@ export function expand() {
         state('*', style({ opacity: 1, transform: 'translateX(0)' })),
         transition(':enter', [
             style({ transform: 'translateY(-50%)', opacity:0 }),
-            animate('200ms ease-in', style({ opacity: 1, transform: 'translateX(0)' }))
+            animate('500ms ease-in', style({ opacity: 1, transform: 'translateX(0)' }))
         ])
     ]);
 }
