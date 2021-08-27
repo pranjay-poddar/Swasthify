@@ -7,6 +7,10 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
   selector: 'app-forget-pas-patient',
   templateUrl: './forget-pas-patient.component.html',
   styleUrls: ['./forget-pas-patient.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
     animations: [
       flyInOut(),
       expand()

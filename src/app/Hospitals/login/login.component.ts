@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { flyInOut , expand,visibility} from '../../Utilities/animations/animation';
+import { flyInOut , expand} from '../../Utilities/animations/animation';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
     animations: [
       flyInOut(),
-      expand(),
-      visibility()
+      expand()
     ]
 })
 export class LoginComponent implements OnInit {

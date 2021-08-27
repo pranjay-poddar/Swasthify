@@ -7,7 +7,10 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
- 
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
     animations: [
       flyInOut(),
       expand()
