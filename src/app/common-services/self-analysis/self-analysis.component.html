@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="home container">
     <div class="row category ">
         <div [@expand]>
@@ -10,7 +11,7 @@
         </div>
     </div>
     <div id="quiz">
-        <h2 class="text-center heading-1 font-weight-normal">{{quiz.name}}</h2>
+        <h2 class="text-center heading-1 font-weight-normal" [@expand]>{{quiz.name}}</h2>
         <hr />
 
         <div *ngIf="mode=='quiz' && quiz">
@@ -35,10 +36,10 @@
                 </div>
             </div>
             <hr />
-            <div class="text-center">
+            <div class="text-center" [@expand]>
                 <!-- <button class="btn grow btn-secondary" *ngIf="config.allowBack" (click)="goTo(0);">First</button> -->
-                <!-- <button class="btn grow  btn-primary" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button> -->
-                <button class="btn grow btn-primary" (click)="goTo(pager.index + 1);">Next</button>
+                <button class="btn grow  btn-primary  mr-2" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
+                <button class="btn grow btn-primary  ml-2" (click)="goTo(pager.index + 1);">Next</button>
                 <!-- <button class="btn grow btn-secondary" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Last</button> -->
                 <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
             </div>
@@ -54,24 +55,23 @@
         </div>
         <div class="result" *ngIf="mode=='result'">
             <h2>Analysis Responses</h2>
-            <div *ngIf="onPositive()== 1">
+            <!-- <div *ngIf="onPositive()== 1">
                 <h1 id="positive-heading-1">YOU NEED TO TAKE A COVID-19 TEST, CONTACT YOUR NEARBY COVID TESTING CENTER TO GET TESTED FOR COVID-19!</h1>
 
-            </div>
-            <div *ngIf="onPositive()== 0">
+            </div> -->
+            <!-- <div *ngIf="onPositive()== 0">
                 <h1 id="positive-heading-3">COVID-19 TEST IS NOT REQUIRED! YOU DO NOT HAVE COVID SYMPTOMS</h1>
-            </div>
+            </div> -->
             <div *ngFor="let question of quiz.questions; let index = index">
                 <div class="result-question">
                     <h5>{{index + 1}}. {{question.name}}</h5>
                     <div class="row">
                         <div class="col-6" *ngFor="let Option of question.options">
                             <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}
+
                         </div>
+
                     </div>
-
-
-                    <div class="p-1 m-3 alert {{ isCorrect(question) == 'correct'? '':''}}"></div>
                 </div>
             </div>
             <p class="text-muted" style="text-align: center;">All the generated analysis results are tentative and do not carry any guarantee</p>
