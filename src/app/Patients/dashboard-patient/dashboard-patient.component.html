@@ -1,1 +1,85 @@
-<p>dashboard-patient works!</p>
+<div class=" container wrapper ">
+
+    <div class="top_navbar">
+        <div class="hamburger " (click)="toggleNav()">
+            <div class="one "></div>
+            <div class="two "></div>
+            <div class="three "></div>
+        </div>
+        <div class="top_menu ">
+            <div class="logo " (click)="toggleNav()">
+                <!-- <img src="../../../assets/images/nav-logo.png" height="50px" width="100px"> -->
+                Swasthify
+            </div>
+            <ul>
+                <li>
+                    <a href="# ">
+                        <i class="fas fa-search "></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="# ">
+                        <i class="fas fa-user "></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sidebar {{sidenav}}">
+        <ul>
+            <li>
+                <a href="# ">
+                    <span class="icon "><i class=" fas fa-first-aid "></i></span>
+                    <span class=" {{sidenavTitle}}">ICU</span>
+                </a>
+            </li>
+            <li>
+                <a href="# ">
+                    <span class="icon "><i class="fas fa-fire-extinguisher"></i></span>
+                    <span class="{{sidenavTitle}}">O2 Cylinders</span>
+                </a>
+            </li>
+            <li>
+                <a href="# ">
+                    <span class="icon "><i class="fas fa-syringe "></i></span>
+                    <span class="{{sidenavTitle}} ">Vaccine</span>
+                </a>
+            </li>
+            <li>
+                <a href="# " class="active ">
+                    <span class="icon "><i class="fas fa-bed "></i></span>
+                    <span class="{{sidenavTitle}} ">Beds</span>
+                </a>
+            </li>
+            <li>
+                <a href="# ">
+                    <span class="icon "><i class="	fas fa-user-md "></i></span>
+                    <span class="{{sidenavTitle}} ">Doctor</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/home">
+                    <span class="icon "><i class="	fas fa-user-md "></i></span>
+                    <span class="{{sidenavTitle}} ">Home</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main_container container ">
+        <div class="item ">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+        </div>
+        <div class="item ">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+        </div>
+        <div class="item ">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+        </div>
+        <div class="item ">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+        </div>
+    </div>
+</div>
