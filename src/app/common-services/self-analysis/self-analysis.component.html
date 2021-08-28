@@ -30,15 +30,15 @@
                         </div>
                     </div>
                 </div>
-                <div *ngIf="pager.index == 8">
+                <div *ngIf="pager.index == 9">
                     <h1 style="text-align: center; font-weight: bold;">Please Click Submit</h1>
                 </div>
             </div>
             <hr />
             <div class="text-center">
                 <!-- <button class="btn grow btn-secondary" *ngIf="config.allowBack" (click)="goTo(0);">First</button> -->
-                <!-- <button class="btn grow  btn-primary" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button> -->
-                <button class="btn grow btn-primary" (click)="goTo(pager.index + 1);">Next</button>
+                <button class="btn grow  btn-primary mr-3" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
+                <button class="btn grow btn-primary ml-3" (click)="goTo(pager.index + 1);">Next</button>
                 <!-- <button class="btn grow btn-secondary" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Last</button> -->
                 <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
             </div>
@@ -71,7 +71,7 @@
                     </div>
 
 
-                    <div class="p-1 m-3 alert {{ isCorrect(question) == 'correct'? '':''}}"></div>
+                    <div class="p-1 m-3 alert {{ isCorrect(question) == 'correct'? 'correct':''}}"></div>
                 </div>
             </div>
             <p class="text-muted" style="text-align: center;">All the generated analysis results are tentative and do not carry any guarantee</p>

@@ -1,33 +1,33 @@
 {
     "id": 3,
-    "name": "Physical Self- Analysis",
-    "description": "Self- Analysis",
+    "name": "Physical Self - Analysis",
+    "description": "Self - Analysis",
     "questions": [{
             "id": 1010,
-            "name": "In SOLID principle, O stands for:",
+            "name": "I am happy with my body size and weight.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Objects and Variables",
-                    "isAnswer": false
+                    "name": "Never",
+                    "isAnswer": true
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Open-Closed Principle",
-                    "isAnswer": true
+                    "name": "Rarely",
+                    "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Object Oriented Programming",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "OutOfMemory Exception",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -39,30 +39,30 @@
         },
         {
             "id": 1011,
-            "name": "Which pattern defines an interface for creating an object, but let the subclasses decide which class to instantiate. It let the instantiation differ to subclasses.",
+            "name": "I engage in vigorous exercises such as brisk walking, jogging, swimming, or running for at least 30 minutes per day, 3–4 times per week.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Factory Method",
+                    "name": "Never",
                     "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Abstract Factory",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Builder",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Prototype",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -74,30 +74,30 @@
         },
         {
             "id": 1012,
-            "name": "Which pattern attach the additional responsibilities to an object dynamically.It provides a flexible alternative to subclassing for extending functionality.",
+            "name": "I do exercises designed to strengthen my muscles and increase endurance at least 2 times per week.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Chain of responsibility",
-                    "isAnswer": false
+                    "name": "Never",
+                    "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Adapter",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Decorator",
-                    "isAnswer": true
+                    "name": "Some of the Time",
+                    "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Composite",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -109,30 +109,30 @@
         },
         {
             "id": 1013,
-            "name": "Singleton pattern is a (according to Gang of Four):",
+            "name": "I do stretching, limbering up, and balance exercises such as yoga, pilates, or tai chi to increase my body awareness and control and increase my overall physical health.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Creational Pattern",
+                    "name": "Never",
                     "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Behavioural Pattern",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Structural Pattern",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "None of the above",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -144,31 +144,31 @@
         },
         {
             "id": 1014,
-            "name": "MVC, MVP and MVVP are related to which layer of software architecture?",
+            "name": "I feel good about the condition of my body and would be able to respond to most demands placed upon it.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Data Access Layer",
-                    "isAnswer": false
+                    "name": "Never",
+                    "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Business/Service Layer",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Third Party Library",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "User Interface",
-                    "isAnswer": true
+                    "name": "Usually or Always",
+                    "isAnswer": false
                 }
             ],
             "questionType": {
@@ -179,30 +179,30 @@
         },
         {
             "id": 1015,
-            "name": "Which pattern defines a family of algorithms, encapsulate each one, and make them interchangeable. It lets the algorithm vary independently from clients that use it?",
+            "name": "I get at least 7–8 hours of sleep each night.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Template method",
-                    "isAnswer": false
+                    "name": "Never",
+                    "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Decorator",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Strategy",
-                    "isAnswer": true
+                    "name": "Some of the Time",
+                    "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Visitor",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -214,30 +214,30 @@
         },
         {
             "id": 1016,
-            "name": "Which pattern define one to many dependency between objects so that when one object change state, all its dependent are notified and updated automatically?",
+            "name": "I try to add moderate activity to each day, such as taking the stairs instead of the elevator and walking whenever I can instead of riding.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Chain of responsibility",
-                    "isAnswer": false
+                    "name": "Never",
+                    "isAnswer": true
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Observer Pattern",
-                    "isAnswer": true
+                    "name": "Rarely",
+                    "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Event Notification",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Deligate Pattern",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -249,30 +249,30 @@
         },
         {
             "id": 1017,
-            "name": "Which pattern ensures a class has only one instance, and provide a global access point to it?",
+            "name": "My immune system is strong and my body heals itself quickly when I get sick or injured.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Single Class Factory",
-                    "isAnswer": false
+                    "name": "Never",
+                    "isAnswer": true
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Singleton",
-                    "isAnswer": true
+                    "name": "Rarely",
+                    "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Proxy",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Flyweight",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -284,30 +284,30 @@
         },
         {
             "id": 1018,
-            "name": "Which pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation?",
+            "name": "I have lots of energy and can get through the day without being overly tired.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Iterator",
+                    "name": "Never",
                     "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Visitor",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Composite",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Command",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],
@@ -319,30 +319,30 @@
         },
         {
             "id": 1019,
-            "name": "In SOLID principles 'S' stands for:",
+            "name": "I listen to my body; when there is something wrong, I try to make adjustments to heal it or seek professional advice.",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Single Responsibility",
+                    "name": "Never",
                     "isAnswer": true
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Session",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Strength",
+                    "name": "Some of the Time",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "SqlServer",
+                    "name": "Usually or Always",
                     "isAnswer": false
                 }
             ],

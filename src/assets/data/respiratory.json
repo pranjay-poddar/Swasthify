@@ -1,6 +1,6 @@
 {
     "id": 2,
-    "name": "Respiratory Self- Analysis",
+    "name": "Eating Disorder - Analysis",
     "description": "Self- Analysis",
     "config": {
         "shuffleQuestions": true,
@@ -10,30 +10,30 @@
     },
     "questions": [{
             "id": 1010,
-            "name": "Which of the following assemblies can be stored in Global Assembly Cache?",
+            "name": "How much more or less do you feel you worry about your weight and body shape than other people your age ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Private Assemblies",
+                    "name": "I worry a little less than other people",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Friend Assemblies",
+                    "name": "I worry about the same as other people",
                     "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Public Assemblies",
+                    "name": "I worry a little more than other people",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Shared Assemblies",
+                    "name": "I worry a lot more than other people",
                     "isAnswer": true
                 }
             ],
@@ -45,37 +45,31 @@
         },
         {
             "id": 1011,
-            "name": "Which of the following .NET components can be used to remove unused references from the managed heap?",
+            "name": "How afraid are you of gaining 1 kilogram ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Language Infrastructure",
+                    "name": "Not afraid of gaining",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "CLR",
+                    "name": "Slightly afraid of gaining",
                     "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Garbage Collector",
+                    "name": "Very afraid of gaining",
                     "isAnswer": true
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Class Loader",
-                    "isAnswer": false
-                },
-                {
-                    "id": 1058,
-                    "questionId": 1010,
-                    "name": "CTS",
-                    "isAnswer": false
+                    "name": "Terrified of gaining",
+                    "isAnswer": true
                 }
             ],
             "questionType": {
@@ -86,31 +80,31 @@
         },
         {
             "id": 1012,
-            "name": "Which of the following utilities can be used to compile managed assemblies into processor-specific native code?",
+            "name": "When was the last time you went on a diet ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "gacutil",
+                    "name": "I have never been on a diet",
                     "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "ngen",
-                    "isAnswer": true
+                    "name": "I was on a diet about 6 months ago",
+                    "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "dumpbin",
+                    "name": "I was on a diet about 1 month ago",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "ildasm",
-                    "isAnswer": false
+                    "name": "I’m on a diet now",
+                    "isAnswer": true
                 }
             ],
             "questionType": {
@@ -121,31 +115,31 @@
         },
         {
             "id": 1013,
-            "name": "Which of the following is NOT an Arithmetic operator in C#.NET?",
+            "name": "Compared to other things in your life, how important is your weight to you ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "** (Double Star)",
+                    "name": "My weight is not important compared to other things in my life",
                     "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "+ (Plus)",
+                    "name": "My weight is a little more important than some other things in my life",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "/ (Divide)",
+                    "name": "My weight is more important than most, but not all, things in my life",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "% (Modulo)",
-                    "isAnswer": false
+                    "name": "My weight is the most important thing in my life",
+                    "isAnswer": true
                 }
             ],
             "questionType": {
@@ -156,31 +150,31 @@
         },
         {
             "id": 1014,
-            "name": "Which of the following statements is correct about an interface used in C#.NET?",
+            "name": "Do you ever feel fat ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "If a class implements an interface partially, then it should be an abstract class.",
-                    "isAnswer": true
+                    "name": "Never",
+                    "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "A class cannot implement an interface partially.",
+                    "name": "Rarely",
                     "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "An interface can contain static methods.",
+                    "name": "Often",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "An interface can contain static data.",
-                    "isAnswer": false
+                    "name": "Always",
+                    "isAnswer": true
                 }
             ],
             "questionType": {
@@ -191,31 +185,31 @@
         },
         {
             "id": 1015,
-            "name": "What does the term <strong>immutable</strong> means in term of string objects?",
+            "name": "How distressed or upset have you felt about these episodes?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "We can modify characters included in the string",
+                    "name": "Not at all",
                     "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "We cannot modify characters contained in the string",
-                    "isAnswer": true
+                    "name": "A little",
+                    "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "We cannot perform various operation of comparison, inserting, appending etc",
+                    "name": "Greatly",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "None of the above",
-                    "isAnswer": false
+                    "name": "Extremely",
+                    "isAnswer": true
                 }
             ],
             "questionType": {
@@ -226,30 +220,30 @@
         },
         {
             "id": 1016,
-            "name": "Which of the following is NOT a .NET Exception class?",
+            "name": "Do you struggle with a lack of interest in eating or food ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Exception",
-                    "isAnswer": false
+                    "name": "Yes",
+                    "isAnswer": true
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "StackMemoryException",
-                    "isAnswer": true
+                    "name": "No",
+                    "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "DivideByZeroException",
+                    "name": "Little",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "InvalidOperationException",
+                    "name": "Cannot Say",
                     "isAnswer": false
                 }
             ],
@@ -261,30 +255,30 @@
         },
         {
             "id": 1017,
-            "name": "In C#.NET if we do not catch the exception thrown at runtime then which of the following will catch it?",
+            "name": "Do you consume a small amount of food (i.e., less than 1200 calories/day) on a regular basis to influence your shape or weight ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Compiler",
-                    "isAnswer": false
+                    "name": "Yes",
+                    "isAnswer": true
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "CLR",
-                    "isAnswer": true
+                    "name": "No",
+                    "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Linker",
+                    "name": "Little",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Operating system",
+                    "name": "Cannot Say",
                     "isAnswer": false
                 }
             ],
@@ -296,30 +290,30 @@
         },
         {
             "id": 1018,
-            "name": "Which of the following statements are correct about delegates?",
+            "name": "Do you avoid certain or many foods because of such features as texture, consistency, temperature, or smell, or have other people suggested this may be the case for you ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Delegates cannot be used to call a static method of a class.",
-                    "isAnswer": false
+                    "name": "Yes",
+                    "isAnswer": true
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Delegates cannot be used to call procedures that receive variable number of arguments.",
-                    "isAnswer": true
+                    "name": "No",
+                    "isAnswer": false
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "If signatures of two methods are same they can be called through the same delegate object.",
+                    "name": "Little",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Delegates cannot be used to call an instance function. Delegates cannot be used to call an instance subroutine.",
+                    "name": "Cannot Say",
                     "isAnswer": false
                 }
             ],
@@ -331,30 +325,30 @@
         },
         {
             "id": 1019,
-            "name": "Which of the following does NOT represent Integer?",
+            "name": "Have you experienced significant weight loss but are not overly concerned with the size or shape of your body ?",
             "questionTypeId": 1,
             "options": [{
                     "id": 1055,
                     "questionId": 1010,
-                    "name": "Char",
+                    "name": "Yes",
                     "isAnswer": true
                 },
                 {
                     "id": 1056,
                     "questionId": 1010,
-                    "name": "Byte",
+                    "name": "No",
                     "isAnswer": false
                 },
                 {
                     "id": 1057,
                     "questionId": 1010,
-                    "name": "Short",
+                    "name": "Little",
                     "isAnswer": false
                 },
                 {
                     "id": 1058,
                     "questionId": 1010,
-                    "name": "Long",
+                    "name": "Cannot Say",
                     "isAnswer": false
                 }
             ],
