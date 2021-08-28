@@ -23,4 +23,8 @@ export class HospitalService {
   getHospById(id : number) : Observable<Hospitals>{
     return this.httpClient.get<any>(this.baseUrl+"details/"+id);
   }
+  //update detaisl of hospitals
+  updateDetailsOfHospital(id : number, hospital : Hospitals) : Observable<Hospitals>{
+    return this.httpClient.put<Hospitals>(this.baseUrl+"add-services/"+id, hospital);
+  }
 }

@@ -21,6 +21,7 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
 export class LoginComponent implements OnInit {
   id ! : number;
   HLoginForm !: FormGroup;
+  err ! : String;
   constructor(private fb: FormBuilder, private hospService : HospitalService, private router : Router) { }
 
   ngOnInit(): void {
@@ -68,7 +69,15 @@ export class LoginComponent implements OnInit {
     });
       this.router.navigate(['hospital-dashboard',this.id]);
     },
-    (Error)=>{alert(Error.error.message);
+    (Error)=>{
+      this.err = Error.error.message;
+      alert(this.err);
+      // Swal.fire({  
+      //   icon: 'error',  
+      //   title: 'Oops...',  
+      //   text: ('${this.err}'),  
+      //   footer: '<a href>Why do I have this issue?</a>'  
+      // }) 
     });
   this.HLoginForm.reset({
     email: '',

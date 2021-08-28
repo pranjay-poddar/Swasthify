@@ -3,9 +3,15 @@ export class Hospitals {
     hospitalName! : String;
     emailId! : String;
     city! : String;
-    State! : String;
-    pass! : String;
-    conPass! : String;
+    state! : String;
     contact! : String;
-    hospServices! : [any];
+    hospServices! : [
+        {
+            "icuBeds" : number,
+            "isolationBeds" : number,
+            "oxygenCylinders" : number,
+            "vaccine1" : number,
+            "vaccine2" : number
+        }
+    ];
 }
