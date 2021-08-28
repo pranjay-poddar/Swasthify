@@ -1,0 +1,66 @@
+.sec {
+  padding: 30px;
+}
+.h1-si {
+  font-size: 50px;
+  margin: 22px 0 -3px;
+}
+.card {
+  border: none;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05) inset -5px -5px 5px
+    rgba(255, 255, 255, 0.5) inset 5px 5px 5px rgba(0, 0, 0, 0.05) inset -5px -5px
+    5px rgba(255, 255, 255, 0.5);
+
+  border-radius: 15px;
+  margin: 30px;
+}
+.card .box {
+  background: rgb(207, 241, 241);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.card:hover .box {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #b95ce4, #4f29cd);
+}
+.card .box .content {
+  padding: 20px;
+  text-align: center;
+}
+.card .box .content h2 {
+  font-size: 1.8em;
+  color: rgb(20, 20, 20);
+  z-index: 1;
+  transition: 0.5s;
+}
+.card .box .content p {
+  font-size: 1em;
+  font-weight: 300;
+  color: rgb(20, 20, 20);
+  z-index: 1;
+  transition: 0.5s;
+}
+.card:hover .box .content h2,
+.card:hover .box .content p {
+  color: #fff;
+}
+.card .box .content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: #03a9f4;
+  margin-top: 15px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.card:hover .box .content a {
+  background: #ff568f;
+}

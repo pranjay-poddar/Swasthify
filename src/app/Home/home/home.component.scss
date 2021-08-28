@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 100px 0;
+  margin: 60px 0;
 }
 .left-side {
   flex-basis: 40%;
@@ -89,7 +89,7 @@
   transition: 0.5s;
 }
 .card:hover .box {
-  transform: translateY(-50px);
+  transform: translateY(-40px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   background: linear-gradient(45deg, #b95ce4, #4f29cd);
 }
@@ -130,12 +130,12 @@
   background: #ff568f;
 }
 .jumbo-margin {
-  margin: 0;
+  margin: 0px;
 }
 @media only screen and (max-width: 900px) {
   .row-about-us {
     flex-direction: column;
-    margin: 0;
+    margin: 0px;
   }
   .about-img {
     height: 250px;
@@ -146,11 +146,17 @@
 .about-img {
   margin-bottom: 20px;
 }
-.para-padding {
-  padding: 0 30px;
-  font-size: 20px;
+.pa-padding {
+  padding: 10px 25px;
+  font-size: 23px;
   line-height: 150%;
 }
 .h-size {
   font-size: 40px;
+}
+.space {
+  padding: 0px;
+}
+.a-link {
+  text-decoration: none;
 }

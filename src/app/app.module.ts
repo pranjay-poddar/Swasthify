@@ -25,6 +25,8 @@ import { ForgetPasPatientComponent } from './Patients/forget-pas-patient/forget-
 import { SelfAnalysisComponent } from './common-services/self-analysis/self-analysis.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ResourcesComponent } from './common-services/resources/resources.component';
+import { OurProductsComponent } from './common-services/our-products/our-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { FormsModule } from '@angular/forms';
     AlertmsgComponent,
     ForgetPasComponent,
     ForgetPasPatientComponent,
-    SelfAnalysisComponent
+    SelfAnalysisComponent,
+    ResourcesComponent,
+    OurProductsComponent
   ],
   imports: [
     BrowserModule,
