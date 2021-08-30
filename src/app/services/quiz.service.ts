@@ -17,7 +17,7 @@ export class QuizService {
       { id: 'assets/data/covid.json', name: 'Covid' },
       { id: 'assets/data/mental.json', name: 'Mental' },
       { id: 'assets/data/physical.json', name: 'Physical' },
-      { id: 'assets/data/respiratory.json', name: 'Respiratory' },
+      { id: 'assets/data/respiratory.json', name: 'Eating Disorder' },
     ];
   }
 }

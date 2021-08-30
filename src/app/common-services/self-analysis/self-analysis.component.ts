@@ -21,7 +21,7 @@ export class SelfAnalysisComponent implements OnInit {
   mode = 'quiz';
   quizName !: string;
   config: QuizConfig = {
-    'allowBack': false,
+    'allowBack': true,
     'allowReview': true,
     'autoMove': true,  // if true, it will move to next question automatically when answered.
     'duration': 600,  // indicates the time (in secs) in which quiz needs to be completed. 0 means unlimited.
@@ -89,13 +89,22 @@ export class SelfAnalysisComponent implements OnInit {
       this.quiz.questions.slice(this.pager.index, this.pager.index + this.pager.size) : [];
   }
 
-  onSelect(question: Question, option: Option) {
+  /*onSelect(question: Question, option: Option) {
     if (question.questionTypeId === 1) {
       question.options.forEach((x) => { if (x.id !== option.id) x.selected = false; });
     }
 
     if (this.config.autoMove) {
       setTimeout(() => { this.goTo(this.pager.index + 1); }, 500);
+    }
+  }*/
+  onSelect(question: any, option: any) {
+    if (question.QuestionTypeId == 1) {
+      question.Options.forEach((x:any) => { if (x.Id != option.Id) x.Selected = false; });
+    }
+
+    if (this.config.autoMove) {
+      this.goTo(this.pager.index + 1);
     }
   }
 
@@ -120,11 +129,12 @@ export class SelfAnalysisComponent implements OnInit {
   };
 
   onSubmit() {
-    let answers = [];
+    let answers:any = [];
    
     this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
     
     // Post your data to the server here. answers contains the questionId and the users' answer.
+    console.log(answers)
     
     this.mode = 'result';
   }
@@ -145,7 +155,7 @@ export class SelfAnalysisComponent implements OnInit {
   
   onPositive(){
     
-    
+    console.log(positive);
     if(positive >= 6){
       return 1;
     }
