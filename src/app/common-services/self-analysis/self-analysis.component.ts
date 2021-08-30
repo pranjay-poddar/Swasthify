@@ -107,13 +107,15 @@ export class SelfAnalysisComponent implements OnInit {
   }
 
   isAnswered(question: Question) {
+    console.log(question.options[0].selected)
     return question.options.find(x => x.selected) ? 'Answered' : 'Not Answered';
+    
   };
   
   isCorrect(question: Question) {
-    if(question.options.every(x => x.selected === x.isAnswer)){
-     return positive = positive + 1;
-}
+//     if(question.options.every(x => x.selected === x.isAnswer)){
+//      return positive = positive + 1;
+// }
     return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
   };
 
@@ -125,6 +127,20 @@ export class SelfAnalysisComponent implements OnInit {
     // Post your data to the server here. answers contains the questionId and the users' answer.
     
     this.mode = 'result';
+  }
+
+ total(x: Question){
+   for(let i = 0;i < 4;i++){
+     let y = x.options[i].selected;
+    //  console.log(y);
+     if(x.options[i].isAnswer===true && x.options[i].selected===true){
+       positive = positive + 1;
+     }
+    
+   }
+  //  console.log(x.options)
+ 
+  
   }
   
   onPositive(){

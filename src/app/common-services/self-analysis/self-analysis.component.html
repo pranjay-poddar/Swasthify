@@ -26,7 +26,7 @@
                     <div class="col-6" *ngFor="let option of question.options">
                         <div class="option">
                             <label class="font-weight-normal" [attr.for]="option.id">
-                <input id="{{option.id}}" type="checkbox" [(ngModel)]="option.selected" (change)="onSelect(question, option);" /> {{option.name}}
+                <input id="{{option.id}}" type="checkbox" (click)="total(question)" [(ngModel)]="option.selected" (change)="onSelect(question, option);" /> {{option.name}}
               </label>
                         </div>
                     </div>
