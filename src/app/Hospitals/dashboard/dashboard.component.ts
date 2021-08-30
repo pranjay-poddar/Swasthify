@@ -23,13 +23,11 @@ export class DashboardComponent implements OnInit {
     (Error) => {
       console.log(Error.error.message);
     });
-    // if(this.hospitals.hospServices.length() === 0){
-    //   console.log("null");
-    // }
   }
   updateEntries(){
     this.hospService.updateDetailsOfHospital(this.id, this.hospitals).subscribe((data) => {
       this.hospitals = data;
+      console.log(this.hospitals);
       alert("Updated Successfully")
     },
     (Error) => {

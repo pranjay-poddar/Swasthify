@@ -5,13 +5,9 @@ export class Hospitals {
     city! : String;
     state! : String;
     contact! : String;
-    hospServices! : [
-        {
-            "icuBeds" : number,
-            "isolationBeds" : number,
-            "oxygenCylinders" : number,
-            "vaccine1" : number,
-            "vaccine2" : number
-        }
-    ];
+    icuBeds! : number;
+    isolationBeds! : number;
+    oxygenCylinders! : number;
+    vaccine1! : number;
+    vaccine2! : number;
 }
