@@ -18,6 +18,10 @@ select {
     margin: .35em .65em;
 }
 
+.category2 {
+    display: none;
+}
+
 .grow:hover {
     transform: scale(1.1);
 }
@@ -77,12 +81,10 @@ body {
     background-color: $blue;
 }
 
-
 .option {
     background-color: $blue;
     font-size: 20px;
     border-radius: 10px;
-    height: 60px;
     padding: 10px;
     margin: 3px;
 }
