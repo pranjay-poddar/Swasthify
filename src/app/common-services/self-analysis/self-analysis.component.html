@@ -1,49 +1,45 @@
 <app-navbar></app-navbar>
 <div class="home container">
-  <div class="row category">
-    <div [@expand]>
-      <div
-        class="
-          col-lg-12 col-md-12 col-sm-12 col-xs-12
-          d-flex
-          justify-content-center
-        "
-      >
-        <span class="select badge badge-info"> Select Category:</span>
-        <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
+
+    <div class="row  {{hidecomponent}}">
+        <div [@expand]>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
+                <span class="select badge badge-info"> Select Category:</span>
+                <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
           <option *ngFor="let quiz of quizes" [value]="quiz.id">
             {{ quiz.name }}
           </option>
         </select>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="quiz">
-    <h2 class="text-center heading-1 font-weight-normal" [@expand]>
-      {{ quiz.name }}
-    </h2>
-    <hr />
-
-    <div *ngIf="mode == 'quiz' && quiz">
-      <div *ngFor="let question of filteredQuestions">
-        <div class="badge badge-info">
-          Question {{ pager.index + 1 }} of {{ pager.count }}.
-        </div>
-        <div *ngIf="config.duration" class="badge badge-info float-right">
-          Time: {{ ellapsedTime }} / {{ duration }}
-        </div>
-        <h2 class="font-weight-normal" [@flyInOut]>
-          {{ pager.index + 1 }}.
-          <span [innerHTML]="question.name"></span>
+    <div id="quiz">
+        <h2 class="text-center heading-1 font-weight-normal" [@expand]>
+            {{ quiz.name }}
         </h2>
+        <hr />
 
-        <div class="row text-left options" [@flyInOut]>
-          <div class="col-6" *ngFor="let option of question.options">
-            <div class="option">
-              <label class="font-weight-normal" [attr.for]="option.id">
+        <div *ngIf="mode == 'quiz' && quiz">
+            <div *ngFor="let question of filteredQuestions">
+                <div class="badge badge-info">
+                    Question {{ pager.index + 1 }} of {{ pager.count }}.
+                </div>
+                <div *ngIf="config.duration" class="badge badge-info float-right">
+                    Time: {{ ellapsedTime }} / {{ duration }}
+                </div>
+                <h2 class="font-weight-normal" [@flyInOut]>
+                    {{ pager.index + 1 }}.
+                    <span [innerHTML]="question.name"></span>
+                </h2>
+
+                <div class="row text-left options" [@flyInOut]>
+                    <div class="col-6" *ngFor="let option of question.options">
+                        <div class="option">
+                            <label class="font-weight-normal" [attr.for]="option.id">
                 <input
                   id="{{ option.id }}"
                   type="checkbox"
+                 
                   [(ngModel)]="option.selected"
                   (change)="onSelect(question, option)"
                 />
@@ -64,84 +60,73 @@
                 <!-- <button class="btn grow btn-secondary" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Last</button> -->
                 <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
             </div>
-          </div>
         </div>
-        <div *ngIf="pager.index == 8">
-          <h1 style="text-align: center; font-weight: bold">
-            Please Click Submit
-          </h1>
-        </div>
+    </div>
+
 
     <div class="row text-center" *ngIf="mode == 'review'">
-      <div
-        class="col-4 cursor-pointer"
-        *ngFor="let question of quiz.questions; let index = index"
-      >
-        <div
-          (click)="goTo(index)"
-          class="p-3 mb-2 {{
+        <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index">
+            <div (click)="goTo(index)" class="p-3 mb-2 {{
             isAnswered(question) == 'Answered' ? 'bg-info' : 'bg-warning'
-          }}"
-        >
-          {{ index + 1 }}. {{ isAnswered(question) }}
+          }}">
+                {{ index + 1 }}. {{ isAnswered(question) }}
+            </div>
         </div>
-      </div>
-      <div class="col-12">
-        <button class="btn grow btn-back btn-primary" (click)="mode = 'quiz'">
+        <div class="col-12">
+            <button class="btn grow btn-back btn-primary" (click)="mode = 'quiz'">
           Back
         </button>
-      </div>
+        </div>
     </div>
     <div class="result" *ngIf="mode == 'result'">
-      <h2>Analysis Responses</h2>
-      <div *ngIf="onPositive() == 1">
-        <h1 id="positive-heading-1">
-          YOU NEED TO TAKE A COVID-19 TEST, CONTACT YOUR NEARBY COVID TESTING
-          CENTER TO GET TESTED FOR COVID-19!
-        </h1>
-      </div>
-      <div *ngIf="onPositive() == 0">
-        <h1 id="positive-heading-3">
-          COVID-19 TEST IS NOT REQUIRED! YOU DO NOT HAVE COVID SYMPTOMS
-        </h1>
-      </div>
-      <div *ngFor="let question of quiz.questions; let index = index">
-        <div class="result-question">
-          <h5>{{ index + 1 }}. {{ question.name }}</h5>
-          <div class="row">
-            <div class="col-6" *ngFor="let Option of question.options">
-              <input
-                id="{{ Option.id }}"
-                type="checkbox"
-                disabled="disabled"
-                [(ngModel)]="Option.selected"
-              />
-              {{ Option.name }}
-            </div>
-          </div>
-
-          <div
-            class="p-1 m-3 alert {{
-              isCorrect(question) == 'correct' ? '' : ''
-            }}"
-          ></div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/self-analysis">Self-Analysis</a></li>
+            </ol>
+        </nav>
+        <h2>Analysis Responses</h2>
+        <div *ngIf="onPositive() == 1">
+            <h1 id="positive-heading-1">
+                {{analysisResultPositive}}
+            </h1>
         </div>
-      </div>
-      <p class="text-muted" style="text-align: center">
-        All the generated analysis results are tentative and do not carry any
-        guarantee
-      </p>
+        <div *ngIf="onPositive() == 0">
+            <h1 id="positive-heading-3">
+                {{analysisResultNegative}}
+            </h1>
+        </div>
+        <div *ngFor="let question of quiz.questions; let index = index">
+            <div class="result-question">
+                <h5>{{ index + 1 }}. {{ question.name }}</h5>
+                <div class="row">
+                    <div class="col-6" *ngFor="let Option of question.options">
+                        <input id="{{ Option.id }}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{ Option.name }}
+                    </div>
+                </div>
+
+                <div class="p-1 m-3 alert {{
+              isCorrect(question) == 'correct' ? '' : ''
+            }}"></div>
+            </div>
+        </div>
+        <p class="text-muted" style="text-align: center">
+            All the generated analysis results are tentative and do not carry any guarantee
+        </p>
+        <div class="text-center">
+            <a class="badge badge-info" href="/self-analysis">Take Another Self-Analysis </a>
+        </div>
     </div>
     <hr />
     <div *ngIf="mode != 'result'">
-      <div class="text-center">
-        <!-- <button class="btn grow btn-back btn-primary" (click)="mode = 'quiz'">Back</button> -->
-        <button class="btn grow btn-submit btn-primary" (click)="onSubmit()">
+        <div class="text-center">
+            <!-- <button class="btn grow btn-back btn-primary" (click)="mode = 'quiz'">Back</button> -->
+            <button class="btn grow btn-submit btn-primary" (click)="onSubmit()">
           Submit
         </button>
-        <button class="btn grow btn-review btn-info" (click)="mode = 'review'">
+            <button class="btn grow btn-review btn-info" (click)="mode = 'review'">
           Review
         </button>
-      </div>
+        </div>
     </div>
-  </div>
+</div>
