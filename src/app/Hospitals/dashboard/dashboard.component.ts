@@ -4,10 +4,15 @@ import { Hospitals } from 'src/app/models/hospitals';
 import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
 
+import { flyInOut , expand} from '../../Utilities/animations/animation';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  animations: [
+    flyInOut(),
+    expand()
+  ]
 })
 export class DashboardComponent implements OnInit {
 

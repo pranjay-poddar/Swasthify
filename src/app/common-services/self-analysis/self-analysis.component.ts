@@ -4,28 +4,29 @@ import { HelperService } from 'src/app/services/helper.service';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { QuizService } from 'src/app/services/quiz.service';
 let positive = 0;
+let answers:any = [];
+
 @Component({
   selector: 'app-self-analysis',
   templateUrl: './self-analysis.component.html',
   styleUrls: ['./self-analysis.component.scss'],
   providers: [QuizService],
-  host: {
-    '[@flyInOut]': 'true',
-    'style': 'display: block;'
-    },
     animations: [
       flyInOut(),
       expand()
     ]
 })
-export class SelfAnalysisComponent implements OnInit {
 
+export class SelfAnalysisComponent implements OnInit {
+  hidecomponent = "";
+  analysisResultPositive:string='';
+  analysisResultNegative:string='';
   quizes !: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
   quizName !: string;
   config: QuizConfig = {
-    'allowBack': false,
+    'allowBack': true,
     'allowReview': true,
     'autoMove': true,  // if true, it will move to next question automatically when answered.
     'duration': 600,  // indicates the time (in secs) in which quiz needs to be completed. 0 means unlimited.
@@ -63,6 +64,8 @@ export class SelfAnalysisComponent implements OnInit {
     this.quizService.get(quizName).subscribe(res => {
       this.quiz = new Quiz(res);
       this.pager.count = this.quiz.questions.length;
+      this.pager.index=0;
+    
       this.startTime = new Date();
       this.ellapsedTime = '00:00';
       this.timer = setInterval(() => { this.tick(); }, 1000);
@@ -93,13 +96,13 @@ export class SelfAnalysisComponent implements OnInit {
       this.quiz.questions.slice(this.pager.index, this.pager.index + this.pager.size) : [];
   }
 
-  onSelect(question: Question, option: Option) {
-    if (question.questionTypeId === 1) {
-      question.options.forEach((x) => { if (x.id !== option.id) x.selected = false; });
+  onSelect(question: any, option: any) {
+    if (question.QuestionTypeId == 1) {
+      question.Options.forEach((x:any) => { if (x.Id != option.Id) x.Selected = false; });
     }
 
     if (this.config.autoMove) {
-      setTimeout(() => { this.goTo(this.pager.index + 1); }, 500);
+      this.goTo(this.pager.index + 1);
     }
   }
 
@@ -111,29 +114,73 @@ export class SelfAnalysisComponent implements OnInit {
   }
 
   isAnswered(question: Question) {
+
     return question.options.find(x => x.selected) ? 'Answered' : 'Not Answered';
+    
   };
   
   isCorrect(question: Question) {
-    if(question.options.every(x => x.selected === x.isAnswer)){
-     return positive = positive + 1;
-}
+//     if(question.options.every(x => x.selected === x.isAnswer)){
+//      return positive = positive + 1;
+// }
     return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
   };
 
   onSubmit() {
-    let answers = [];
-   
-    this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
+    
+
+    this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered,'isans0': x.options[0].isAnswer,'isans1': x.options[1].isAnswer,'isans2': x.options[2].isAnswer,'isans3': x.options[3].isAnswer,'s0':x.options[0].selected,'s1':x.options[1].selected,'s2':x.options[2].selected,'s3':x.options[3].selected}));
     
     // Post your data to the server here. answers contains the questionId and the users' answer.
+   
+    for(let i = 0; i < 10;i++){
+      
+        if(answers[i].isans0== true && answers[i].s0==true){
+          positive=positive+1;
+        }
+        else if(answers[i].isans1==true && answers[i].s1==true){
+          positive=positive+1;
+        }
+        else if(answers[i].isans2==true && answers[i].s2==true){
+          positive=positive+1;
+        }
+        else if(answers[i].isans3==true && answers[i].s3==true){
+          positive=positive+1;
+        }
+    }
     
-    this.mode = 'result';
-  }
+   
+  // to hide the category option on submit 
+      if(this.hidecomponent){
+        this.hidecomponent = "";
+      }
+      else{
+        this.hidecomponent = "category2";
+      }
   
+   
+    this.mode = 'result';
+    if(answers[1].quizId==1){
+      this.analysisResultPositive="YOU NEED TO TAKE A COVID-19 TEST, CONTACT YOUR NEARBY COVID TESTING CENTER TO GET TESTED FOR COVID-19!";
+      this.analysisResultNegative="COVID TEST IS NOT REQUIRED! YOU DO NOT HAVE COVID SYMPTOMS"
+    }
+    if(answers[1].quizId==2){
+      this.analysisResultPositive="YOU NEED TO CONSULT A DOCTOR, CONTACT YOUR NEARBY DOCTOR TO GET TESTED FOR EATING DISORDER!";
+      this.analysisResultNegative="YOU ARE HEALTHY! YOU DO NOT HAVE ANY SYMPTOMS OF EATING DISORDER"
+    }
+    if(answers[1].quizId==3){
+      this.analysisResultPositive="YOU NEED TO CONSULT A DOCTOR, CONTACT YOUR NEARBY dOCTOR TO GET TESTED FOR PHYSICAL HEALTH!";
+      this.analysisResultNegative="YOU ARE PHYSICALLY HEALTHY! YOU DO NOT HAVE ANY SYMPTOMS OF PHYSICAL HEALTH DISORDER"
+    }
+    if(answers[1].quizId==4){
+      this.analysisResultPositive="YOU NEED TO CONSULT A DOCTOR, CONTACT YOUR NEARBY PSYCHIATRIST TO GET TESTED FOR MENTAL DISORDER!";
+      this.analysisResultNegative="YOU ARE MENTALY HEALTHY! YOU DO NOT HAVE ANY SYMPTOMS OF MENTAL DISORDER"
+    }
+
+  }
+
   onPositive(){
-    
-    
+    // console.log(positive);
     if(positive >= 6){
       return 1;
     }

@@ -9,10 +9,6 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  host: {
-    '[@flyInOut]': 'true',
-    'style': 'display: block;'
-    },
     animations: [
       flyInOut(),
       expand()

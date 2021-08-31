@@ -6,6 +6,7 @@ export class Question {
     questionTypeId: number;
     options: Option[];
     answered!: boolean;
+    
 
     constructor(data: any) {
         data = data || {};
@@ -13,7 +14,6 @@ export class Question {
         this.name = data.name;
         this.questionTypeId = data.questionTypeId;
         this.options = [];
-        
         data.options.forEach((o:any) => {
             this.options.push(new Option(o));
         });

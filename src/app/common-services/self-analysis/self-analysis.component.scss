@@ -13,6 +13,15 @@ $pink:#F3797E;
     font-weight: bold;
 }
 
+select {
+    border-radius: .5rem;
+    margin: .35em .65em;
+}
+
+.category2 {
+    display: none;
+}
+
 .grow:hover {
     transform: scale(1.1);
 }
@@ -23,7 +32,7 @@ $pink:#F3797E;
 }
 
 .btn-review {
-    background-color: $lpurple;
+    background-color: $pink;
     margin-left: 8%;
 }
 
@@ -76,7 +85,6 @@ body {
     background-color: $blue;
     font-size: 20px;
     border-radius: 10px;
-    height: 60px;
     padding: 10px;
     margin: 3px;
 }
