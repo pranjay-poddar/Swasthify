@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Hospitals } from 'src/app/models/hospitals';
 import { HospitalService } from 'src/app/services/hospital.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,24 +16,24 @@ export class DashboardComponent implements OnInit {
   constructor(private hospService : HospitalService, private router : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = this.router.snapshot.params['id'];
-    this.hospService.getHospById(this.id).subscribe((data) => {
-      this.hospitals = data;
-      console.log(this.hospitals);
-    },
-    (Error) => {
-      console.log(Error.error.message);
-    });
+    // this.id = this.router.snapshot.params['id'];
+    // this.hospService.getHospById(this.id).subscribe((data) => {
+    //   this.hospitals = data;
+    //   console.log(this.hospitals);
+    // },
+    // (Error) => {
+    //   console.log(Error.error.message);
+    // });
   }
   updateEntries(){
-    this.hospService.updateDetailsOfHospital(this.id, this.hospitals).subscribe((data) => {
-      this.hospitals = data;
-      console.log(this.hospitals);
-      alert("Updated Successfully")
-    },
-    (Error) => {
-      console.log(Error.error.message);
-    })
+    // this.hospService.updateDetailsOfHospital(this.id, this.hospitals).subscribe((data) => {
+    //   this.hospitals = data;
+    //   console.log(this.hospitals); 
+    //   Swal.fire('Updated Successfully');  
+    // },
+    // (Error) => {
+    //   console.log(Error.error.message);
+    // })
   }
 
 }

@@ -59,26 +59,26 @@ export class LoginComponent implements OnInit {
 
 
   submit(){
-    //console.log(this.HLoginForm.value);
-    this.hospService.signInHospital(this.HLoginForm.value).subscribe((data)=>{
-      this.id = data.id;
-      Swal.fire({  
-        icon: 'success',  
-        title: 'Thank You...',  
-        text: 'Login Succesfull!',  
-    });
-      this.router.navigate(['hospital-dashboard',this.id]);
-    },
-    (Error)=>{
-      this.err = Error.error.message;
-      alert(this.err);
+    // this.hospService.signInHospital(this.HLoginForm.value).subscribe((data)=>{
+    //   this.id = data.id;
+    //   Swal.fire({  
+    //     icon: 'success',  
+    //     title: 'Thank You...',  
+    //     text: 'Login Succesfull!',  
+    // });
+    //   this.router.navigate(['hospital-dashboard',this.id]);
+    // },
+    // (Error)=>{
+    //   this.err = Error.error.message;
+    //   alert(this.err);
+
       // Swal.fire({  
       //   icon: 'error',  
       //   title: 'Oops...',  
       //   text: ('${this.err}'),  
       //   footer: '<a href>Why do I have this issue?</a>'  
       // }) 
-    });
+    //});
   this.HLoginForm.reset({
     email: '',
     password: '',
