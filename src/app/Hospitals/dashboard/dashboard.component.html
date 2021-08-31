@@ -1,2 +1,20 @@
-<app-navbar></app-navbar>
-<h1>Hospital Dashboard works</h1>
+<div class="container">
+    <h1>{{hospitals.hospitalName}}</h1>
+    <section class="details">
+        <h2>{{ hospitals.emailId }}</h2>
+        State : <input type="text" class="services" name="state"[(ngModel)]="hospitals.state"><br>
+        City : <input type="text" class="services" name="city"[(ngModel)]="hospitals.city">
+        <h2>Update Services</h2>
+        <div class="service-sec">
+            ICU BEDS : <input type="text" class="services" name="icuBeds"[(ngModel)]="hospitals.icuBeds">
+            ISOLATION BEDS : <input type="text" class="services" name="isolationBeds"[(ngModel)]="hospitals.isolationBeds">
+            OXYGEN CYLINDERS : <input type="text" class="services" name="oxygenCylinders"[(ngModel)]="hospitals.oxygenCylinders">
+        </div> 
+        <div class="vaccine-sec">
+            <h2>Vaccines Available</h2>
+            Covaxin : <input type="text" class="services" name="vaccine1"[(ngModel)]="hospitals.vaccine1">
+            Covishield : <input type="text" class="services" name="vaccine2"[(ngModel)]="hospitals.vaccine2">
+        </div>
+        <button type="button" class="btn btn-primary"(click)="updateEntries()">Update</button>
+    </section>
+</div>
