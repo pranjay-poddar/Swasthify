@@ -18,7 +18,7 @@
                     <form [formGroup]="HSForm">
 
                         <mat-form-field>
-                            <input matInput type="text" placeholder="Hospital Name" formControlName="name">
+                            <input matInput type="text" placeholder="Hospital Name" formControlName="hospitalName">
                             <mat-error *ngIf="name?.errors?.minlength">
                                 Name should be atleast 3 characters long
                             </mat-error>
@@ -32,7 +32,7 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput placeholder="Email" type="email" formControlName="email">
+                            <input matInput placeholder="Email" type="email" formControlName="emailId">
                             <mat-error *ngIf="email?.invalid && email?.touched">
                                 Please, enter valid email address
                             </mat-error>
@@ -53,7 +53,7 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Password" formControlName="password">
+                            <input matInput type="password" placeholder="Password" formControlName="pass">
                             <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
                             <mat-error *ngIf="password?.invalid && password?.touched">
                                 Please enter Password in correct format
@@ -61,7 +61,7 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Confirm Password" formControlName="cpassword">
+                            <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
 
                             <mat-error *ngIf="cpassword?.invalid && cpassword?.touched">
                                 Please enter Password in correct format

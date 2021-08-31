@@ -10,14 +10,14 @@
                 <div class="card" [@flyInOut]>
                     <form [formGroup]="HLoginForm">
                         <mat-form-field>
-                            <input matInput placeholder="Email" type="email" formControlName="email">
+                            <input matInput placeholder="Email" type="email" formControlName="emailId">
                             <mat-error *ngIf="email?.invalid && email?.touched">
                                 Please, enter valid email address
                             </mat-error>
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Password" formControlName="password">
+                            <input matInput type="password" placeholder="Password" formControlName="pass">
 
                             <mat-error *ngIf="password?.invalid && password?.touched">
                                 Please enter Password in correct format
