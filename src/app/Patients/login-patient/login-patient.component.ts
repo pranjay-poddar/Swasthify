@@ -53,19 +53,19 @@ export class LoginPatientComponent implements OnInit {
 
 
   submit(){
-    this.patientServ.loginPatient(this.PLoginForm.value).subscribe((data) => {
-      this.id = data.id;
-      Swal.fire({  
-        icon: 'success',  
-        title: 'Thank You...',  
-        text: 'Login Succesfull!',  
-      });
-      setTimeout(() => {
-        this.router.navigate(['patient-dashboard',this.id]);
-      },1000);
-    },
-    (Error) =>{alert(Error.error.message)}
-    );
+    // this.patientServ.loginPatient(this.PLoginForm.value).subscribe((data) => {
+    //   this.id = data.id;
+    //   Swal.fire({  
+    //     icon: 'success',  
+    //     title: 'Thank You...',  
+    //     text: 'Login Succesfull!',  
+    //   });
+    //   setTimeout(() => {
+    //     this.router.navigate(['patient-dashboard',this.id]);
+    //   },1000);
+    // },
+    // (Error) =>{alert(Error.error.message)}
+    // );
     
   this.PLoginForm.reset({
     emailId: '',
