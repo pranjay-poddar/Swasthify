@@ -21,6 +21,7 @@ const routes: Routes = [
 {path: 'hospital-dashboard', component: DashboardComponent},
 {path: 'patient-login', component: LoginPatientComponent},
 {path: 'patient-signup', component: SignupPatientComponent},
+//{path: 'patient-dashboard/:id', component: DashboardPatientComponent},
 {path: 'patient-dashboard', component: DashboardPatientComponent},
 {path: 'home', component: HomeComponent},
 {path: 'h-forget-pas', component: ForgetPasComponent},

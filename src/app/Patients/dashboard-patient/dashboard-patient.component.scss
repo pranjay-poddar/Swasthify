@@ -275,6 +275,9 @@ sup {
 .badge {
   border-radius: 25px;
 }
+.check-hospitals, .detail-table{
+  margin-left: 20%;
+}
 
 @media (max-width: 985px) {
   .main_container {
@@ -410,6 +413,9 @@ sup {
   .stats3 {
     margin: 25px 0;
   }
+  .check-hospitals, .detail-table{
+    margin-left: 12%;
+  }
 }
 
 @media (max-width: 390px) {
@@ -435,5 +441,8 @@ sup {
   }
   .card-head {
     font-size: 15px;
+  }
+  .check-hospitals, .detail-table{
+    margin-left: 12%;
   }
 }
