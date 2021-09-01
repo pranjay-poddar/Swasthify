@@ -22,6 +22,7 @@ export class DashboardPatientComponent implements OnInit {
   main_container = "main_container" ;
   city! : String;
   hospitalDetails : HospitalDetails[] = [];
+  tempDetails : HospitalDetails[] = [];
   toggleNav(){
     if(this.sidenav){
       this.sidenav = "";
@@ -60,7 +61,6 @@ export class DashboardPatientComponent implements OnInit {
       this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
         this.totService = data;
       })
-      console.log(this.hospitalDetails);
     },
     (Error) => {console.log(Error.error.message)}
     );
@@ -71,6 +71,45 @@ export class DashboardPatientComponent implements OnInit {
         id : id
       }
     });
+  }
+  findIcu(){
+    let temp : any = [];
+    this.PatientService.getHospitalsByService().subscribe((data) => {
+      this.tempDetails = data;
+      for(let a of this.tempDetails){
+        if(a.icuBeds > 0){
+          temp.push(a);
+        }
+      }
+    }); 
+    this.ngOnInit();
+    this.hospitalDetails = temp;
+  }
+  findVaccines(){
+    let temp : any = [];
+    this.PatientService.getHospitalsByService().subscribe((data) => {
+      this.tempDetails = data;
+      for(let a of this.tempDetails){
+        if(a.vaccine1 > 0 || a.vaccine2 > 0){
+          temp.push(a);
+        }
+      }
+    }); 
+    this.ngOnInit();
+    this.hospitalDetails = temp;
+  }
+  findIsolationBeds(){
+    let temp : any = [];
+    this.PatientService.getHospitalsByService().subscribe((data) => {
+      this.tempDetails = data;
+      for(let a of this.tempDetails){
+        if(a.isolationBeds > 0){
+          temp.push(a);
+        }
+      }
+    }); 
+    this.ngOnInit();
+    this.hospitalDetails = temp;
   }
 
   

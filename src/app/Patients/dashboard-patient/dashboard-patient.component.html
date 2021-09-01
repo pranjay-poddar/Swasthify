@@ -29,43 +29,43 @@
     <div class="sidebar {{ sidenav }}" [@flyInOut]>
       <ul>
         <li>
-          <a href="# ">
-            <span class="icon"><i class="fas fa-first-aid grow"></i></span>
-            <span class=" {{ sidenavTitle }} t grow">ICU</span>
-          </a>
-        </li>
-        <li>
-          <a href="# ">
-            <span class="icon"
-              ><i class="fas fa-fire-extinguisher grow"></i>
-            </span>
-            <span class="{{ sidenavTitle }} t grow">O2 Cylinders</span>
-          </a>
-        </li>
-        <li>
-          <a href="# ">
-            <span class="icon"><i class="fas fa-syringe grow"></i></span>
-            <span class="{{ sidenavTitle }} t grow">Vaccine</span>
-          </a>
-        </li>
-        <li>
-          <a href="# " class="active">
-            <span class="icon"><i class="fas fa-bed grow"></i></span>
-            <span class="{{ sidenavTitle }} t grow">Beds</span>
-          </a>
-        </li>
-        <li>
-          <a href="# ">
-            <span class="icon"><i class="fas fa-user-md grow"></i></span>
-            <span class="{{ sidenavTitle }} t grow">Doctor</span>
-          </a>
-        </li>
-        <li>
           <a routerLink="/home">
             <span class="icon"><i class="fas fa-home grow"></i></span>
             <span class="{{ sidenavTitle }} t grow">Home</span>
           </a>
         </li>
+        <!-- <li>
+          <a (click)="findHospitals()">
+            <span class="icon"><i class="fas fa-first-aid grow"></i></span>
+            <span class=" {{ sidenavTitle }} t grow" ><input type="text" [(ngModel)]="city" name="city" placeholder="City"></span>
+          </a>
+        </li> -->
+        <li>
+          <a (click)="findIcu()">
+            <span class="icon"
+              ><i class="fas fa-fire-extinguisher grow"></i>
+            </span>
+            <span class="{{ sidenavTitle }} t grow">ICU BEDS</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="findVaccines()">
+            <span class="icon"><i class="fas fa-syringe grow"></i></span>
+            <span class="{{ sidenavTitle }} t grow">Vaccine</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="findIsolationBeds()">
+            <span class="icon"><i class="fas fa-bed grow"></i></span>
+            <span class="{{ sidenavTitle }} t grow">Beds</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="# ">
+            <span class="icon"><i class="fas fa-user-md grow"></i></span>
+            <span class="{{ sidenavTitle }} t grow">Doctor</span>
+          </a>
+        </li> -->
       </ul>
     </div>
 
@@ -118,6 +118,29 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="check-hospitals">
+        <label>Check for Hospitals in your City : </label>
+        <input type="text" [(ngModel)]="city" name="city">
+        <button type="button" class="btn btn-primary" (click)="findHospitals()">Info</button>
+      </div>
+      <div class="detail-table" *ngIf="hospitalDetails.length > 0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+               <td>Hospitals</td>
+               <td>Email Id</td>
+               <td>Details</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let a of hospitalDetails">
+              <td>{{ a.hospitalName }}</td>
+              <td>{{ a.emailId}}</td>
+              <td><button type="button" class="btn btn-primary" (click)="openDialog(a.id)">Detais</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="row">
         <div
@@ -174,27 +197,5 @@
       </div>
     </div>
   </div>
-  <div class="check-hospitals">
-    <label>Check for Hospitals in your City : </label>
-    <input type="text" [(ngModel)]="city" name="city">
-    <button type="button" class="btn btn-primary" (click)="findHospitals()">Info</button>
-  </div>
-  <div class="detail-table" *ngIf="hospitalDetails.length > 0">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-           <td>Hospitals</td>
-           <td>Email Id</td>
-           <td>Details</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let a of hospitalDetails">
-          <td>{{ a.hospitalName }}</td>
-          <td>{{ a.emailId}}</td>
-          <td><button type="button" class="btn btn-primary" (click)="openDialog(a.id)">Detais</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  
 </div>

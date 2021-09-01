@@ -30,4 +30,8 @@ export class PatientService {
   public getDetailsOfHospitalsByCity(city : String) : Observable<any>{
     return this.httpClient.get<any>(this.baseUrl+"details/"+city);
   }
+  //get all hospitals by service
+  public getHospitalsByService() : Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl+"all-hospitals");
+  }
 }
