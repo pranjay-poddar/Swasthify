@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ResourcesComponent } from './common-services/resources/resources.component';
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +46,7 @@ import { OurProductsComponent } from './common-services/our-products/our-product
     ForgetPasPatientComponent,
     SelfAnalysisComponent,
     ResourcesComponent,
-    OurProductsComponent
+    OurProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { OurProductsComponent } from './common-services/our-products/our-product
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule ,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

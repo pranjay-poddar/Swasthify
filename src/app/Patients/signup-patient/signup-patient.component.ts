@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { PatientService } from 'src/app/services/patient.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 @Component({
@@ -17,7 +18,7 @@ export class SignupPatientComponent implements OnInit {
 
   
   PSForm !: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private patientService : PatientService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -40,7 +41,7 @@ export class SignupPatientComponent implements OnInit {
         Validators.minLength(3),
         Validators.maxLength(46)
       ]],
-      email: ['',[
+      emailId: ['',[
         Validators.required,
         Validators.email,
         Validators.maxLength(40)
@@ -50,12 +51,12 @@ export class SignupPatientComponent implements OnInit {
         Validators.min(999999999),
         Validators.max(99999999999)
       ]],
-      password:['',[
+      pass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8)
       ]],
-      cpassword:['',[
+      conPass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8),
@@ -64,7 +65,7 @@ export class SignupPatientComponent implements OnInit {
         Validators.requiredTrue
       ]]
     }, { 
-      validator: ConfirmedValidator('password', 'cpassword')
+      validator: ConfirmedValidator('pass', 'conPass')
     });
     
     
@@ -76,20 +77,20 @@ export class SignupPatientComponent implements OnInit {
     return this.PSForm.get('name');
   }
 
-  get email(){
-    return this.PSForm.get('email');
+  get emailId(){
+    return this.PSForm.get('emailId');
   }
 
   get contact(){
 return this.PSForm.get('contact');
   }
 
-  get password(){
-    return this.PSForm.get('password');
+  get pass(){
+    return this.PSForm.get('pass');
   }
 
-  get cpassword(){
-    return this.PSForm.get('cpassword');
+  get conPass(){
+    return this.PSForm.get('conPass');
   }
 
   get agree(){
@@ -98,7 +99,7 @@ return this.PSForm.get('contact');
 
   submit(){
     console.log(this.PSForm.value);
-
+    this.patientService.registerPatient(this.PSForm.value).subscribe((data) => {
       Swal.fire({  
         icon: 'success',  
         title: 'Thank You...',  
@@ -106,6 +107,11 @@ return this.PSForm.get('contact');
         footer: '<a href="patient-login">Login</a>'  
       
   });
+    },
+    (Error) =>{alert(Error.error.message)}    
+    );
+
+      
     this.PSForm.reset({
       name: '',
       email: '',
