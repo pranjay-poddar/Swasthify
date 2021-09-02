@@ -48,61 +48,61 @@ export class DashboardPatientComponent implements OnInit {
   constructor(private PatientService : PatientService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    /*---sample to be deleted----*/
-    this.hospitalDetails = [
-      {
-        "id" : 1,
-        "hospitalName" : "max hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      },
-      {
-        "id" : 1,
-        "hospitalName" : "Fortis hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      },
-      {
-        "id" : 1,
-        "hospitalName" : "Fortis hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      },
-      {
-        "id" : 1,
-        "hospitalName" : "Fortis hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      }
-    ]
+    // /*---sample to be deleted----*/
+    // this.hospitalDetails = [
+    //   {
+    //     "id" : 1,
+    //     "hospitalName" : "max hospital",
+    //     "emailId" : "ramesh@gmail.com",
+    //     "city" : "Lucknow",
+    //     "contact" : 93979323,
+    //     "icuBeds" : 100,
+    //     "isolationBeds" : 120,
+    //     "oxygenCylinders" : 25,
+    //     "vaccine1" : 50,
+    //     "vaccine2" : 40,
+    //     "state" : "Uttar Pradesh"
+    //   },
+    //   {
+    //     "id" : 1,
+    //     "hospitalName" : "Fortis hospital",
+    //     "emailId" : "ramesh@gmail.com",
+    //     "city" : "Lucknow",
+    //     "contact" : 93979323,
+    //     "icuBeds" : 100,
+    //     "isolationBeds" : 120,
+    //     "oxygenCylinders" : 25,
+    //     "vaccine1" : 50,
+    //     "vaccine2" : 40,
+    //     "state" : "Uttar Pradesh"
+    //   },
+    //   {
+    //     "id" : 1,
+    //     "hospitalName" : "Fortis hospital",
+    //     "emailId" : "ramesh@gmail.com",
+    //     "city" : "Lucknow",
+    //     "contact" : 93979323,
+    //     "icuBeds" : 100,
+    //     "isolationBeds" : 120,
+    //     "oxygenCylinders" : 25,
+    //     "vaccine1" : 50,
+    //     "vaccine2" : 40,
+    //     "state" : "Uttar Pradesh"
+    //   },
+    //   {
+    //     "id" : 1,
+    //     "hospitalName" : "Fortis hospital",
+    //     "emailId" : "ramesh@gmail.com",
+    //     "city" : "Lucknow",
+    //     "contact" : 93979323,
+    //     "icuBeds" : 100,
+    //     "isolationBeds" : 120,
+    //     "oxygenCylinders" : 25,
+    //     "vaccine1" : 50,
+    //     "vaccine2" : 40,
+    //     "state" : "Uttar Pradesh"
+    //   }
+    // ]
     //original content
     this.PatientService.getTotalServices().subscribe((data) => {
       this.totService = data;
@@ -130,7 +130,7 @@ export class DashboardPatientComponent implements OnInit {
   }
   findIcu(){
     let temp : any = [];
-    this.PatientService.getHospitalsByService().subscribe((data) => {
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
       this.tempDetails = data;
       for(let a of this.tempDetails){
         if(a.icuBeds > 0){
@@ -138,12 +138,29 @@ export class DashboardPatientComponent implements OnInit {
         }
       }
     }); 
-    this.ngOnInit();
+    this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+      this.totService = data;
+    });
+    this.hospitalDetails = temp;
+  }
+  findOxygencylinders(){
+    let temp : any = [];
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
+      this.tempDetails = data;
+      for(let a of this.tempDetails){
+        if(a.oxygenCylinders > 0){
+          temp.push(a);
+        }
+      }
+    }); 
+    this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+      this.totService = data;
+    });
     this.hospitalDetails = temp;
   }
   findVaccines(){
     let temp : any = [];
-    this.PatientService.getHospitalsByService().subscribe((data) => {
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
       this.tempDetails = data;
       for(let a of this.tempDetails){
         if(a.vaccine1 > 0 || a.vaccine2 > 0){
@@ -151,12 +168,14 @@ export class DashboardPatientComponent implements OnInit {
         }
       }
     }); 
-    this.ngOnInit();
+    this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+      this.totService = data;
+    });
     this.hospitalDetails = temp;
   }
   findIsolationBeds(){
     let temp : any = [];
-    this.PatientService.getHospitalsByService().subscribe((data) => {
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
       this.tempDetails = data;
       for(let a of this.tempDetails){
         if(a.isolationBeds > 0){
@@ -164,7 +183,9 @@ export class DashboardPatientComponent implements OnInit {
         }
       }
     }); 
-    this.ngOnInit();
+    this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+      this.totService = data;
+    });
     this.hospitalDetails = temp;
   }
 
