@@ -95,25 +95,49 @@ button.prev-button{
         height:250px;
     }
 }
-
-.stepper-1{
-    width: 200px;
-    height: 200px;
-    background-color: blanchedalmond;
-    border-radius: 50%;
-    border: 2px solid black;
-    margin: 30px 30px;
+.prog-bar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin-top: 12%;
 }
+.prog-bar::before{
+content: "";
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+height: 4px;
+width: 83%;
+background-color: #7da0fa;
+z-index: -1;
+}
+.stepper-1{
+    width: 35px;
+    height: 35px;
+    background-color: #7da0fa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+.stepper-1::before{
+    counter-increment: step;
+    content: counter(step);
+}
+
 .c1{
-    background-color: black;
+    background-color: #233E8B; 
     color: white;
 }
 .c2{
-    background-color: white;
-    color: black;
-}
-.c3{
-    background-color: black;
+    background-color: #7da0fa; 
     color: white;
+}
+@media only screen and (min-width: 1186px) {
+    .prog-bar::before{
+        width: 88%;
+    }
 }
 

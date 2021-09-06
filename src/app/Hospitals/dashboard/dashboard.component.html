@@ -34,6 +34,11 @@
         <button type="button" *ngIf="step == 3" class="know-btn pull-left"(click)="updateEntries()">Submit</button>
     </div>
         </div>
+        <div class="container prog-bar">
+            <div class="{{one}} stepper-1"></div>
+            <div class="{{two}} stepper-1"></div>
+            <div class="{{three}} stepper-1"></div> 
+        </div>
     </div>
     </div>
     <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12" [@expand]>
@@ -43,10 +48,6 @@
     </div>
 </div>
 </div>
-<div class="container">
-    <span class="{{one}} stepper-1">1</span>
-    <span class="{{two}} stepper-1">2</span>
-    <span class="{{three}} stepper-1">3</span>
-</div>
+<br>
 <br>
 <app-footer></app-footer>
