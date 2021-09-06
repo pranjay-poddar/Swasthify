@@ -1,5 +1,19 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
+<div class="start-box">
+  <h1 mat-dialog-title class="text-center">{{ hospital.hospitalName }}</h1>
+</div>
+<div mat-dialog-content class="content-box">
+ICU BEDS : {{ hospital.icuBeds }}
+<br>
+ISOLATION BEDS : {{ hospital.isolationBeds }}
+<br>
+OXYGEN CYLINDERS : {{ hospital.oxygenCylinders }}
+<br>
+COVAXIN : {{ hospital.vaccine1 }}
+<br>
+COVISHIELD : {{ hospital.vaccine2 }}
+<br>
+CONTACT NUMBER : {{ hospital.contact }}
+</div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+  <button type="button" class="btn btn-primary infobtn grow" (click)="dialogClose()">Close</button>
 </div>
