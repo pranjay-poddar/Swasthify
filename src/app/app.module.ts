@@ -28,6 +28,8 @@ import { FormsModule } from '@angular/forms';
 import { ResourcesComponent } from './common-services/resources/resources.component';
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     ForgetPasPatientComponent,
     SelfAnalysisComponent,
     ResourcesComponent,
-    OurProductsComponent
+    OurProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     MatStepperModule
   ],
   providers: [],

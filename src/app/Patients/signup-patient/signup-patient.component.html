@@ -31,8 +31,8 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput placeholder="Email" type="email" formControlName="email">
-                            <mat-error *ngIf="email?.invalid && email?.touched">
+                            <input matInput placeholder="Email" type="email" formControlName="emailId">
+                            <mat-error *ngIf="emailId?.invalid && emailId?.touched">
                                 Please, enter valid email address
                             </mat-error>
                         </mat-form-field>
@@ -49,23 +49,26 @@
                             <mat-error *ngIf="contact?.errors?.max">
                                 Contact number should be equal to 10 Digits
                             </mat-error>
+                            <!-- <mat-error *ngIf="contact?.touched && contact?.invalid">
+                                Please enter only Digits
+                            </mat-error> -->
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Password" formControlName="password">
+                            <input matInput type="password" placeholder="Password" formControlName="pass">
                             <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
-                            <mat-error *ngIf="password?.invalid && password?.touched">
+                            <mat-error *ngIf="pass?.invalid && pass?.touched">
                                 Please enter Password in correct format
                             </mat-error>
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Confirm Password" formControlName="cpassword">
+                            <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
 
-                            <mat-error *ngIf="cpassword?.invalid && cpassword?.touched">
+                            <mat-error *ngIf="conPass?.invalid && conPass?.touched">
                                 Please enter Password in correct format
                             </mat-error>
-                            <mat-error *ngIf="cpassword?.errors?.confirmedValidator">
+                            <mat-error *ngIf="conPass?.errors?.confirmedValidator">
                                 Passwords does not match
                             </mat-error>
                         </mat-form-field>
