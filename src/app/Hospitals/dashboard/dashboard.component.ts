@@ -17,6 +17,9 @@ import { flyInOut, expand } from '../../Utilities/animations/animation';
 })
 export class DashboardComponent implements OnInit {
   step: any = 1;
+  one: any = "c1";
+  two: any;
+  three: any;
   id !: number;
   hospitals: Hospitals = new Hospitals();
   constructor(private hospService: HospitalService, private router: ActivatedRoute) { }
@@ -42,13 +45,30 @@ export class DashboardComponent implements OnInit {
     // (Error) => {
     //   console.log(Error.error.message);
     // })
+
   }
 
   submit() {
+    if (this.step == 1) {
+      this.two = "c1";
+    }
+    else if (this.step == 2) {
+      this.three = "c1";
+    }
     this.step = this.step + 1;
   }
+
+
+
   previous() {
+    if (this.step == 3) {
+      this.three = "c2";
+    }
+    else if (this.step == 2) {
+      this.two = "c2";
+    }
     this.step = this.step - 1;
+
   }
 
 }
