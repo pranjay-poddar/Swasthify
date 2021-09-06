@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ResourcesComponent } from './common-services/resources/resources.component';
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
+import { MatStepperModule } from '@angular/material/stepper';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,8 +57,9 @@ import { OurProductsComponent } from './common-services/our-products/our-product
     MatChipsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule ,
-    BrowserAnimationsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
