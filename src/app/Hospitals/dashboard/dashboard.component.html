@@ -1,20 +1,53 @@
+<app-navbar></app-navbar>
 <div class="container">
-    <h1>{{hospitals.hospitalName}}</h1>
-    <section class="details">
-        <h2>{{ hospitals.emailId }}</h2>
-        State : <input type="text" class="services" name="state"[(ngModel)]="hospitals.state"><br>
-        City : <input type="text" class="services" name="city"[(ngModel)]="hospitals.city">
-        <h2>Update Services</h2>
-        <div class="service-sec">
-            ICU BEDS : <input type="text" class="services" name="icuBeds"[(ngModel)]="hospitals.icuBeds">
-            ISOLATION BEDS : <input type="text" class="services" name="isolationBeds"[(ngModel)]="hospitals.isolationBeds">
-            OXYGEN CYLINDERS : <input type="text" class="services" name="oxygenCylinders"[(ngModel)]="hospitals.oxygenCylinders">
-        </div> 
-        <div class="vaccine-sec">
-            <h2>Vaccines Available</h2>
-            Covaxin : <input type="text" class="services" name="vaccine1"[(ngModel)]="hospitals.vaccine1">
-            Covishield : <input type="text" class="services" name="vaccine2"[(ngModel)]="hospitals.vaccine2">
+<div class="row align-items-center rows">
+    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+        <div class="col-12 left-side">
+            <div class="card" [@flyInOut]>
+                <div *ngIf="step == 1">
+                <h1 class="text-center">{{hospitals.hospitalName}}</h1> 
+                <h2 class="text-center">{{ hospitals.emailId }}</h2>
+                <label>State</label>
+                <input type="text" class="services" name="state"[(ngModel)]="hospitals.state"><br>
+                <label>City</label>
+                <input type="text" class="services" name="city"[(ngModel)]="hospitals.city"><br>
+               </div>
+               <div *ngIf="step == 2">
+                <h2 class="text-center">Update Services</h2>
+                    <label>ICU BEDS</label>
+                    <input type="text" class="services" name="icuBeds"[(ngModel)]="hospitals.icuBeds"><br>
+                    <label>ISOLATION BEDS</label>
+                    <input type="text" class="services" name="isolationBeds"[(ngModel)]="hospitals.isolationBeds"><br>
+                   <label> OXYGEN CYLINDERS</label> 
+                    <input type="text" class="services" name="oxygenCylinders"[(ngModel)]="hospitals.oxygenCylinders"><br>
+                </div> 
+                <div *ngIf="step == 3">
+                    <h2 class="text-center">Vaccines Available</h2>
+                    <label> Covaxin</label>
+                    <input type="text" class="services" name="vaccine1"[(ngModel)]="hospitals.vaccine1"><br>
+                    <label>Covishield</label>
+                    <input type="text" class="services" name="vaccine2"[(ngModel)]="hospitals.vaccine2"><br>
+            </div>
+           <div class="clearfix"> 
+        <button type="button" class="prev-button pull-right" *ngIf="step != 1" (click)="previous()">Prev</button>
+        <button type="button" class="next-button pull-left" *ngIf="step != 3" (click)="submit()">Next</button>
+        <button type="button" *ngIf="step == 3" class="know-btn pull-left"(click)="updateEntries()">Submit</button>
+    </div>
         </div>
-        <button type="button" class="btn btn-primary"(click)="updateEntries()">Update</button>
-    </section>
+        <div class="container prog-bar">
+            <div class="{{one}} stepper-1"></div>
+            <div class="{{two}} stepper-1"></div>
+            <div class="{{three}} stepper-1"></div> 
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12" [@expand]>
+        <div class="col-12 right-side">
+            <img src="../../../assets/images/hospital-login.svg" class="controller" />
+        </div>
+    </div>
 </div>
+</div>
+<br>
+<br>
+<app-footer></app-footer>
