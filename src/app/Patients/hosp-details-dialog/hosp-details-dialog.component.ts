@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Hospitals } from 'src/app/models/hospitals';
 import { HospitalService } from 'src/app/services/hospital.service';
 import { DashboardPatientComponent } from '../dashboard-patient/dashboard-patient.component';
@@ -11,7 +11,7 @@ import { DashboardPatientComponent } from '../dashboard-patient/dashboard-patien
 })
 export class HospDetailsDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DashboardPatientComponent, private hospService : HospitalService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DashboardPatientComponent, private hospService : HospitalService, private dialog : MatDialog) { }
 
   id ! : any;
   hospital : Hospitals = new Hospitals();
@@ -22,6 +22,9 @@ export class HospDetailsDialogComponent implements OnInit {
     },
     (Error) => {console.log(Error.error.message)}
     );
+  }
+  dialogClose(){
+    this.dialog.closeAll();
   }
 
 
