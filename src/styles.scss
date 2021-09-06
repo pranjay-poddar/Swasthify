@@ -21,6 +21,7 @@ $pink: #f3797e;
     background: #4f6cb6;
     border-radius: 100px;
     height: 50px !important;
+    overflow: auto;
 }
 
 
@@ -92,5 +93,4 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     height: 100%;
-    overflow-x: hidden;
 }

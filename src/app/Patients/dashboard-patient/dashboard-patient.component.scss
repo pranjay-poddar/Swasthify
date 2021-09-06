@@ -11,6 +11,10 @@
     margin: 0px;
 }
 
+.dateTime-mobile {
+    display: none;
+}
+
 .head1 {
     font-weight: 500;
     color: rgb(68, 68, 68);
@@ -219,7 +223,7 @@
 
 .stats {
     padding: 1.25rem 1.25rem;
-    width: 13rem;
+    width: 12rem;
     font-family: "Nunito", sans-serif;
     height: 8rem;
     margin: 10px 0;
@@ -272,8 +276,12 @@ sup {
 }
 
 .card-head {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
+}
+
+.mobile-view {
+    display: none;
 }
 
 .card-head2 {
@@ -300,6 +308,7 @@ sup {
 .card-head3 {
     width: 60%;
     border-radius: 5px;
+    font-size: 18px;
     padding: 2px !important;
 }
 
@@ -311,6 +320,7 @@ sup {
 .card-head4 {
     width: 60%;
     border-radius: 5px;
+    font-size: 18px;
     background-color: #2e4ead !important;
     padding: 2px !important;
 }
@@ -457,6 +467,37 @@ tr:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .mobile-view {
+        display: block;
+    }
+    .mobile-hide {
+        display: none;
+    }
+    .head1 {
+        font-weight: 500;
+        color: rgb(68, 68, 68);
+        margin-left: 0px;
+    }
+    .head2 {
+        font-size: 18px;
+    }
+    .check-city {
+        font-weight: 500;
+        font-size: 120%;
+        margin: 10px 0;
+    }
+    .check-city input {
+        margin: 20px 0;
+    }
+    .stats3 {
+        margin: 15px 0;
+    }
+    .table-container {
+        overflow-x: hidden;
+    }
+}
+
 @media (max-width: 857px) {
     .main_container {
         width: calc(100% - 10%);
@@ -497,6 +538,13 @@ tr:hover {
 @media (max-width: 576px) {
     .dateTime {
         display: none;
+    }
+    .head1 {
+        font-size: 20px;
+    }
+    .dateTime-mobile {
+        display: block;
+        float: right;
     }
     .main_container {
         width: calc(100% - 50px);
