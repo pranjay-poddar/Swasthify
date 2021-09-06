@@ -147,6 +147,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="container">
+                <p class="text-muted"> 1) Select a city to find available hospitals.</p>
+                <p class="text-muted"> 2) Select a service from left-side category list to find details of that service in the selected city.</p>
+                <p class="text-muted"> 3) Select details in the table below to know more.</p>
+
+            </div>
+
             <div class="check-hospitals text-center">
                 <label class="check-city">Check for Hospitals in your City: </label>
                 <input type="text" [(ngModel)]="city" name="city">
@@ -166,7 +174,7 @@
                         <tr *ngFor="let a of hospitalDetails">
                             <td>{{ a.hospitalName }}</td>
                             <td>{{ a.emailId}}</td>
-                            <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Detais</button></td>
+                            <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
                         </tr>
                     </tbody>
                 </table>
