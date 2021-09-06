@@ -5,7 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
+
+  /*var script-d = document.createElement('script-d');
+    script-d.type = 'text/javascript';
+
+  script-d.src="https://code.iconify.design/1/1.0.4/iconify.min.js";
+    document.body.appendChild(script-d);*/
+
    x="dark";
   light = "" ;
   toggleNav(){
