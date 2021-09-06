@@ -27,4 +27,8 @@ export class HospitalService {
   updateDetailsOfHospital(id : number, hospital : Hospitals) : Observable<Hospitals>{
     return this.httpClient.put<Hospitals>(this.baseUrl+"add-services/"+id, hospital);
   }
+  //get details for patient dialog
+  getDetailsOfHospital(id: number) : Observable<Hospitals>{
+    return this.httpClient.get<Hospitals>(this.baseUrl+"hospital-details/"+id);
+  }
 }

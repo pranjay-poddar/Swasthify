@@ -6,6 +6,8 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
 import {MatDialog} from '@angular/material/dialog';
 import { HospDetailsDialogComponent } from '../hosp-details-dialog/hosp-details-dialog.component';
 import { Subscription, timer } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Patients } from 'src/app/models/patients';
 
 @Component({
   selector: 'app-dashboard-patient',
@@ -26,7 +28,8 @@ export class DashboardPatientComponent implements OnInit {
   hospitalDetails : HospitalDetails[] = [];
   tempDetails : HospitalDetails[] = [];
   time = new Date();
-
+  id ! : number;
+  patient : Patients = new Patients();
   intervalId:any;
   subscription: any;
 
@@ -52,71 +55,20 @@ export class DashboardPatientComponent implements OnInit {
   };
 
   totService : TotalService = new TotalService();
-  constructor(private PatientService : PatientService, public dialog: MatDialog) { }
+  constructor(private PatientService : PatientService, public dialog: MatDialog, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
- // Using Basic Interval for clock
- this.intervalId = setInterval(() => {
-  this.time = new Date();
-}, 1000);
+    // Using Basic Interval for clock
+    this.intervalId = setInterval(() => {
+    this.time = new Date();
+    }, 1000);
+    this.id = this.route.snapshot.params['id'];
+    this.PatientService.getPatient(this.id).subscribe((data) => {
+      this.patient = data;
+    },
+    (Error) => {console.log(Error.error.message)}
+    );
 
-
-    /*---sample to be deleted----*/
-    this.hospitalDetails = [
-      {
-        "id" : 1,
-        "hospitalName" : "max hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      },
-      {
-        "id" : 1,
-        "hospitalName" : "Fortis hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      },
-      {
-        "id" : 1,
-        "hospitalName" : "Fortis hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      },
-      {
-        "id" : 1,
-        "hospitalName" : "Fortis hospital",
-        "emailId" : "ramesh@gmail.com",
-        "city" : "Lucknow",
-        "contact" : 93979323,
-        "icuBeds" : 100,
-        "isolationBeds" : 120,
-        "oxygenCylinders" : 25,
-        "vaccine1" : 50,
-        "vaccine2" : 40,
-        "state" : "Uttar Pradesh"
-      }
-    ]
-    //original content
     this.PatientService.getTotalServices().subscribe((data) => {
       this.totService = data;
     },
@@ -131,25 +83,26 @@ export class DashboardPatientComponent implements OnInit {
     }
   }
   findHospitals(){
-    this.PatientService.getDetailsOfHospitalsByCity(this.city).subscribe((data) => {
-      this.hospitalDetails = data;
-      this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
-        this.totService = data;
-      })
-    },
-    (Error) => {console.log(Error.error.message)}
-    );
+    setTimeout(() => {
+      this.PatientService.getDetailsOfHospitalsByCity(this.city).subscribe((data) => {
+        this.hospitalDetails = data;
+        this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+          this.totService = data;
+        })
+      },
+      (Error) => {console.log(Error.error.message)}
+      );
+    }, 500);
   }
+  //open daialog of details-----
   openDialog(id : number) {
-    this.dialog.open(HospDetailsDialogComponent, {
-      data: {
-        id : id
-      }
+    this.dialog.open(HospDetailsDialogComponent,{
+      data : id,
     });
   }
   findIcu(){
     let temp : any = [];
-    this.PatientService.getHospitalsByService().subscribe((data) => {
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
       this.tempDetails = data;
       for(let a of this.tempDetails){
         if(a.icuBeds > 0){
@@ -157,12 +110,34 @@ export class DashboardPatientComponent implements OnInit {
         }
       }
     }); 
-    this.ngOnInit();
+    setTimeout(() => {
+      this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+        this.totService = data;
+      });
+    },2000);
+    
+    this.hospitalDetails = temp;
+  }
+  findOxygencylinders(){
+    let temp : any = [];
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
+      this.tempDetails = data;
+      for(let a of this.tempDetails){
+        if(a.oxygenCylinders > 0){
+          temp.push(a);
+        }
+      }
+    }); 
+    setTimeout(() => {
+      this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+        this.totService = data;
+      });
+    },2000);
     this.hospitalDetails = temp;
   }
   findVaccines(){
     let temp : any = [];
-    this.PatientService.getHospitalsByService().subscribe((data) => {
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
       this.tempDetails = data;
       for(let a of this.tempDetails){
         if(a.vaccine1 > 0 || a.vaccine2 > 0){
@@ -170,12 +145,16 @@ export class DashboardPatientComponent implements OnInit {
         }
       }
     }); 
-    this.ngOnInit();
+    setTimeout(() => {
+      this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+        this.totService = data;
+      });
+    },2000);
     this.hospitalDetails = temp;
   }
   findIsolationBeds(){
     let temp : any = [];
-    this.PatientService.getHospitalsByService().subscribe((data) => {
+    this.PatientService.getHospitalsByService(this.city).subscribe((data) => {
       this.tempDetails = data;
       for(let a of this.tempDetails){
         if(a.isolationBeds > 0){
@@ -183,7 +162,11 @@ export class DashboardPatientComponent implements OnInit {
         }
       }
     }); 
-    this.ngOnInit();
+    setTimeout(() => {
+      this.PatientService.getTotalServicesByCity(this.city).subscribe((data) => {
+        this.totService = data;
+      });
+    },2000);
     this.hospitalDetails = temp;
   }
 
