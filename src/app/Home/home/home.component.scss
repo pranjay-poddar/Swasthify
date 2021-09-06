@@ -1,60 +1,196 @@
-.switch input {
-    display: none;
-}
-
-.switch {
-    display: inline-block;
-    width: 60px;
+.switch-d {
     height: 30px;
-    transform: translateX(0%);
     position: absolute;
     top: 75px;
     right: 10px;
-}
-
-.dark-label {
+    margin-top: 5px;
+    display: flex;
+  }
+  
+  .toggle-checkbox {
     position: absolute;
-    top: 110px;
-    right: 25px;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 30px;
-    box-shadow: 0 0 0 2px #777, 0 0 4px #777;
+    opacity: 0;
     cursor: pointer;
-    border: 4px solid transparent;
-    overflow: hidden;
-    transition: .4s;
-}
-
-.slider:before {
+    height: 0;
+    width: 0;
+  }
+  
+  .toggle-slot {
+    position: relative;
+    height: 5em;
+    width: 10em;
+    border: 5px solid #e4e7ec;
+    border-radius: 10em;
+    background-color: white;
+    box-shadow: 0px 10px 25px #e4e7ec;
+    transition: background-color 250ms;
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot {
+    background-color: #374151;
+  }
+  
+  .toggle-button {
+    transform: translate(5em, 0.4em);
     position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: #777;
-    border-radius: 30px;
-    transform: translateX(-30px);
-    transition: .4s;
-}
-
-input:checked+.slider:before {
-    transform: translateX(30px);
-    background: #7DA0FA;
-}
-
-input:checked+.slider {
-    box-shadow: 0 0 0 2px #7DA0FA, 0 0 2px #7DA0FA;
-}
+    height: 3.5em;
+    width: 3.5em;
+    border-radius: 50%;
+    background-color: #ffeccf;
+    box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 0.75em white;
+    transform: translate(1em, 0.4em);
+  }
+  
+  .sun-icon {
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    color: #ffbb52;
+  }
+  
+  .sun-icon-wrapper {
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    opacity: 1;
+    transform: translate(1em, 0.75em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+    opacity: 0;
+    transform: translate(2em, 0.75em) rotate(0deg);
+  }
+  
+  .moon-icon {
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    color: white;
+  }
+  
+  .moon-icon-wrapper {
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    opacity: 0;
+    transform: translate(4.5em, 0.75em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+    opacity: 1;
+    transform: translate(5.5em, 0.75em) rotate(-15deg);
+  }
 
 // ------------------toggle dark mode switch end -----------------------------------------------------
 .dark {
-    background-color: #777;
+    background-color: #161625;
+    
+    h3 {
+        color: #fff;
+    }
+
+    .left-side h2 {
+        color: #fff;
+        font-size: 50px;
+    }
+
+    .left-side p {
+        font-size: 14px;
+        color: #9ea5ad;
+        font-weight: 400;
+    }
+
+    .right-side img.controller {
+        display: none;
+        width: 90%;
+    }
+    
+    .right-side img.controller-dark {
+        display: inline;
+        width: 90%;
+    }
+
+    .card {
+        border: none;
+        background-color: #161625;
+        border-radius: 15px;
+        margin: 30px;
+    }
+    
+    .card .box {
+        background: #323f4b;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+    }
+    
+    .card:hover .box {
+        transform: translateY(-40px);
+        background: linear-gradient(45deg, #b95ce4, #4f29cd);
+    }
+    
+    .card .box .content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .card .box .content h2 {
+        font-size: 1.8em;
+        color: #fff;
+        z-index: 1;
+        transition: 0.5s;
+    }
+    
+    .card .box .content p {
+        font-size: 1em;
+        font-weight: 300;
+        color: #fff;
+        z-index: 1;
+        transition: 0.5s;
+    }
+    
+    .card:hover .box .content h2,
+    .card:hover .box .content p {
+        color: #fff;
+    }
+    
+    .card .box .content a {
+        position: relative;
+        display: inline-block;
+        padding: 8px 20px;
+        background: #03a9f4;
+        margin-top: 15px;
+        border-radius: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 400;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card:hover .box .content a {
+        background: #ff568f;
+    }
+    
+    .jumbo-margin {
+        margin: 0px;
+    }
+
+    .jumbo-margin {
+        background-color: #131417;
+        color: #fff;
+    }
 }
 
 .rows {
@@ -126,6 +262,11 @@ input:checked+.slider {
 }
 
 .right-side img.controller {
+    width: 90%;
+}
+
+.right-side img.controller-dark {
+    display: none;
     width: 90%;
 }
 
@@ -210,6 +351,55 @@ input:checked+.slider {
 }
 
 @media only screen and (max-width: 900px) {
+    .toggle-slot {
+        height: 2.5em;
+        width: 5em;
+        border: 5px solid #e4e7ec;
+        border-radius: 10em;
+    }
+      
+    .toggle-button {
+        transform: translate(2.55em, 0.2em);
+        height: 1.5em;
+        width: 1.5em;
+        border-radius: 50%;
+    }
+      
+    .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+        transform: translate(0.25em, 0.2em);
+    }
+      
+    .sun-icon {
+        height: 1.5em;
+        width: 1.5em;
+    }
+      
+    .sun-icon-wrapper {
+        height: 1.5em;
+        width: 1.5em;
+        transform: translate(0.5em, 0.25em) rotate(15deg);
+    }
+      
+    .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+        opacity: 0;
+        transform: translate(1em, 0.75em) rotate(0deg);
+    }
+      
+    .moon-icon {
+        height: 1.5em;
+        width: 1.5em;
+    }
+      
+    .moon-icon-wrapper {
+        height: 1.5em;
+        width: 1.5em;
+        transform: translate(2em, 0.25em) rotate(0deg);
+    }
+      
+    .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+        transform: translate(2.5em, 0.25em) rotate(-15deg);
+    }
+
     .row-about-us {
         flex-direction: column;
         margin: 0px;
@@ -241,4 +431,15 @@ input:checked+.slider {
 
 .a-link {
     text-decoration: none;
+}
+
+.container {
+    padding: 5% 5%;
+    max-width: none;
+}
+
+.rows {
+    margin: 0;
+    padding-top: 14%;
+    padding-bottom: 5%;
 }

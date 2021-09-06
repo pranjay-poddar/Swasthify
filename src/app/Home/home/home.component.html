@@ -1,103 +1,111 @@
 <app-navbar></app-navbar>
-<div class="container {{light}}">
 
-    <div>
-        <label class="switch">
-          
-        <input type="checkbox" (click)="toggleNav()">
-        <span class="slider"></span>
-
-    </label>
-        <h3 class="dark-label">{{x}}</h3>
-    </div>
-
-
-    <div class="row align-items-center rows">
-        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <div class="col-12 left-side">
-                <h2>Swasthify</h2>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est incidunt dolores dolorum dignissimos quia omnis at cumque aperiam doloribus vitae, eos illum nesciunt maiores.
-                </p>
-                <a href="/home#r" class="a-link">
-                    <button class="know-button">
-            Explore
-            <img src="../../../assets/images/arrow.png" class="button-image" />
-          </button>
-                </a>
+<div class="home1">
+    <div class="container {{light}}">
+        <div>
+            <label class="switch-d">
+                <input class="toggle-checkbox" type="checkbox" (click)="toggleNav()">
+                <div class='toggle-slot'>
+                    <div class='sun-icon-wrapper'>
+                      <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                    </div>
+                    <div class='toggle-button'></div>
+                    <div class='moon-icon-wrapper'>
+                        <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                    </div>
+                </div>    
+            </label>
+        </div>
+    
+    
+        <div class="row align-items-center rows">
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="col-12 left-side">
+                    <h2>Swasthify</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est incidunt dolores dolorum dignissimos quia omnis at cumque aperiam doloribus vitae, eos illum nesciunt maiores.
+                    </p>
+                    <a href="/home#r" class="a-link">
+                        <button class="know-button">
+                Explore
+                <img src="../../../assets/images/arrow.png" class="button-image" />
+              </button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="col-12 right-side">
+                    <img src="../../../assets/images/Doctors.gif" class="controller" />
+                    <img src="../../../assets/images/Doctors-dark.png" class="controller-dark" />
+                </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <div class="col-12 right-side">
-                <img src="../../../assets/images/Doctors.gif" class="controller" />
+        <br />
+        <div class="container" id="r">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <h2>Hospitals</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui illum atque voluptatum fugiat inventore esse placeat iure?
+                                </p>
+                                <a routerLink="/hospital-login"><span class="grow">Try Now</span></a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
-<br />
-<div class="container" id="r">
-    <div class="row">
-        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-            <div class="card">
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+              <div class="card">
                 <div class="box">
-                    <div class="content">
-                        <h2>Hospitals</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui illum atque voluptatum fugiat inventore esse placeat iure?
-                        </p>
-                        <a routerLink="/hospital-login"><span class="grow">Try Now</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-      <div class="card">
-        <div class="box">
-          <div class="content">
-            <h2>Patients</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui
-              illum atque voluptatum fugiat inventore esse placeat iure?
-            </p>
-            <a routerLink="/patient-login"><span class="grow">Try Now</span></a>
+                  <div class="content">
+                    <h2>Patients</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui
+                      illum atque voluptatum fugiat inventore esse placeat iure?
+                    </p>
+                    <a routerLink="/patient-login"><span class="grow">Try Now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <h2>Services</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui illum atque voluptatum fugiat inventore esse placeat iure?
+                                </p>
+                                <a routerLink="/self-analysis"><span class="grow">Try Now</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-            <div class="card">
-                <div class="box">
-                    <div class="content">
-                        <h2>Services</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui illum atque voluptatum fugiat inventore esse placeat iure?
-                        </p>
-                        <a routerLink="/self-analysis"><span class="grow">Try Now</span></a>
-                    </div>
+        <br />
+        <br />
+        <br />
+        <div class="jumbotron jumbo-margin">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4 text-center h-size">Who Are We?</h1>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<br />
-<br />
-<br />
-<div class="jumbotron jumbo-margin">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="display-4 text-center h-size">Who Are We?</h1>
-        </div>
-    </div>
-    <div class="row align-items-center row-about-us">
-        <div class="col-sm-3 col-md-3 about-img">
-            <img src="../../../assets/images/who-we-are.png" class="img-fluid grow" />
-        </div>
-        <div class="col-sm-9 col-md-9 space">
-            <p class="pa-padding">
-                Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eum? Sit laudantium quidem commodi animi, inventore quisquam nihil quo delectus unde laboriosam minus ea amet autem molestias porro saepe repellat, libero alias facere quasi laborum,
-                accusantium est assumenda.
-            </p>
+            <div class="row align-items-center row-about-us">
+                <div class="col-sm-3 col-md-3 about-img">
+                    <img src="../../../assets/images/who-we-are.png" class="img-fluid grow" />
+                </div>
+                <div class="col-sm-9 col-md-9 space">
+                    <p class="pa-padding">
+                        Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eum? Sit laudantium quidem commodi animi, inventore quisquam nihil quo delectus unde laboriosam minus ea amet autem molestias porro saepe repellat, libero alias facere quasi laborum,
+                        accusantium est assumenda.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
