@@ -1,201 +1,195 @@
 <div class="container wrapper">
-  <div class="top_navbar">
-    <div class="hamburger" (click)="toggleNav()">
-      <div class="one grow"></div>
-      <div class="two grow"></div>
-      <div class="three grow"></div>
+    <div class="top_navbar">
+        <div class="hamburger" (click)="toggleNav()">
+            <div class="one grow"></div>
+            <div class="two grow"></div>
+            <div class="three grow"></div>
+        </div>
+        <div class="top_menu">
+            <div class="logo" (click)="toggleNav()" [@expand]>
+                <!-- <img src="../../../assets/images/nav-logo.png" height="50px" width="100px"> -->
+                Swasthify
+            </div>
+            <ul>
+                <div class="row">
+                    <div class="col-12">
+                        <span class="dateTime justify-content-end">{{date| date : 'dd-MM-yyyy'}}</span>
+                    </div>
+                    <div class="col-12">
+                        <span class="dateTime justify-content-end">{{ time | date: 'hh:mm:ss a' }}</span>
+                    </div>
+                </div>
+                <li>
+                    <a routerLink="/home">
+                        <i class="fas fa-home grow"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="top_menu">
-      <div class="logo" (click)="toggleNav()" [@expand]>
-        <!-- <img src="../../../assets/images/nav-logo.png" height="50px" width="100px"> -->
-        Swasthify
-      </div>
-      <ul>
-        <li>
-          <a href="# ">
-            <i class="fas fa-search grow"></i>
-          </a>
-        </li>
+    <div class="container">
+        <div class="sidebar {{ sidenav }}" [@flyInOut]>
+            <ul>
 
-        <li>
-          <a href="# ">
-            <i class="fas fa-user grow"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="container">
-    <div class="sidebar {{ sidenav }}" [@flyInOut]>
-      <ul>
-        <li>
-          <a routerLink="/home">
-            <span class="icon"><i class="fas fa-home grow"></i></span>
-            <span class="{{ sidenavTitle }} t grow">Home</span>
-          </a>
-        </li>
-        <!-- <li>
+                <!-- <li>
           <a (click)="findHospitals()">
             <span class="icon"><i class="fas fa-first-aid grow"></i></span>
             <span class=" {{ sidenavTitle }} t grow" ><input type="text" [(ngModel)]="city" name="city" placeholder="City"></span>
           </a>
         </li> -->
-        <li>
-          <a (click)="findIcu()">
-            <span class="icon"
-              ><i class="fas fa-fire-extinguisher grow"></i>
+
+                <li class="text-center">
+                    <span class=" {{ sidenavTitle }} t grow text-center badge badge-light cat">Select Category
+  </span>
+                </li>
+
+
+                <li>
+                    <a (click)="findIcu()">
+                        <span class="icon"><i class="fas fa-hospital"></i>
             </span>
-            <span class="{{ sidenavTitle }} t grow">ICU BEDS</span>
-          </a>
-        </li>
-        <li>
-          <a (click)="findVaccines()">
-            <span class="icon"><i class="fas fa-syringe grow"></i></span>
-            <span class="{{ sidenavTitle }} t grow">Vaccine</span>
-          </a>
-        </li>
-        <li>
-          <a (click)="findIsolationBeds()">
-            <span class="icon"><i class="fas fa-bed grow"></i></span>
-            <span class="{{ sidenavTitle }} t grow">Beds</span>
-          </a>
-        </li>
-        <!-- <li>
+                        <span class="{{ sidenavTitle }} t grow">ICU BEDS</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="findVaccines()">
+                        <span class="icon"><i class="fas fa-syringe grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Vaccines</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="findIsolationBeds()">
+                        <span class="icon"><i class="fas fa-bed grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Beds</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/home">
+                        <span class="icon"><i class="fas fa-comment grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Comments</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/home">
+                        <span class="icon"><i class="fas fa-home grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Home</span>
+                    </a>
+                </li>
+                <!-- <li>
           <a href="# ">
             <span class="icon"><i class="fas fa-user-md grow"></i></span>
             <span class="{{ sidenavTitle }} t grow">Doctor</span>
           </a>
         </li> -->
-      </ul>
+            </ul>
+        </div>
+
+        <div class="{{ main_container }}">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ">
+                    <h1 class="head1">Welcome John</h1>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 text-center">
+                    <h1 class="head2">Total Numbers At A Glance</h1>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 d-flex justify-content-center">
+                    <div class="card first-card align-items-center">
+                        <img class="card-img-top img-fluid" src="../../../assets/images/patient-dashboard.svg" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-6 d-flex justify-content-center">
+                            <div class="card stats c-1 grow">
+                                <h1 class="card-head text-center" [@expand]>Vaccines</h1>
+                                <h1 class="card-head2 text-center" [@expand]>{{ totService.vaccine1+totService.vaccine2 }}</h1>
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex justify-content-center">
+                            <div class="card stats c-2 grow">
+                                <h1 class="card-head text-center" [@expand]>Beds</h1>
+                                <h1 class="card-head2 text-center" [@expand]>{{ totService.isolationBeds }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 d-flex justify-content-center">
+                            <div class="card stats c-3 grow">
+                                <h1 class="card-head text-center" [@expand]>
+                                    O<sup>2</sup> Cylinders
+                                </h1>
+                                <h1 class="card-head2 text-center" [@expand]>{{ totService.oxygenCylinders }}</h1>
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex justify-content-center">
+                            <div class="card stats c-4 grow">
+                                <h1 class="card-head text-center" [@expand]>ICUs</h1>
+                                <h1 class="card-head2 text-center" [@expand]>{{ totService.icuBeds }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="check-hospitals text-center">
+                <label class="check-city">Check for Hospitals in your City: </label>
+                <input type="text" [(ngModel)]="city" name="city">
+                <button type="button" class="btn btn-primary infobtn grow" (click)="findHospitals()">Info</button>
+            </div>
+
+            <div class="table-responsive-sm tablem" *ngIf="hospitalDetails.length > 0">
+                <table class="table table-container ">
+                    <thead>
+                        <tr>
+                            <td>Hospitals</td>
+                            <td>Email Id</td>
+                            <td>Details</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let a of hospitalDetails">
+                            <td>{{ a.hospitalName }}</td>
+                            <td>{{ a.emailId}}</td>
+                            <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Detais</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
+                    <div class="card stats3 c-5">
+                        <h1 class="card-head text-center">Self Analysis</h1>
+                        <a routerLink="/self-analysis" class="text-center">
+                            <h1 class="card-head4 text-center btn btn-primary grow" [@expand]>
+                                Try Now
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
+                    <div class="card stats3 c-6">
+                        <h1 class="card-head text-center">Emergency SOS</h1>
+                        <a href="tel: +91-1234567890" class="text-center">
+                            <h1 class="card-head3 text-center btn btn-danger grow" [@expand]>
+                                Call
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
+                    <div class="card stats3 c-7">
+                        <h1 class="card-head text-center">Resources</h1>
+                        <a routerLink="/resources" class="text-center">
+                            <h1 class="card-head4 text-center btn btn-primary grow" [@expand]>
+                                Try Now
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="{{ main_container }}">
-      <div class="row d-flex justify-content-center">
-        <div
-          class="
-            col-md-6 col-lg-6 col-xs-12 col-sm-12
-            d-flex
-            justify-content-center
-          "
-        >
-          <div class="card first-card align-items-center">
-            <img
-              class="card-img-top img-fluid"
-              src="../../../assets/images/patient-dashboard.svg"
-              alt="Card image cap"
-            />
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-          <div class="row">
-            <div class="col-6 d-flex justify-content-center">
-              <div class="card stats c-1 grow">
-                <h1 class="card-head text-center" [@expand]>Vaccines</h1>
-                <h1 class="card-head2 text-center" [@expand]>{{ totService.vaccine1+totService.vaccine2 }}</h1>
-              </div>
-            </div>
-            <div class="col-6 d-flex justify-content-center">
-              <div class="card stats c-2 grow">
-                <h1 class="card-head text-center" [@expand]>Beds</h1>
-                <h1 class="card-head2 text-center" [@expand]>{{ totService.isolationBeds }}</h1>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6 d-flex justify-content-center">
-              <div class="card stats c-3 grow">
-                <h1 class="card-head text-center" [@expand]>
-                  O<sup>2</sup> Cylinders
-                </h1>
-                <h1 class="card-head2 text-center" [@expand]>{{ totService.oxygenCylinders }}</h1>
-              </div>
-            </div>
-            <div class="col-6 d-flex justify-content-center">
-              <div class="card stats c-4 grow">
-                <h1 class="card-head text-center" [@expand]>ICUs</h1>
-                <h1 class="card-head2 text-center" [@expand]>{{ totService.icuBeds }}</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="check-hospitals">
-        <label>Check for Hospitals in your City : </label>
-        <input type="text" [(ngModel)]="city" name="city">
-        <button type="button" class="btn btn-primary" (click)="findHospitals()">Info</button>
-      </div>
-      <div class="detail-table" *ngIf="hospitalDetails.length > 0">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-               <td>Hospitals</td>
-               <td>Email Id</td>
-               <td>Details</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let a of hospitalDetails">
-              <td>{{ a.hospitalName }}</td>
-              <td>{{ a.emailId}}</td>
-              <td><button type="button" class="btn btn-primary" (click)="openDialog(a.id)">Detais</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="row">
-        <div
-          class="
-            col-md-4 col-lg-4 col-sm-12 col-xs-12
-            d-flex
-            justify-content-center
-          "
-        >
-          <div class="card stats3 c-5">
-            <h1 class="card-head text-center">Services</h1>
-            <h1
-              class="card-head3 text-center badge badge-success grow"
-              [@expand]
-            >
-              Available
-            </h1>
-          </div>
-        </div>
-        <div
-          class="
-            col-md-4 col-lg-4 col-sm-12 col-xs-12
-            d-flex
-            justify-content-center
-          "
-        >
-          <div class="card stats3 c-6">
-            <h1 class="card-head text-center">Ambulance</h1>
-            <h1
-              class="card-head3 text-center badge badge-danger grow"
-              [@expand]
-            >
-              Not Available
-            </h1>
-          </div>
-        </div>
-        <div
-          class="
-            col-md-4 col-lg-4 col-sm-12 col-xs-12
-            d-flex
-            justify-content-center
-          "
-        >
-          <div class="card stats3 c-7">
-            <h1 class="card-head text-center">Emergency</h1>
-            <h1
-              class="card-head3 text-center badge badge-success grow"
-              [@expand]
-            >
-              Available
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 </div>

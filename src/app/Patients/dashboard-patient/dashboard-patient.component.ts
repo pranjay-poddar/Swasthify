@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HospitalDetails } from 'src/app/models/hospital-details';
 import { TotalService } from 'src/app/models/total-service';
 import { PatientService } from 'src/app/services/patient.service';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import {MatDialog} from '@angular/material/dialog';
 import { HospDetailsDialogComponent } from '../hosp-details-dialog/hosp-details-dialog.component';
+import { Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-patient',
@@ -17,12 +18,18 @@ import { HospDetailsDialogComponent } from '../hosp-details-dialog/hosp-details-
  
 })
 export class DashboardPatientComponent implements OnInit {
+  date=Date();
   sidenav = "";
   sidenavTitle = "";
   main_container = "main_container" ;
   city! : String;
   hospitalDetails : HospitalDetails[] = [];
   tempDetails : HospitalDetails[] = [];
+  time = new Date();
+
+  intervalId:any;
+  subscription: any;
+
   toggleNav(){
     if(this.sidenav){
       this.sidenav = "";
@@ -48,6 +55,12 @@ export class DashboardPatientComponent implements OnInit {
   constructor(private PatientService : PatientService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+ // Using Basic Interval for clock
+ this.intervalId = setInterval(() => {
+  this.time = new Date();
+}, 1000);
+
+
     /*---sample to be deleted----*/
     this.hospitalDetails = [
       {
@@ -110,6 +123,12 @@ export class DashboardPatientComponent implements OnInit {
     (Error) => {console.log(Error.error.message)}
     );
     
+  }
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
   findHospitals(){
     this.PatientService.getDetailsOfHospitalsByCity(this.city).subscribe((data) => {
