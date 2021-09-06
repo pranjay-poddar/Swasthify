@@ -85,23 +85,9 @@ $pink: #f3797e;
   transform: scaleX(1);
 }
 
-html,
-body {
+html, body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   height: 100%;
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  height : 100%;
-}
