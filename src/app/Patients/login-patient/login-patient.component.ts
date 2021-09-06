@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PatientService } from 'src/app/services/patient.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 @Component({
@@ -13,19 +15,20 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
 })
 export class LoginPatientComponent implements OnInit {
   PLoginForm !: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  id ! : number;
+  constructor(private fb: FormBuilder, private patientServ : PatientService, private router : Router) { }
 
   ngOnInit(): void {
   
     this.PLoginForm = this.fb.group({
     
-      email: ['',[
+      emailId: ['',[
         Validators.required,
         Validators.email,
         Validators.maxLength(40)
       ]],
       
-      password:['',[
+      pass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8)
@@ -40,27 +43,39 @@ export class LoginPatientComponent implements OnInit {
 
 
   get email(){
-    return this.PLoginForm.get('email');
+    return this.PLoginForm.get('emailId');
   }
 
   get password(){
-    return this.PLoginForm.get('password');
+    return this.PLoginForm.get('pass');
   }
 
 
 
   submit(){
-    console.log(this.PLoginForm.value);
-    Swal.fire({  
-      icon: 'success',  
-      title: 'Thank You...',  
-      text: 'Login Succesfull!',  
-});
+    // this.patientServ.loginPatient(this.PLoginForm.value).subscribe((data) => {
+    //   this.id = data.id;
+    //   Swal.fire({  
+    //     icon: 'success',  
+    //     title: 'Thank You...',  
+    //     text: 'Login Succesfull!',  
+    //   });
+    //   setTimeout(() => {
+    //     this.router.navigate(['patient-dashboard',this.id]);
+    //   },1000);
+    // },
+    // (Error) =>{alert(Error.error.message)}
+    // );
+    
   this.PLoginForm.reset({
-    email: '',
-    password: '',
+    emailId: '',
+    pass: '',
   });
  
 }
 
 }
+function ms(arg0: number, ms: any) {
+  throw new Error('Function not implemented.');
+}
+
