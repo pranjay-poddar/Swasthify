@@ -1,4 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Hospitals } from 'src/app/models/hospitals';
+import { HospitalService } from 'src/app/services/hospital.service';
+import { DashboardPatientComponent } from '../dashboard-patient/dashboard-patient.component';
 
 @Component({
   selector: 'app-hosp-details-dialog',
@@ -7,10 +11,17 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class HospDetailsDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DashboardPatientComponent, private hospService : HospitalService) { }
 
+  id ! : any;
+  hospital : Hospitals = new Hospitals();
   ngOnInit(): void {
-    
+    this.id = this.data
+    this.hospService.getDetailsOfHospital(this.id).subscribe((data) => {
+      this.hospital = data;
+    },
+    (Error) => {console.log(Error.error.message)}
+    );
   }
 
 

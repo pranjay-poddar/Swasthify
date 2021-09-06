@@ -48,62 +48,6 @@ export class DashboardPatientComponent implements OnInit {
   constructor(private PatientService : PatientService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    // /*---sample to be deleted----*/
-    // this.hospitalDetails = [
-    //   {
-    //     "id" : 1,
-    //     "hospitalName" : "max hospital",
-    //     "emailId" : "ramesh@gmail.com",
-    //     "city" : "Lucknow",
-    //     "contact" : 93979323,
-    //     "icuBeds" : 100,
-    //     "isolationBeds" : 120,
-    //     "oxygenCylinders" : 25,
-    //     "vaccine1" : 50,
-    //     "vaccine2" : 40,
-    //     "state" : "Uttar Pradesh"
-    //   },
-    //   {
-    //     "id" : 1,
-    //     "hospitalName" : "Fortis hospital",
-    //     "emailId" : "ramesh@gmail.com",
-    //     "city" : "Lucknow",
-    //     "contact" : 93979323,
-    //     "icuBeds" : 100,
-    //     "isolationBeds" : 120,
-    //     "oxygenCylinders" : 25,
-    //     "vaccine1" : 50,
-    //     "vaccine2" : 40,
-    //     "state" : "Uttar Pradesh"
-    //   },
-    //   {
-    //     "id" : 1,
-    //     "hospitalName" : "Fortis hospital",
-    //     "emailId" : "ramesh@gmail.com",
-    //     "city" : "Lucknow",
-    //     "contact" : 93979323,
-    //     "icuBeds" : 100,
-    //     "isolationBeds" : 120,
-    //     "oxygenCylinders" : 25,
-    //     "vaccine1" : 50,
-    //     "vaccine2" : 40,
-    //     "state" : "Uttar Pradesh"
-    //   },
-    //   {
-    //     "id" : 1,
-    //     "hospitalName" : "Fortis hospital",
-    //     "emailId" : "ramesh@gmail.com",
-    //     "city" : "Lucknow",
-    //     "contact" : 93979323,
-    //     "icuBeds" : 100,
-    //     "isolationBeds" : 120,
-    //     "oxygenCylinders" : 25,
-    //     "vaccine1" : 50,
-    //     "vaccine2" : 40,
-    //     "state" : "Uttar Pradesh"
-    //   }
-    // ]
-    //original content
     this.PatientService.getTotalServices().subscribe((data) => {
       this.totService = data;
     },
@@ -121,11 +65,10 @@ export class DashboardPatientComponent implements OnInit {
     (Error) => {console.log(Error.error.message)}
     );
   }
+  //open daialog of details-----
   openDialog(id : number) {
-    this.dialog.open(HospDetailsDialogComponent, {
-      data: {
-        id : id
-      }
+    this.dialog.open(HospDetailsDialogComponent,{
+      data : id,
     });
   }
   findIcu(){
