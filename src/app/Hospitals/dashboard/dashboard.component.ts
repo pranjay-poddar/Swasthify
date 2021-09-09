@@ -25,26 +25,24 @@ export class DashboardComponent implements OnInit {
   constructor(private hospService: HospitalService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.id = this.router.snapshot.params['id'];
-    // this.hospService.getHospById(this.id).subscribe((data) => {
-    //   this.hospitals = data;
-    //   console.log(this.hospitals);
-    // },
-    // (Error) => {
-    //   console.log(Error.error.message);
-    // });
-    this.hospitals.hospitalName = "Max Hospital"
-    this.hospitals.emailId = "max@gmail.com"
+    this.id = this.router.snapshot.params['id'];
+    this.hospService.getHospById(this.id).subscribe((data) => {
+      this.hospitals = data;
+      console.log(this.hospitals);
+    },
+    (Error) => {
+      console.log(Error.error.message);
+    });
   }
   updateEntries() {
-    // this.hospService.updateDetailsOfHospital(this.id, this.hospitals).subscribe((data) => {
-    //   this.hospitals = data;
-    //   console.log(this.hospitals); 
-    //   Swal.fire('Updated Successfully');  
-    // },
-    // (Error) => {
-    //   console.log(Error.error.message);
-    // })
+    this.hospService.updateDetailsOfHospital(this.id, this.hospitals).subscribe((data) => {
+      this.hospitals = data;
+      console.log(this.hospitals); 
+      Swal.fire('Updated Successfully');  
+    },
+    (Error) => {
+      console.log(Error.error.message);
+    })
 
   }
 
