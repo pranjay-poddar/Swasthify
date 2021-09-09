@@ -20,9 +20,11 @@
     color: rgb(68, 68, 68);
     margin-left: 15px;
 }
-.guideline{
+
+.guideline {
     margin: 3.5em 0;
 }
+
 .head2 {
     font-weight: 500;
     color: rgb(68, 68, 68);
@@ -392,6 +394,10 @@ tr:hover {
     margin-bottom: 20px !important;
 }
 
+#card3 {
+    margin-top: 25vh;
+}
+
 @media (max-width: 985px) {
     .main_container {
         width: 100%;
@@ -541,12 +547,12 @@ tr:hover {
     .dateTime {
         display: none;
     }
-    .head1 {
-        font-size: 20px;
-    }
     .dateTime-mobile {
         display: block;
         float: right;
+    }
+    .head1 {
+        font-size: 21px;
     }
     .main_container {
         width: calc(100% - 50px);
