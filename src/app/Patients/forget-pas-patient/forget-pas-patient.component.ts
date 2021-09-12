@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-forget-pas-patient',
@@ -16,7 +17,8 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
 export class ForgetPasPatientComponent implements OnInit {
   
   PForgotForm !: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  light ! : string;
+  constructor(private fb: FormBuilder, private sharingService:SharingService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -57,6 +59,7 @@ export class ForgetPasPatientComponent implements OnInit {
         validator: ConfirmedValidator('password', 'cpassword')
       });
     
+      this.light = this.sharingService.getData(); 
   }
 
 

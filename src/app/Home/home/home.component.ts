@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-home',
@@ -6,35 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 
+
 export class HomeComponent implements OnInit {
 
-  /*var script-d = document.createElement('script-d');
-    script-d.type = 'text/javascript';
 
-  script-d.src="https://code.iconify.design/1/1.0.4/iconify.min.js";
-    document.body.appendChild(script-d);*/
+  light :any;
+  state :any;
 
-   x="dark";
-  light = "" ;
   toggleNav(){
-    if(this.light){
-      this.light = "";
-    this.x = "light";
-    }
-    else{
+    if(this.light == "light"){
       this.light = "dark";
-    this.x="dark";
-    }
-    if(this.x=="dark"){
-      this.x="light";
     }
     else{
-      this.x="dark";
+      this.light = "light";
     }
+    
+    this.sharingService.setData(this.light);
   }
-  constructor() { }
+  constructor(private router:Router,
+    private sharingService:SharingService){}
+
 
   ngOnInit(): void {
+    this.light = "light";
+    this.light = this.sharingService.getData();
   }
-
 }

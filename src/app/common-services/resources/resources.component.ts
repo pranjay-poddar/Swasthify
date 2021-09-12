@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { flyInOut, expand } from '../../Utilities/animations/animation';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-resources',
@@ -12,9 +13,12 @@ import { flyInOut, expand } from '../../Utilities/animations/animation';
 })
 export class ResourcesComponent implements OnInit {
 
-  constructor() { }
+  light ! : string;
+
+  constructor(private sharingService:SharingService) { }
 
   ngOnInit(): void {
+    this.light = this.sharingService.getData();
   }
 
 }

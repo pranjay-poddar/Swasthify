@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  navbarcolour : string = "navbar-dark";
+  light ! : string;
+  constructor(private sharingService:SharingService) {}
 
   ngOnInit(): void {
+
+    setInterval(() => {
+      this.light = this.sharingService.getData();
+      if(this.light == "light"){
+        this.navbarcolour = "navbar-light";
+      }
+      else{
+        this.navbarcolour = "navbar-dark";
+      }
+    }, 5);
+    }
+
+    
   }
 
-}

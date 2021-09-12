@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Component, OnInit } from '@angular/core';
 import { LoginPatientComponent } from './login-patient.component';
+import { SharingService } from 'src/app/services/sharing.service';
+
 
 describe('LoginPatientComponent', () => {
   let component: LoginPatientComponent;
@@ -23,3 +25,4 @@ describe('LoginPatientComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

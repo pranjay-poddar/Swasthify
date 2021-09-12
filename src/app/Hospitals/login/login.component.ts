@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +16,12 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
     ]
 })
 export class LoginComponent implements OnInit {
+
   id ! : number;
   HLoginForm !: FormGroup;
   err ! : String;
-  constructor(private fb: FormBuilder, private hospService : HospitalService, private router : Router) { }
+  light ! : string;
+  constructor(private fb: FormBuilder, private hospService : HospitalService, private router : Router, private sharingService:SharingService) { }
 
   ngOnInit(): void {
   
@@ -39,7 +42,8 @@ export class LoginComponent implements OnInit {
      
     });
     
-    
+    this.light = this.sharingService.getData();
+    //console.log("light = "+this.light);
   }
 
 

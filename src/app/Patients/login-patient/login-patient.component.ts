@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patient.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
+import { SharingService } from 'src/app/services/sharing.service';
 @Component({
   selector: 'app-login-patient',
   templateUrl: './login-patient.component.html',
@@ -16,7 +17,8 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
 export class LoginPatientComponent implements OnInit {
   PLoginForm !: FormGroup;
   id ! : number;
-  constructor(private fb: FormBuilder, private patientServ : PatientService, private router : Router) { }
+  light ! : string;
+  constructor(private fb: FormBuilder, private patientServ : PatientService, private router : Router, private sharingService:SharingService) { }
 
   ngOnInit(): void {
   
@@ -37,6 +39,7 @@ export class LoginPatientComponent implements OnInit {
      
     });
     
+    this.light = this.sharingService.getData();
     
   }
 

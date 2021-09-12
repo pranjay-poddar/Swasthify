@@ -29,6 +29,7 @@ import { ResourcesComponent } from './common-services/resources/resources.compon
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SharingService } from './services/sharing.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
     MatStepperModule
   ],
-  providers: [],
+  providers: [SharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

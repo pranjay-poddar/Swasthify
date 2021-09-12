@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { PatientService } from 'src/app/services/patient.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
+import { SharingService } from 'src/app/services/sharing.service';
 @Component({
   selector: 'app-signup-patient',
   templateUrl: './signup-patient.component.html',
@@ -18,7 +19,8 @@ export class SignupPatientComponent implements OnInit {
 
   
   PSForm !: FormGroup;
-  constructor(private fb: FormBuilder, private patientService : PatientService) { }
+  light ! : string;
+  constructor(private fb: FormBuilder, private patientService : PatientService, private sharingService:SharingService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -68,7 +70,8 @@ export class SignupPatientComponent implements OnInit {
       validator: ConfirmedValidator('pass', 'conPass')
     });
     
-    
+    this.light = this.sharingService.getData();
+
   }
 
 
