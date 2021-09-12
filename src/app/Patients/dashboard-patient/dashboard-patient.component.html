@@ -21,7 +21,12 @@
                 </div>
                 <li>
                     <a routerLink="/home">
-                        <i class="fas fa-home grow"></i>
+                        <i class="fa fa-home grow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/home">
+                        <i (click)="logoutalert()" class="fas fa-sign-out-alt grow"></i>
                     </a>
                 </li>
             </ul>
@@ -43,36 +48,35 @@
                 </li>
                 <li>
                     <a (click)="findIcu()">
-                    <span class="icon"><i class="fas fa-hospital"></i> </span>
-                    <span class="{{ sidenavTitle }} t grow">ICU BEDS</span>
+                        <span class="icon"><i class="fas fa-hospital"></i> </span>
+                        <span class="{{ sidenavTitle }} t grow">ICU BEDS</span>
                     </a>
                 </li>
                 <li>
-                  <a (click)="findOxygencylinders()">
-                    <span class="icon"
-                      ><i class="fas fa-fire-extinguisher grow"></i>
+                    <a (click)="findOxygencylinders()">
+                        <span class="icon"><i class="fas fa-fire-extinguisher grow"></i>
                     </span>
-                    <span class="{{ sidenavTitle }} t grow">Oxygen Cylinders</span>
-                  </a>
+                        <span class="{{ sidenavTitle }} t grow">Oxygen Cylinders</span>
+                    </a>
                 </li>
                 <li>
-                  <a (click)="findVaccines()">
-                    <span class="icon"><i class="fas fa-syringe grow"></i></span>
-                    <span class="{{ sidenavTitle }} t grow">Vaccine</span>
-                  </a>
+                    <a (click)="findVaccines()">
+                        <span class="icon"><i class="fas fa-syringe grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Vaccine</span>
+                    </a>
                 </li>
                 <li>
-                  <a (click)="findIsolationBeds()">
-                    <span class="icon"><i class="fas fa-bed grow"></i></span>
-                    <span class="{{ sidenavTitle }} t grow">Beds</span>
-                  </a>
+                    <a (click)="findIsolationBeds()">
+                        <span class="icon"><i class="fas fa-bed grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Beds</span>
+                    </a>
                 </li>
                 <li>
                     <a routerLink="/home">
-                      <span class="icon"><i class="fas fa-comment grow"></i></span>
-                      <span class="{{ sidenavTitle }} t grow">Comments</span>
+                        <span class="icon"><i class="fas fa-comment grow"></i></span>
+                        <span class="{{ sidenavTitle }} t grow">Reviews</span>
                     </a>
-                  </li>
+                </li>
                 <!-- <li>
                   <a href="# ">
                     <span class="icon"><i class="fas fa-user-md grow"></i></span>
@@ -90,6 +94,7 @@
                         </div>
                         <div class="col-6 ">
                             <span class="dateTime-mobile ">{{date| date : 'dd-MM-yyyy'}}</span>
+                            <br>
                             <span class="dateTime-mobile ">{{ time | date: 'hh:mm:ss a' }}</span>
                         </div>
 
@@ -177,7 +182,7 @@
                 </table>
             </div>
 
-            <div class="row">
+            <div class="row" id="card3">
                 <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
                     <div class="card stats3 c-5">
                         <h1 class="card-head text-center">Self Analysis</h1>

@@ -50,8 +50,8 @@ export class SignupPatientComponent implements OnInit {
       ]],
       contact: ['',[
         Validators.required,
-        Validators.min(999999999),
-        Validators.max(99999999999)
+        // Validators.min(999999999),
+        // Validators.max(99999999999)
       ]],
       pass:['',[
         Validators.required,

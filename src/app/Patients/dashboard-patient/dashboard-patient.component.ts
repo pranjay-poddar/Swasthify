@@ -8,6 +8,7 @@ import { HospDetailsDialogComponent } from '../hosp-details-dialog/hosp-details-
 import { Subscription, timer } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Patients } from 'src/app/models/patients';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard-patient',
@@ -32,6 +33,10 @@ export class DashboardPatientComponent implements OnInit {
   patient : Patients = new Patients();
   intervalId:any;
   subscription: any;
+
+  logoutalert(){  
+    Swal.fire('Thank you...', 'Logout succesfully!', 'success')  
+  } 
 
   toggleNav(){
     if(this.sidenav){

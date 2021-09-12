@@ -5,6 +5,17 @@
     margin: 100px 0;
 }
 
+#datetime {
+    position: absolute;
+    top: 80px;
+    right: 15px;
+}
+
+.dateTime {
+    float: right;
+    font-weight: 500;
+}
+
 .left-side {
     flex-basis: 40%;
     position: relative;
@@ -20,19 +31,22 @@
 .right-side img.controller {
     width: 100%;
 }
-.card{
+
+.card {
     padding: 4%;
     padding-bottom: 0%;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgb(136 136 136 / 20%), 0 6px 20px 0 rgb(138 138 138 / 19%);
 }
-label{
+
+label {
     display: block;
     font-size: 14px;
     margin-top: 20px;
     text-transform: uppercase;
 }
-input{
+
+input {
     width: 100%;
     background: #fff;
     border: none;
@@ -40,7 +54,8 @@ input{
     padding: 7px;
     border-bottom: 1px solid gray;
 }
-.know-btn{
+
+.know-btn {
     border: none;
     outline: none;
     padding: 8px;
@@ -52,13 +67,16 @@ input{
     margin: 15px 15px 15px 0;
     float: right !important;
 }
-.know-btn:hover,button.next-button:hover,
-button.prev-button:hover{
-  background: #2196f3;
-  color: black;
+
+.know-btn:hover,
+button.next-button:hover,
+button.prev-button:hover {
+    background: #2196f3;
+    color: black;
 }
+
 button.next-button,
-button.prev-button{
+button.prev-button {
     border: none;
     outline: none;
     padding: 8px;
@@ -70,9 +88,11 @@ button.prev-button{
     border-radius: 20px;
     float: right !important;
 }
-button.prev-button{
+
+button.prev-button {
     float: left !important;
 }
+
 @media only screen and (max-width: 800px) {
     .rows {
         flex-direction: column-reverse;
@@ -83,36 +103,40 @@ button.prev-button{
         margin-bottom: 50px;
     }
     button.next-button,
-    button.prev-button{
+    button.prev-button {
         width: 100px;
     }
-    .know-btn{
+    .know-btn {
         width: 100px;
     }
 }
+
 @media only screen and (max-width: 400px) {
-    img.controller{
-        height:250px;
+    img.controller {
+        height: 250px;
     }
 }
-.prog-bar{
+
+.prog-bar {
     position: relative;
     display: flex;
     justify-content: space-between;
     counter-reset: step;
     margin-top: 12%;
 }
-.prog-bar::before{
-content: "";
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-height: 4px;
-width: 83%;
-background-color: #7da0fa;
-z-index: -1;
+
+.prog-bar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 83%;
+    background-color: #7da0fa;
+    z-index: -1;
 }
-.stepper-1{
+
+.stepper-1 {
     width: 35px;
     height: 35px;
     background-color: #7da0fa;
@@ -122,22 +146,24 @@ z-index: -1;
     align-items: center;
     font-weight: 500;
 }
-.stepper-1::before{
+
+.stepper-1::before {
     counter-increment: step;
     content: counter(step);
 }
 
-.c1{
-    background-color: #233E8B; 
+.c1 {
+    background-color: #233E8B;
     color: white;
 }
-.c2{
-    background-color: #7da0fa; 
+
+.c2 {
+    background-color: #7da0fa;
     color: white;
 }
+
 @media only screen and (min-width: 1186px) {
-    .prog-bar::before{
+    .prog-bar::before {
         width: 88%;
     }
 }
-
