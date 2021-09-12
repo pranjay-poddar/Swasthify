@@ -117,6 +117,11 @@
     .card .box {
         background: #323f4b;
     }
+    .card:hover .box {
+        transform: translateY(-40px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(45deg, #b95ce4, #4f29cd);
+    }
     .card .box .content h2 {
         color: #fff;
     }
@@ -334,6 +339,7 @@
 .container {
     padding: 5% 5%;
     max-width: none;
+    margin-top: 9vh;
 }
 
 .rows {

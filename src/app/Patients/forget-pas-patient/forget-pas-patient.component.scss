@@ -3,32 +3,26 @@ $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
 .dark {
-
     background-color: #161625;
     color: #fff;
-
     .patient-forgot {
         background-color: #161625;
     }
-
     #plogin_heading {
         color: #fff;
     }
-
     .card {
         background-color: #323f4b;
         box-shadow: none;
     }
-
     mat-hint {
         color: #fff;
     }
-
-    .mat-raised-button.mat-primary.mat-button-disabled, .mat-raised-button.mat-button-disabled.mat-button-disabled {
+    .mat-raised-button.mat-primary.mat-button-disabled,
+    .mat-raised-button.mat-button-disabled.mat-button-disabled {
         background-color: grey;
         color: #fff;
     }
-
     .mat-raised-button.mat-primary {
         background-color: #131417;
         color: #fff;
@@ -71,6 +65,7 @@ $pink:#F3797E;
 .container {
     padding: 0% 5%;
     max-width: none;
+    margin-top: 9vh;
 }
 
 @media (max-width:996px) {

@@ -5,7 +5,7 @@
 
         <div class="row  {{hidecomponent}}">
             <div [@expand]>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center cat">
                     <span class="select badge badge-info"> Select Category:</span>
                     <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
               <option *ngFor="let quiz of quizes" [value]="quiz.id">
@@ -20,7 +20,7 @@
                 {{ quiz.name }}
             </h2>
             <hr />
-    
+
             <div *ngIf="mode == 'quiz' && quiz">
                 <div *ngFor="let question of filteredQuestions">
                     <div class="badge badge-info">
@@ -33,7 +33,7 @@
                         {{ pager.index + 1 }}.
                         <span [innerHTML]="question.name"></span>
                     </h2>
-    
+
                     <div class="row text-left options" [@flyInOut]>
                         <div class="col-6" *ngFor="let option of question.options">
                             <div class="option">
@@ -64,8 +64,8 @@
                 </div>
             </div>
         </div>
-    
-    
+
+
         <div class="row text-center" *ngIf="mode == 'review'">
             <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index">
                 <div (click)="goTo(index)" class="p-3 mb-2 {{
@@ -106,7 +106,7 @@
                             <input id="{{ Option.id }}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{ Option.name }}
                         </div>
                     </div>
-    
+
                     <div class="p-1 m-3 alert {{
                   isCorrect(question) == 'correct' ? '' : ''
                 }}"></div>

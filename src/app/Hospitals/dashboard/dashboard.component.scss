@@ -5,6 +5,10 @@
     margin: 100px 0;
 }
 
+.container {
+    margin-top: 15vh;
+}
+
 #datetime {
     position: absolute;
     top: 80px;
@@ -26,6 +30,7 @@
     flex-basis: 60%;
     display: flex;
     align-items: center;
+    transform: translateY(14px);
 }
 
 .right-side img.controller {
@@ -123,6 +128,7 @@ button.prev-button {
     justify-content: space-between;
     counter-reset: step;
     margin-top: 12%;
+    transform: translateY(20px);
 }
 
 .prog-bar::before {
@@ -165,5 +171,11 @@ button.prev-button {
 @media only screen and (min-width: 1186px) {
     .prog-bar::before {
         width: 88%;
+    }
+}
+
+@media only screen and (min-width: 994px) {
+    .card {
+        transform: translateY(50px) !important;
     }
 }
