@@ -14,23 +14,24 @@ import { ResourcesComponent } from './common-services/resources/resources.compon
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-{path: 'hospital-login', component: LoginComponent},
-{path: 'hospital-signup', component: SignupComponent},
-{path: 'hospital-dashboard/:id', component: DashboardComponent},
-{path: 'patient-login', component: LoginPatientComponent},
-{path: 'patient-signup', component: SignupPatientComponent},
-{path: 'patient-dashboard/:id', component: DashboardPatientComponent},
-{path: 'home', component: HomeComponent},
-{path: 'h-forget-pas', component: ForgetPasComponent},
-{path: 'p-forget-pas', component: ForgetPasPatientComponent},
-{path: 'self-analysis', component: SelfAnalysisComponent},
-{path: 'resources', component: ResourcesComponent},
-{path: 'our-products', component: OurProductsComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'hospital-login', component: LoginComponent },
+  { path: 'hospital-signup', component: SignupComponent },
+  //{path: 'hospital-dashboard/:id', component: DashboardComponent},
+  { path: 'hospital-dashboard', component: DashboardComponent },
+  { path: 'patient-login', component: LoginPatientComponent },
+  { path: 'patient-signup', component: SignupPatientComponent },
+  { path: 'patient-dashboard/:id', component: DashboardPatientComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'h-forget-pas', component: ForgetPasComponent },
+  { path: 'p-forget-pas', component: ForgetPasPatientComponent },
+  { path: 'self-analysis', component: SelfAnalysisComponent },
+  { path: 'resources', component: ResourcesComponent },
+  { path: 'our-products', component: OurProductsComponent }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, {
+  imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'enabled', // Add options right here
   })],
   exports: [RouterModule]
