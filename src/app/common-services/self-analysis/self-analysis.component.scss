@@ -6,6 +6,7 @@ $blue: #7DA0FA;
 $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
+
 .select {
     font-size: 200%;
     margin: 2vh 1%;
@@ -60,6 +61,7 @@ body {
     text-align: center;
     justify-content: center;
     margin-top: 3%;
+    padding-top: 5vh;
 }
 
 #positive-heading-1 {
@@ -109,9 +111,16 @@ body {
     max-width: none;
 }
 
+.heightfix {
+    height: 100vh;
+}
+
+.marginHide2 {
+    padding-top: 12vh;
+}
+
 .dark {
     background-color: #161625;
-    height: 100vh;
 
     h2 {
         color: #fff;
@@ -124,6 +133,15 @@ body {
 
     .btn {
         border-color: #161625;
+    }
+
+    .result-question {
+        background-color: #323f4b;
+        color: white;
+    }
+
+    .breadcrumb {
+        background-color: #161625;
     }
 }
 

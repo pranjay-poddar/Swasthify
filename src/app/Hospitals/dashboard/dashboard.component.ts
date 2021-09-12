@@ -5,6 +5,7 @@ import { Subscription, timer } from 'rxjs';
 import { Hospitals } from 'src/app/models/hospitals';
 import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
+import { SharingService } from 'src/app/services/sharing.service';
 
 import { flyInOut, expand } from '../../Utilities/animations/animation';
 @Component({
@@ -27,9 +28,12 @@ export class DashboardComponent implements OnInit {
   hospitals: Hospitals = new Hospitals();
   intervalId:any;
   subscription: any;
-  constructor(private hospService: HospitalService, private router: ActivatedRoute) { }
+  light ! : string;
+  constructor(private hospService: HospitalService, private router: ActivatedRoute, private sharingService:SharingService) { }
 
   ngOnInit(): void {
+    this.light = this.sharingService.getData();
+    console.log(this.light);
  // Using Basic Interval for clock
  this.intervalId = setInterval(() => {
   this.time = new Date();
@@ -44,6 +48,8 @@ export class DashboardComponent implements OnInit {
     (Error) => {
       console.log(Error.error.message);
     });
+
+    
   }
   ngOnDestroy() {
     clearInterval(this.intervalId);

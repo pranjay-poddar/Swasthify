@@ -2,6 +2,37 @@ $blue: #7DA0FA;
 $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
+.mat-form-field {
+    width: 100%;
+    padding: 10px;
+}
+
+.patient-signup {
+    background-color: #f8f8f8;
+    position: relative;
+    padding-top: 12vh;
+}
+
+.image {
+    margin-top: 3%;
+    height: 26vw;
+    width: 36vw;
+}
+
+.card {
+    padding: 1%;
+    margin: 5% 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
+}
+
+#ps_heading {
+    margin-top: 5%;
+    font-size: 300%;
+    font-weight: 550;
+    color: rgb(43, 43, 43);
+}
+
 .dark {
 
     background-color: #161625;
@@ -37,41 +68,6 @@ $pink:#F3797E;
         background-color: #131417;
         color: #fff;
     }
-}
-
-.mat-form-field {
-    width: 100%;
-    padding: 10px;
-}
-
-.patient-signup {
-    background-color: #f8f8f8;
-    position: relative;
-}
-
-.image {
-    margin-top: 3%;
-    height: 26vw;
-    width: 36vw;
-}
-
-.card {
-    padding: 1%;
-    margin: 5% 0;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
-}
-
-#ps_heading {
-    margin-top: 5%;
-    font-size: 300%;
-    font-weight: 550;
-    color: rgb(43, 43, 43);
-}
-
-.container {
-    padding: 0% 5%;
-    max-width: none;
 }
 
 @media (max-width:996px) {

@@ -1,94 +1,92 @@
 <app-navbar></app-navbar>
 
-<div class="container {{light}}">
-    <div class="patient-signup">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-7 col-lg 7 col-sm-12 d-flex justify-content-center" [@expand]>
-                    <div class="row">
-                        <div class="col-md-12 col-12 text-center">
-                            <h1 id="ps_heading">Register Patient</h1>
-                        </div>
-                        <div class="col-md-12 col-12 text-center">
-                            <img class="image grow2" src="../../../assets/images/patient.png">
-                        </div>
+<div class="patient-signup {{light}}">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7 col-lg 7 col-sm-12 d-flex justify-content-center" [@expand]>
+                <div class="row">
+                    <div class="col-md-12 col-12 text-center">
+                        <h1 id="ps_heading">Register Patient</h1>
                     </div>
-                </div>
-                <div class="col-md-5 col-lg-5 col-sm-11 col-xs-8">
-                    <div class="card" [@flyInOut]>
-                        <form [formGroup]="PSForm">
-    
-                            <mat-form-field>
-                                <input matInput type="text" placeholder="Patient Name" formControlName="name">
-                                <mat-error *ngIf="name?.errors?.minlength">
-                                    Name should be atleast 3 characters long
-                                </mat-error>
-                                <mat-error *ngIf="name?.errors?.maxlength">
-                                    Name should be less than 46 characters
-                                </mat-error>
-                                <mat-error *ngIf="name?.touched">
-                                    Please, enter valid name
-                                </mat-error>
-    
-                            </mat-form-field>
-    
-                            <mat-form-field>
-                                <input matInput placeholder="Email" type="email" formControlName="emailId">
-                                <mat-error *ngIf="emailId?.invalid && emailId?.touched">
-                                    Please, enter valid email address
-                                </mat-error>
-                            </mat-form-field>
-    
-                            <mat-form-field>
-                                <input matInput type="number" placeholder="Contact" formControlName="contact">
-                                <mat-error *ngIf="contact?.touched && contact?.invalid">
-                                    Please enter contact number in correct format
-                                </mat-error>
-                                <mat-error *ngIf="contact?.errors?.min">
-                                    Contact number should be equal to 10 Digits
-                                </mat-error>
-    
-                                <mat-error *ngIf="contact?.errors?.max">
-                                    Contact number should be equal to 10 Digits
-                                </mat-error>
-                                <!-- <mat-error *ngIf="contact?.touched && contact?.invalid">
-                                    Please enter only Digits
-                                </mat-error> -->
-                            </mat-form-field>
-    
-                            <mat-form-field>
-                                <input matInput type="password" placeholder="Password" formControlName="pass">
-                                <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
-                                <mat-error *ngIf="pass?.invalid && pass?.touched">
-                                    Please enter Password in correct format
-                                </mat-error>
-                            </mat-form-field>
-    
-                            <mat-form-field>
-                                <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
-    
-                                <mat-error *ngIf="conPass?.invalid && conPass?.touched">
-                                    Please enter Password in correct format
-                                </mat-error>
-                                <mat-error *ngIf="conPass?.errors?.confirmedValidator">
-                                    Passwords does not match
-                                </mat-error>
-                            </mat-form-field>
-                            <small class="form-text text-muted">We'll never share your details with anyone else.</small>
-                            <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to submit?</mat-checkbox>
-                            <br>
-    
-                            <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PSForm.invalid" color="primary">Submit</button>
-                        </form>
-                    </div>
-                    <div class="col-md-12 col-12 ">
-                        <h3 class="text-center">Already Regestered? <a routerLink="/patient-login">Login</a></h3>
+                    <div class="col-md-12 col-12 text-center">
+                        <img class="image grow2" src="../../../assets/images/patient.png">
                     </div>
                 </div>
             </div>
+            <div class="col-md-5 col-lg-5 col-sm-11 col-xs-8">
+                <div class="card" [@flyInOut]>
+                    <form [formGroup]="PSForm">
+
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="Patient Name" formControlName="name">
+                            <mat-error *ngIf="name?.errors?.minlength">
+                                Name should be atleast 3 characters long
+                            </mat-error>
+                            <mat-error *ngIf="name?.errors?.maxlength">
+                                Name should be less than 46 characters
+                            </mat-error>
+                            <mat-error *ngIf="name?.touched">
+                                Please, enter valid name
+                            </mat-error>
+
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput placeholder="Email" type="email" formControlName="emailId">
+                            <mat-error *ngIf="emailId?.invalid && emailId?.touched">
+                                Please, enter valid email address
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="number" placeholder="Contact" formControlName="contact">
+                            <mat-error *ngIf="contact?.touched && contact?.invalid">
+                                Please enter contact number in correct format
+                            </mat-error>
+                            <mat-error *ngIf="contact?.errors?.min">
+                                Contact number should be equal to 10 Digits
+                            </mat-error>
+
+                            <mat-error *ngIf="contact?.errors?.max">
+                                Contact number should be equal to 10 Digits
+                            </mat-error>
+                            <!-- <mat-error *ngIf="contact?.touched && contact?.invalid">
+                                Please enter only Digits
+                            </mat-error> -->
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Password" formControlName="pass">
+                            <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
+                            <mat-error *ngIf="pass?.invalid && pass?.touched">
+                                Please enter Password in correct format
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
+
+                            <mat-error *ngIf="conPass?.invalid && conPass?.touched">
+                                Please enter Password in correct format
+                            </mat-error>
+                            <mat-error *ngIf="conPass?.errors?.confirmedValidator">
+                                Passwords does not match
+                            </mat-error>
+                        </mat-form-field>
+                        <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+                        <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to submit?</mat-checkbox>
+                        <br>
+
+                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PSForm.invalid" color="primary">Submit</button>
+                    </form>
+                </div>
+                <div class="col-md-12 col-12 ">
+                    <h3 class="text-center">Already Regestered? <a routerLink="/patient-login">Login</a></h3>
+                </div>
+            </div>
         </div>
-        <br>
     </div>
+    <br>
 </div>
 
 

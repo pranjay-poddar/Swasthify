@@ -85,6 +85,11 @@
 .container-d {
   padding: 0% 5%;
   max-width: none;
+  padding-top: 12vh;
+}
+
+hr {
+  margin-top: 3vh;
 }
 
 .dark {
@@ -108,6 +113,10 @@
     background-color: #161625;
     box-shadow: none;
   }
+
+  .card:hover .box {
+    background: linear-gradient(45deg, #b95ce4, #4f29cd);
+}
 
   .card .box .content h2 {
     color: #fff;

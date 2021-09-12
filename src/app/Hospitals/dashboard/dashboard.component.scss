@@ -5,6 +5,10 @@
     margin: 100px 0;
 }
 
+.h-dashboard {
+    padding-top: 12vh;
+}
+
 #datetime {
     position: absolute;
     top: 80px;
@@ -91,6 +95,22 @@ button.prev-button {
 
 button.prev-button {
     float: left !important;
+}
+
+.dark {
+    background-color: #161625;
+    color: #fff;
+    #datetime span {
+        color: #fff !important;
+    }
+    .card {
+        background-color: #323f4b;
+        box-shadow: none;
+    }
+    .prog-bar::before {
+        background-color: #7da0fa;
+        z-index: -1;
+    }
 }
 
 @media only screen and (max-width: 800px) {
