@@ -3,6 +3,7 @@ import { Option, Question, Quiz, QuizConfig } from '../../models/index';
 import { HelperService } from 'src/app/services/helper.service';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { QuizService } from 'src/app/services/quiz.service';
+import { SharingService } from 'src/app/services/sharing.service';
 let positive = 0;
 let answers:any = [];
 
@@ -25,6 +26,7 @@ export class SelfAnalysisComponent implements OnInit {
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
   quizName !: string;
+  light ! : string;
   config: QuizConfig = {
     'allowBack': true,
     'allowReview': true,
@@ -50,7 +52,7 @@ export class SelfAnalysisComponent implements OnInit {
   endTime !: Date;
   ellapsedTime = '00:00';
   duration = '';
-  constructor(private quizService: QuizService) { }
+  constructor(private quizService: QuizService, private sharingService:SharingService) { }
 
   ngOnInit() {
     this.quizes = this.quizService.getAll();
@@ -59,6 +61,7 @@ export class SelfAnalysisComponent implements OnInit {
     if(this.quizes[0]){
     
     }
+    this.light = this.sharingService.getData();
   }
   loadQuiz(quizName: string) {
     this.quizService.get(quizName).subscribe(res => {

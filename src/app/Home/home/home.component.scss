@@ -22,7 +22,6 @@
     border: 5px solid #e4e7ec;
     border-radius: 10em;
     background-color: white;
-    //box-shadow: 0px 10px 25px #e4e7ec;
     transition: background-color 250ms;
 }
 
@@ -93,18 +92,16 @@
 
 // ------------------toggle dark mode switch end -----------------------------------------------------
 .dark {
+    
     background-color: #161625;
     h3 {
         color: #fff;
     }
     .left-side h2 {
         color: #fff;
-        font-size: 50px;
     }
     .left-side p {
-        font-size: 14px;
         color: #9ea5ad;
-        font-weight: 400;
     }
     .right-side img.controller {
         display: none;
@@ -117,59 +114,26 @@
     .card {
         border: none;
         background-color: #161625;
-        border-radius: 15px;
-        margin: 30px;
     }
     .card .box {
         background: #323f4b;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.5s;
-    }
-    .card:hover .box {
-        transform: translateY(-40px);
-        background: linear-gradient(45deg, #b95ce4, #4f29cd);
-    }
-    .card .box .content {
-        padding: 20px;
-        text-align: center;
     }
     .card .box .content h2 {
-        font-size: 1.8em;
         color: #fff;
-        z-index: 1;
-        transition: 0.5s;
     }
     .card .box .content p {
-        font-size: 1em;
-        font-weight: 300;
         color: #fff;
-        z-index: 1;
-        transition: 0.5s;
     }
     .card:hover .box .content h2,
     .card:hover .box .content p {
         color: #fff;
     }
     .card .box .content a {
-        position: relative;
-        display: inline-block;
-        padding: 8px 20px;
         background: #03a9f4;
-        margin-top: 15px;
-        border-radius: 20px;
         color: #fff;
-        text-decoration: none;
-        font-weight: 400;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     .card:hover .box .content a {
         background: #ff568f;
-    }
-    .jumbo-margin {
-        margin: 0px;
     }
     .jumbo-margin {
         background-color: #131417;

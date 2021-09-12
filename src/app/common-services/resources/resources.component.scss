@@ -78,7 +78,42 @@
 }
 
 .a-class {
-    padding-top: 16px;
-    text-decoration: none;
-    background-color: #7da0fa;
+  padding-top: 16px;
+  text-decoration: none;
+}
+
+.container-d {
+  padding: 0% 5%;
+  max-width: none;
+}
+
+.dark {
+  background-color: #161625;
+  color: #fff;
+
+  .align-items-center {
+    padding-top: 22px;
+  }
+
+  .h1-si {
+    margin: 0 0 -3px;
+  }
+
+  .card .box {
+    background: #323f4b;
+    box-shadow: none;
+  }
+
+  .card {
+    background-color: #161625;
+    box-shadow: none;
+  }
+
+  .card .box .content h2 {
+    color: #fff;
+  }
+
+  .card .box .content p {
+    color: #9ea5ad;
+  }
 }

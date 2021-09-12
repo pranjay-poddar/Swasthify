@@ -94,3 +94,12 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     height: 100%;
 }
+
+.dark {
+    .mat-form-field-label{
+        color:#fff !important;
+      }
+      .mat-form-field-underline{
+        background-color:#fff !important;
+      }
+}

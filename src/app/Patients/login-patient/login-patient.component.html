@@ -1,52 +1,55 @@
 <app-navbar></app-navbar>
-<div class="patient-login">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
 
-            <div class="col-md-6 col-lg-5 col-sm-11 col-xs-8">
-                <div class="col-md-12 col-12 text-center">
-                    <h1 id="plogin_heading" class="mobile_view">Patient Login</h1>
-                </div>
-                <div class="card" [@flyInOut]>
-                    <form [formGroup]="PLoginForm">
-                        <mat-form-field>
-                            <input matInput placeholder="Email" type="email" formControlName="emailId">
-                            <mat-error *ngIf="email?.invalid && email?.touched">
-                                Please, enter valid email address
-                            </mat-error>
-                        </mat-form-field>
-
-                        <mat-form-field>
-                            <input matInput type="password" placeholder="Password" formControlName="pass">
-
-                            <mat-error *ngIf="password?.invalid && password?.touched">
-                                Please enter Password in correct format
-                            </mat-error>
-                        </mat-form-field>
-                        <br>
-                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PLoginForm.invalid" color="primary">Login</button>
-                        <a style="float:right ;margin-right: 5%;" routerLink="/p-forget-pas">Forgot Password</a>
-                    </form>
-                </div>
-                <div class="col-md-12 col-12 ">
-
-                    <h3 class="text-center">Don't have an accout? <a routerLink="/patient-signup">Signup</a></h3>
-
-                </div>
-            </div>
-            <div class="col-md-6 col-lg 7 col-sm-12 d-flex justify-content-center" [@expand]>
-                <div class="row">
+<div class="container {{light}}">
+    <div class="patient-login">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+    
+                <div class="col-md-6 col-lg-5 col-sm-11 col-xs-8">
                     <div class="col-md-12 col-12 text-center">
-                        <h1 id="plogin_heading" class="plogin_heading">Patient Login</h1>
+                        <h1 id="plogin_heading" class="mobile_view">Patient Login</h1>
                     </div>
-                    <div class="col-md-12 col-12 text-center">
-                        <img class="image grow2" src="../../../assets/images/patient2.png">
+                    <div class="card" [@flyInOut]>
+                        <form [formGroup]="PLoginForm">
+                            <mat-form-field>
+                                <input matInput placeholder="Email" type="email" formControlName="emailId">
+                                <mat-error *ngIf="email?.invalid && email?.touched">
+                                    Please, enter valid email address
+                                </mat-error>
+                            </mat-form-field>
+    
+                            <mat-form-field>
+                                <input matInput type="password" placeholder="Password" formControlName="pass">
+    
+                                <mat-error *ngIf="password?.invalid && password?.touched">
+                                    Please enter Password in correct format
+                                </mat-error>
+                            </mat-form-field>
+                            <br>
+                            <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PLoginForm.invalid" color="primary">Login</button>
+                            <a style="float:right ;margin-right: 5%;" routerLink="/p-forget-pas">Forgot Password</a>
+                        </form>
+                    </div>
+                    <div class="col-md-12 col-12 ">
+    
+                        <h3 class="text-center">Don't have an accout? <a routerLink="/patient-signup">Signup</a></h3>
+    
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg 7 col-sm-12 d-flex justify-content-center" [@expand]>
+                    <div class="row">
+                        <div class="col-md-12 col-12 text-center">
+                            <h1 id="plogin_heading" class="plogin_heading">Patient Login</h1>
+                        </div>
+                        <div class="col-md-12 col-12 text-center">
+                            <img class="image grow2" src="../../../assets/images/patient2.png">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
     </div>
-    <br>
 </div>
 
 

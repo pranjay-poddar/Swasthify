@@ -104,6 +104,29 @@ body {
     padding: 6px;
 }
 
+.container {
+    padding: 0% 5%;
+    max-width: none;
+}
+
+.dark {
+    background-color: #161625;
+    height: 100vh;
+
+    h2 {
+        color: #fff;
+    }
+
+    select {
+        background-color: #323f4b;
+        color: #fff;
+    }
+
+    .btn {
+        border-color: #161625;
+    }
+}
+
 @media (max-width: 992px) {
     .heading-1 {
         left: 38vw;

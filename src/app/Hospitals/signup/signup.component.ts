@@ -3,6 +3,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +19,8 @@ export class SignupComponent implements OnInit {
 
   HSForm !: FormGroup;
   err ! : String;
-  constructor(private fb: FormBuilder, private hospService : HospitalService) { }
+  light ! : string;
+  constructor(private fb: FormBuilder, private hospService : HospitalService, private sharingService:SharingService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -68,6 +70,7 @@ export class SignupComponent implements OnInit {
       validator: ConfirmedValidator('pass', 'conPass')
     });
     
+    this.light = this.sharingService.getData();
     
   }
 

@@ -3,7 +3,11 @@ $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
 .container {
-    background: $lpurple !important;
+    background-color: #f3f3f3 !important;
+    /*position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;*/
 }
 
 li :hover {
@@ -15,6 +19,9 @@ li :hover {
 .navbar {
     position: relative;
     z-index: 2;
+    .navbar-brand-dark {
+        display: none;
+    }
 }
 
 .bg-light {
@@ -22,7 +29,7 @@ li :hover {
 }
 
 .itemActive {
-    background-color: $blue !important;
+    background-color: #7da0fa93 !important;
     border-radius: 4px;
     transition: 0.1s ease;
 }
@@ -45,4 +52,25 @@ button.navbar-toggler {
 .navbar-toggler-icon:focus {
     outline: none;
     box-shadow: none;
+}
+
+.container {
+    max-width: none;
+}
+
+.dark {
+    background-color: #131417 !important;
+    .navbar {
+        background-color: #131417 !important;
+        height: 66px;
+        .navbar-brand {
+            display: none;
+        }
+        .navbar-brand-dark {
+            display: inline;
+        }
+    }
+    a {
+        color: #fff !important;
+    }
 }
