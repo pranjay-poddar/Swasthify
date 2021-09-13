@@ -1,4 +1,4 @@
-<h1 align="center"><b> SWASTHIFY </b></h1> 
+<h1 align="center"><b> SWASTHIFY </b><span><img src="https://github.com/pranjay-poddar/Swasthify/blob/pranjay/src/assets/images/Swasthify-logo-black" width="40" title="Swasthify logo"></span></h1> 
 <p> A compassionate effort to aid people out of difficult times, we are resolutely committed to provide our users with hospitals and their services at their fingertips.</p>
 <p align="center">
 <img src="https://github.com/pranjay-poddar/Swasthify/blob/pranjay/src/assets/images/Swasthify_gif.gif" width="700" title="Swasthify Poster">
