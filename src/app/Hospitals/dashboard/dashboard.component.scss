@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 100px 0;
+    padding-top: 100px;
 }
 
 .h-dashboard {
@@ -30,6 +30,7 @@
     flex-basis: 60%;
     display: flex;
     align-items: center;
+    margin-bottom: 25vh;
 }
 
 .right-side img.controller {
@@ -97,26 +98,9 @@ button.prev-button {
     float: left !important;
 }
 
-.dark {
-    background-color: #161625;
-    color: #fff;
-    #datetime span {
-        color: #fff !important;
-    }
-    .card {
-        background-color: #323f4b;
-        box-shadow: none;
-    }
-    .prog-bar::before {
-        background-color: #7da0fa;
-        z-index: -1;
-    }
-}
-
 @media only screen and (max-width: 800px) {
     .rows {
         flex-direction: column-reverse;
-        margin: 50px 0;
     }
     .right-side {
         flex-basis: 100%;
@@ -143,6 +127,7 @@ button.prev-button {
     justify-content: space-between;
     counter-reset: step;
     margin-top: 12%;
+    margin-bottom: 15vh;
 }
 
 .prog-bar::before {
@@ -180,6 +165,63 @@ button.prev-button {
 .c2 {
     background-color: #7da0fa;
     color: white;
+}
+
+.dark {
+    background-color: #161625;
+    color: #fff;
+    .row span {
+        color: #fff !important;
+    }
+    .card {
+        background-color: #323f4b;
+        box-shadow: none;
+    }
+    input {
+        background-color: #323f4b;
+        color: #fff;
+    }
+    .prog-bar2 {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        counter-reset: step;
+        margin-top: 12%;
+    }
+    
+    .prog-bar2::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 4px;
+        width: 83%;
+        background-color: #7da0fa;
+        z-index: 0;
+    }
+
+    .stepper-1 {
+        width: 35px;
+        height: 35px;
+        background-color: #7da0fa;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        z-index: 1;
+    }
+    
+    .stepper-1::before {
+        counter-increment: step;
+        content: counter(step);
+    }
+
+    @media only screen and (min-width: 1199px) {
+        .prog-bar::before {
+            width: 90%;
+        }
+    }
 }
 
 @media only screen and (min-width: 1186px) {

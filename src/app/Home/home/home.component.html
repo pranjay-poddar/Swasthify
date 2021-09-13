@@ -1,121 +1,111 @@
 <app-navbar></app-navbar>
 
-<div class="container home {{light}}">
-    <div>
-        <label class="switch-d">
-                <input class="toggle-checkbox" type="checkbox" (click)="toggleNav()">
-                <div class='toggle-slot'>
-                    <div class='sun-icon-wrapper'>
-                      <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
-                    </div>
-                    <div class='toggle-button'></div>
-                    <div class='moon-icon-wrapper'>
-                        <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
-                    </div>
-                </div>    
-            </label>
-    </div>
-
-
-    <div class="row align-items-center rows">
-        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <div class="col-12 left-side">
-                <h2>Swasthify</h2>
-                <p>
-                    A compassionate effort to aid people out of difficult times, we are resolutely committed to provide our users with hospitals and their services at their fingertips.
-                </p>
-                <a href="/home#r" class="a-link">
-                    <button class="know-button">
-                Explore
-                <img src="../../../assets/images/arrow.png" class="button-image" />
-              </button>
-                </a>
+<div class="home {{light}}">
+    <div class="container">
+        <div>
+            <label class="switch-d">
+                    <input class="toggle-checkbox" type="checkbox" (click)="toggleNav()">
+                    <div class='toggle-slot'>
+                        <div class='sun-icon-wrapper'>
+                          <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                        </div>
+                        <div class='toggle-button'></div>
+                        <div class='moon-icon-wrapper'>
+                            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                        </div>
+                    </div>    
+                </label>
+        </div>
+    
+    
+        <div class="row align-items-center rows">
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="col-12 left-side">
+                    <h2>Swasthify</h2>
+                    <p>
+                        A compassionate effort to aid people out of difficult times, we are resolutely committed to provide our users with hospitals and their services at their fingertips.
+                    </p>
+                    <a href="/home#r" class="a-link">
+                        <button class="know-button">
+                    Explore
+                    <img src="../../../assets/images/arrow.png" class="button-image" />
+                  </button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="col-12 right-side">
+                    <img src="../../../assets/images/Doctors-home.gif" class="controller" />
+                    <img src="../../../assets/images/Doctors-dark.png" class="controller-dark" />
+                </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <div class="col-12 right-side">
-                <img src="../../../assets/images/Doctors-home.gif" class="controller" />
-                <img src="../../../assets/images/Doctors-dark.png" class="controller-dark" />
-            </div>
-        </div>
-    </div>
-    <br />
-    <div class="container" id="r">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="box">
-                        <div class="content">
-                            <h2>Hospitals</h2>
-                            <p>
-                                An user-friendly interface for our partner hospitals, where they can add a spate of services.
-                            </p>
-                            <a routerLink="/hospital-login"><span class="grow">Try Now</span></a>
+        <br />
+        <div class="container" id="r">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <h2>Hospitals</h2>
+                                <p>
+                                    An user-friendly interface for our partner hospitals, where they can add a spate of services.
+                                </p>
+                                <a routerLink="/hospital-login"><span class="grow">Try Now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <h2>Patients</h2>
+                                <p>
+                                    A highly interactive dashboard that proffers a collation of hospital services from across the country.
+                                </p>
+                                <a routerLink="/patient-login"><span class="grow">Try Now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12 ">
+                    <div class="card">
+                        <div class="box">
+                            <div class="content">
+                                <h2>Self-Analysis</h2>
+                                <p>
+                                    A prognostication that provides a near to accurate outcome to get a sense of your health.
+                                </p>
+                                <a routerLink="/self-analysis"><span class="grow">Try Now</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="box">
-                        <div class="content">
-                            <h2>Patients</h2>
-                            <p>
-                                A highly interactive dashboard that proffers a collation of hospital services from across the country.
-                            </p>
-                            <a routerLink="/patient-login"><span class="grow">Try Now</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12 ">
-                <div class="card">
-                    <div class="box">
-                        <div class="content">
-                            <h2>Self-Analysis</h2>
-                            <p>
-                                A prognostication that provides a near to accurate outcome to get a sense of your health.
-                            </p>
-                            <a routerLink="/self-analysis"><span class="grow">Try Now</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-md-6 col-lg-3 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="box">
-                        <div class="content">
-                            <h2>Resources</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui illum atque voluptatum fugiat inventore esse placeat iure?
-                            </p>
-                            <a routerLink="/resources"><span class="grow">Try Now</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="jumbotron jumbo-margin" id="whoarewe">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="display-4 text-center h-size">Who Are We?</h1>
+        <br />
+        <br />
+        <br />
+        <div class="jumbotron jumbo-margin" id="whoarewe">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4 text-center h-size">Who Are We?</h1>
+                </div>
             </div>
-        </div>
-        <div class="row align-items-center row-about-us">
-            <div class="col-sm-3 col-md-3 about-img">
-                <img src="../../../assets/images/who-we-are.png" class="img-fluid grow" />
-            </div>
-            <div class="col-sm-9 col-md-9 space">
-                <p class="pa-padding">
-                    This pandemic has literally brought everyone on their knees, the despair and despondency that shrouded the country during covid gave us the motive to calibrate technology and help people out of these unprecedented times. Team Swasthify tries to provide
-                    its users with a service-based distinction of our partner hospitals from all across the country. What really keeps us going is a belief that one day we will make the notion of "hospitals at your fingertips" true.
-                </p>
+            <div class="row align-items-center row-about-us">
+                <div class="col-sm-3 col-md-3 about-img">
+                    <img src="../../../assets/images/who-we-are.png" class="img-fluid grow" />
+                </div>
+                <div class="col-sm-9 col-md-9 space">
+                    <p class="pa-padding">
+                        This pandemic has literally brought everyone on their knees, the despair and despondency that shrouded the country during covid gave us the motive to calibrate technology and help people out of these unprecedented times. Team Swasthify tries to provide
+                        its users with a service-based distinction of our partner hospitals from all across the country. What really keeps us going is a belief that one day we will make the notion of "hospitals at your fingertips" true.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <app-footer></app-footer>
