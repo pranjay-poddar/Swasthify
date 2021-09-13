@@ -6,7 +6,6 @@ $blue: #7DA0FA;
 $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
-
 .select {
     font-size: 200%;
     margin: 2vh 1%;
@@ -17,10 +16,6 @@ $pink:#F3797E;
 select {
     border-radius: .5rem;
     margin: .35em .65em;
-}
-
-.category2 {
-    display: none;
 }
 
 .grow:hover {
@@ -61,7 +56,15 @@ body {
     text-align: center;
     justify-content: center;
     margin-top: 3%;
-    padding-top: 12vh;
+    padding-top: 1vh;
+}
+
+.cat {
+    padding-top: 8vh;
+}
+
+.category2 {
+    display: none;
 }
 
 #positive-heading-1 {
@@ -116,25 +119,20 @@ body {
 
 .dark {
     background-color: #161625;
-
     h2 {
         color: #fff;
     }
-
     select {
         background-color: #323f4b;
         color: #fff;
     }
-
     .btn {
         border-color: #161625;
     }
-
     .result-question {
         background-color: #323f4b;
         color: white;
     }
-
     .breadcrumb {
         background-color: #161625;
     }

@@ -19,11 +19,11 @@ let answers:any = [];
 })
 
 export class SelfAnalysisComponent implements OnInit {
-  hidecomponent = "";
+  hidecomponent = "cat";
   analysisResultPositive:string='';
   analysisResultNegative:string='';
   heightfix="heightfix";
-  marginHide = "";
+  marginHide = "heading-1";
   quizes !: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
@@ -156,30 +156,17 @@ export class SelfAnalysisComponent implements OnInit {
     
    
   // to hide the category option on submit 
-      if(this.hidecomponent){
-        this.hidecomponent = "";
-      }
-      else{
+      if(this.hidecomponent=="cat"){
         this.hidecomponent = "category2";
       }
-      if(this.marginHide){
-        this.marginHide = "";
-      }
       else{
+        this.hidecomponent = "";
+      }
+      if(this.marginHide == "heading-1"){
         this.marginHide = "marginHide2";
       }
-      if(this.heightfix){
-        this.heightfix = "";
-      }
       else{
-        this.heightfix = "heightfix2";
-      }
-  
-      if(this.marginHide){
         this.marginHide = "";
-      }
-      else{
-        this.marginHide = "marginHide2";
       }
       if(this.heightfix){
         this.heightfix = "";
