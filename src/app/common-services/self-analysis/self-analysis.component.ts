@@ -20,10 +20,10 @@ let answers:any = [];
 
 export class SelfAnalysisComponent implements OnInit {
   hidecomponent = "";
-  heightfix="heighfix";
-  marginHide = "";
   analysisResultPositive:string='';
   analysisResultNegative:string='';
+  heightfix="heightfix";
+  marginHide = "";
   quizes !: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
@@ -175,6 +175,18 @@ export class SelfAnalysisComponent implements OnInit {
         this.heightfix = "heightfix2";
       }
   
+      if(this.marginHide){
+        this.marginHide = "";
+      }
+      else{
+        this.marginHide = "marginHide2";
+      }
+      if(this.heightfix){
+        this.heightfix = "";
+      }
+      else{
+        this.heightfix = "heightfix2";
+      }
    
     this.mode = 'result';
     if(answers[1].quizId==1){

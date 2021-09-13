@@ -90,59 +90,8 @@
     transform: translate(2.5em, 0.25em) rotate(-15deg);
 }
 
-// ------------------toggle dark mode switch end -----------------------------------------------------
-.dark {
-    background-color: #161625;
-    h3 {
-        color: #fff;
-    }
-    .left-side h2 {
-        color: #fff;
-    }
-    .left-side p {
-        color: #9ea5ad;
-    }
-    .right-side img.controller {
-        display: none;
-        width: 90%;
-    }
-    .right-side img.controller-dark {
-        display: inline;
-        width: 90%;
-    }
-    .card {
-        border: none;
-        background-color: #161625;
-    }
-    .card .box {
-        background: #323f4b;
-    }
-    .card:hover .box {
-        transform: translateY(-40px);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        background: linear-gradient(45deg, #b95ce4, #4f29cd);
-    }
-    .card .box .content h2 {
-        color: #fff;
-    }
-    .card .box .content p {
-        color: #fff;
-    }
-    .card:hover .box .content h2,
-    .card:hover .box .content p {
-        color: #fff;
-    }
-    .card .box .content a {
-        background: #03a9f4;
-        color: #fff;
-    }
-    .card:hover .box .content a {
-        background: #ff568f;
-    }
-    .jumbo-margin {
-        background-color: #131417;
-        color: #fff;
-    }
+.home {
+    padding : 15vh 0;
 }
 
 .rows {
@@ -220,6 +169,60 @@
 .right-side img.controller-dark {
     display: none;
     width: 90%;
+}
+
+// ------------------toggle dark mode switch end -----------------------------------------------------
+.dark {
+    
+    background-color: #161625;
+    h3 {
+        color: #fff;
+    }
+    .left-side h2 {
+        color: #fff;
+    }
+    .left-side p {
+        color: #9ea5ad;
+    }
+    .right-side img.controller {
+        display: none;
+        width: 90%;
+    }
+    .right-side img.controller-dark {
+        display: inline;
+        width: 90%;
+    }
+    .card {
+        border: none;
+        background-color: #161625;
+    }
+    .card .box {
+        background: #323f4b;
+    }
+    .card:hover .box {
+        background: linear-gradient(45deg, #b95ce4, #4f29cd);
+    }
+    .card .box .content h2 {
+        color: #fff;
+    }
+    .card .box .content p {
+        color: #fff;
+    }
+    .card:hover .box .content h2,
+    .card:hover .box .content p {
+        color: #fff;
+    }
+    .card .box .content a {
+        background: #03a9f4;
+        color: #fff;
+    }
+    .card:hover .box .content a {
+        background: #ff568f;
+    }
+    .jumbo-margin {
+        background-color: #131417;
+        color: #fff;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -334,12 +337,6 @@
 
 .a-link {
     text-decoration: none;
-}
-
-.container {
-    padding: 5% 5%;
-    max-width: none;
-    margin-top: 9vh;
 }
 
 .rows {
