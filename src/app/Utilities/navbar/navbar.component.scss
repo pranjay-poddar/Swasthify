@@ -73,3 +73,10 @@ button.navbar-toggler {
         color: #fff !important;
     }
 }
+
+@media (max-width:991px) {
+    .nav-link {
+        margin-top: 10px;
+        padding: 1rem 1rem;
+    }
+}

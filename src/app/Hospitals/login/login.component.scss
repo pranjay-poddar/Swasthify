@@ -2,30 +2,6 @@ $blue: #7DA0FA;
 $purple:#4747A1;
 $lpurple:#7978E9;
 $pink:#F3797E;
-.dark {
-    background-color: #161625;
-    color: #fff;
-    .hospital-login {
-        background-color: #161625;
-    }
-    #hlogin_heading {
-        color: #fff;
-    }
-    .card {
-        background-color: #323f4b;
-        box-shadow: none;
-    }
-    .mat-raised-button.mat-primary.mat-button-disabled,
-    .mat-raised-button.mat-button-disabled.mat-button-disabled {
-        background-color: grey;
-        color: #fff;
-    }
-    .mat-raised-button.mat-primary {
-        background-color: #131417;
-        color: #fff;
-    }
-}
-
 .mat-form-field {
     width: 100%;
     padding: 10px;
@@ -38,6 +14,7 @@ $pink:#F3797E;
 .hospital-login {
     background-color: #f8f8f8;
     position: relative;
+    padding-top: 12vh;
 }
 
 .image {
@@ -59,10 +36,28 @@ $pink:#F3797E;
     color: rgb(43, 43, 43);
 }
 
-.container {
-    // padding: 0% 5%;
-    max-width: none;
-    margin-top: 9vh;
+.dark {
+    background-color: #161625;
+    color: #fff;
+    .hospital-login {
+        background-color: #161625 !important;
+    }
+    #hlogin_heading {
+        color: #fff;
+    }
+    .card {
+        background-color: #323f4b;
+        box-shadow: none;
+    }
+    .mat-raised-button.mat-primary.mat-button-disabled,
+    .mat-raised-button.mat-button-disabled.mat-button-disabled {
+        background-color: grey;
+        color: #fff;
+    }
+    .mat-raised-button.mat-primary {
+        background-color: #131417;
+        color: #fff;
+    }
 }
 
 @media (max-width:996px) {

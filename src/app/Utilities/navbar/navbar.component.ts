@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
       else{
         this.navbarcolour = "navbar-dark";
       }
-    }, 5);
+    }, 0.0001);
     }
 
     

@@ -1,200 +1,182 @@
-        .grow {
-            transition: all .2s ease-in-out;
-        }
-        
-        $blue: #7DA0FA;
-        $purple:#4747A1;
-        $lpurple:#7978E9;
-        $pink:#F3797E;
-        .select {
-            font-size: 200%;
-            margin: 2vh 1%;
-            font-family: regular;
-            font-weight: bold;
-        }
-        
-        .cat {
-            margin-top: 5vh;
-        }
-        
-        select {
-            border-radius: .5rem;
-            margin: .35em .65em;
-        }
-        
-        .category2 {
-            display: none;
-        }
-        
-        .grow:hover {
-            transform: scale(1.1);
-        }
-        
-        .badge-info {
-            color: #000000;
-            background-color: $blue;
-        }
-        
-        .btn-review {
-            background-color: $pink;
-            margin-left: 8%;
-        }
-        
-        .btn-submit {
-            background-color: rgb(0, 143, 0);
-        }
-        
-        .btn-back {
-            background-color: $blue;
-        }
-        
-        .btn {
-            border-radius: 5px;
-        }
-        
-        body {
-            background-color: black;
-        }
-        
-        .heading-1 {
-            left: 38vw;
-            font-family: bold;
-            color: rgb(0, 0, 0);
-            font-size: 400%;
-            text-align: center;
-            justify-content: center;
-            margin-top: 3%;
-        }
-        
-        #positive-heading-1 {
-            color: red;
-            font-weight: bold;
-        }
-        
-        #positive-heading-3 {
-            color: green;
-            font-weight: bold;
-        }
-        
-        .badge {
-            font-size: 115%;
-        }
-        
-        .btn-locate-center {
-            border-radius: 25px;
-            background-color: $blue;
-        }
-        
-        .option {
-            background-color: $blue;
-            font-size: 20px;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 3px;
-        }
-        
-        #quiz .options input[type=checkbox] {
-            height: 22px;
-            width: 22px;
-        }
-        
-        .cursor-pointer {
-            cursor: pointer;
-        }
-        
-        .result-question {
-            background-color: #eee;
-            margin: 4px;
-            padding: 6px;
-        }
-        
-        .container {
-            padding: 0% 5%;
-            max-width: none;
-            margin-top: 9vh;
-        }
-        
-        .heighfix {
-            height: 100vh;
-        }
-        
-        .marginHide2 {
-            padding-top: 8vh;
-        }
-        
-        .dark {
-            background-color: #161625;
-            h2 {
-                color: #fff;
-            }
-            .breadcrumb {
-                display: flex;
-                flex-wrap: wrap;
-                padding: 0 0;
-                margin-bottom: 1rem;
-                list-style: none;
-                background-color: #161625;
-                color: #fff;
-            }
-            select {
-                background-color: #323f4b;
-                color: #fff;
-            }
-            .btn {
-                border-color: #161625;
-            }
-            .result-question {
-                background-color: #323f4b;
-                color: white;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .heading-1 {
-                left: 38vw;
-                font-size: 350%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .heading-1 {
-                left: 38vw;
-                font-size: 300%;
-            }
-        }
-        
-        @media only screen and (max-width: 480px) {
-            h1,
-            .h1 {
-                font-size: 22px;
-            }
-            h2,
-            .h2 {
-                font-size: 20px;
-            }
-            h3,
-            .h3 {
-                font-size: 18px;
-            }
-            .option {
-                font-size: 16px;
-                padding: 6px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .heading-1 {
-                left: 38vw;
-                font-size: 300%;
-                line-height: 45px;
-            }
-            .badge {
-                font-size: 90%;
-            }
-        }
-        
-        @media (max-width: 296px) {
-            .badge {
-                font-size: 80%;
-            }
-        }
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+$blue: #7DA0FA;
+$purple:#4747A1;
+$lpurple:#7978E9;
+$pink:#F3797E;
+
+.select {
+    font-size: 200%;
+    margin: 2vh 1%;
+    font-family: regular;
+    font-weight: bold;
+}
+
+select {
+    border-radius: .5rem;
+    margin: .35em .65em;
+}
+
+.category2 {
+    display: none;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
+.badge-info {
+    color: #000000;
+    background-color: $blue;
+}
+
+.btn-review {
+    background-color: $pink;
+    margin-left: 8%;
+}
+
+.btn-submit {
+    background-color: rgb(0, 143, 0);
+}
+
+.btn-back {
+    background-color: $blue;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+body {
+    background-color: black;
+}
+
+.heading-1 {
+    left: 38vw;
+    font-family: bold;
+    color: rgb(0, 0, 0);
+    font-size: 400%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3%;
+    padding-top: 12vh;
+}
+
+#positive-heading-1 {
+    color: red;
+    font-weight: bold;
+}
+
+#positive-heading-3 {
+    color: green;
+    font-weight: bold;
+}
+
+.badge {
+    font-size: 115%;
+}
+
+.btn-locate-center {
+    border-radius: 25px;
+    background-color: $blue;
+}
+
+.option {
+    background-color: $blue;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 3px;
+}
+
+#quiz .options input[type=checkbox] {
+    height: 22px;
+    width: 22px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.result-question {
+    background-color: #eee;
+    margin: 4px;
+    padding: 6px;
+}
+
+.heightfix {
+    height: 100vh;
+}
+
+.marginHide2 {
+    padding-top: 12vh;
+}
+
+.dark {
+    background-color: #161625;
+
+    h2 {
+        color: #fff;
+    }
+
+    select {
+        background-color: #323f4b;
+        color: #fff;
+    }
+
+    .btn {
+        border-color: #161625;
+    }
+
+    .result-question {
+        background-color: #323f4b;
+        color: white;
+    }
+
+    .breadcrumb {
+        background-color: #161625;
+    }
+}
+
+@media (max-width: 992px) {
+    .heading-1 {
+        left: 38vw;
+        font-size: 350%;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading-1 {
+        left: 38vw;
+        font-size: 300%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1,
+    .h1 {
+        font-size: 22px;
+    }
+    h2,
+    .h2 {
+        font-size: 20px;
+    }
+    h3,
+    .h3 {
+        font-size: 18px;
+    }
+    .option {
+        font-size: 16px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 576px) {
+    .heading-1 {
+        left: 38vw;
+        font-size: 300%;
+        line-height: 45px;
+    }
+}
