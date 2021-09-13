@@ -162,6 +162,18 @@ export class SelfAnalysisComponent implements OnInit {
       else{
         this.hidecomponent = "category2";
       }
+      if(this.marginHide){
+        this.marginHide = "";
+      }
+      else{
+        this.marginHide = "marginHide2";
+      }
+      if(this.heightfix){
+        this.heightfix = "";
+      }
+      else{
+        this.heightfix = "heightfix2";
+      }
   
       if(this.marginHide){
         this.marginHide = "";

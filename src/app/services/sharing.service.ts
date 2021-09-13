@@ -5,15 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class SharingService {
 
-  private light : string = "light";
+  private light: string = "light";
 
-  setData(light:string){
-      this.light = light;
+  setData(light: string) {
+    this.light = light;
   }
 
-  getData(){
-      return this.light;
-      //return "dark";
+  getData() {
+    return this.light;
+    //return "dark";
   }
 
   constructor() { }

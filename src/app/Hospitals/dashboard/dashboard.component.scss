@@ -9,6 +9,10 @@
     padding-top: 12vh;
 }
 
+.container {
+    margin-top: 15vh;
+}
+
 #datetime {
     position: absolute;
     top: 80px;
@@ -227,5 +231,11 @@ button.prev-button {
 @media only screen and (min-width: 1186px) {
     .prog-bar::before {
         width: 88%;
+    }
+}
+
+@media only screen and (min-width: 994px) {
+    .card {
+        transform: translateY(50px) !important;
     }
 }

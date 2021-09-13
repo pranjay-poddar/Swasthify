@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
 
 
   light :any;
-  state :any;
 
   toggleNav(){
     if(this.light == "light"){
