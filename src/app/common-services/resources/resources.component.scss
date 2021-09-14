@@ -80,30 +80,29 @@
 .a-class {
     padding-top: 16px;
     text-decoration: none;
+    background-color: #7da0fa93;
 }
 
 .container-d {
-  padding: 0% 5%;
-  max-width: none;
-  padding-top: 12vh;
+    padding: 0% 5%;
+    max-width: none;
+    padding-top: 12vh;
 }
 
 hr {
-  margin-top: 3vh;
+    margin-top: 3vh;
 }
 
 .dark {
     background-color: #161625;
     color: #fff;
     box-shadow: none;
-
-  .card:hover .box {
-    background: linear-gradient(45deg, #b95ce4, #4f29cd);
-  }
-
-  .card .box .content h2 {
-    color: #fff;
-  }
+    .card:hover .box {
+        background: linear-gradient(45deg, #b95ce4, #4f29cd);
+    }
+    .card .box .content h2 {
+        color: #fff;
+    }
     .align-items-center {
         padding-top: 22px;
     }
@@ -127,6 +126,12 @@ hr {
         color: #fff;
     }
     .card .box .content p {
-        color: #9ea5ad;
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .card .box .content p {
+        font-size: 1.258em;
     }
 }
