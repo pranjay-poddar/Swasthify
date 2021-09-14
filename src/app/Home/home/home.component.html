@@ -2,20 +2,14 @@
 
 <div class="home {{light}}">
     <div class="container">
-        <div>
-            <label class="switch-d">
-                    <input class="toggle-checkbox" type="checkbox" (click)="toggleNav()">
-                    <div class='toggle-slot'>
-                        <div class='sun-icon-wrapper'>
-                          <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
-                        </div>
-                        <div class='toggle-button'></div>
-                        <div class='moon-icon-wrapper'>
-                            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
-                        </div>
-                    </div>    
-                </label>
-        </div>
+        <button class="dark-mode-toggle" (click)="toggleNav()">
+            <span class="sun">
+                <img alt="sun icon that represents light mode" width="35px" src="../../../assets/images/sun.svg">
+            </span>
+            <span class="moon">
+                <img alt="moon icon to represent dark mode " width="25px" src="../../../assets/images/moon.svg">
+            </span>
+        </button>
     
     
         <div class="row align-items-center rows">
