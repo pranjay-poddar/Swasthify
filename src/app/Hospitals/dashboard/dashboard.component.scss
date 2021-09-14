@@ -2,11 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 100px;
 }
 
 .h-dashboard {
-    padding-top: 12vh;
+    padding-top: 5vh;
 }
 
 .container {
@@ -43,7 +42,7 @@
 
 .card {
     padding: 4%;
-    padding-bottom: 0%;
+    margin-bottom: 15vh;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgb(136 136 136 / 20%), 0 6px 20px 0 rgb(138 138 138 / 19%);
 }
@@ -219,6 +218,16 @@ button.prev-button {
     .stepper-1::before {
         counter-increment: step;
         content: counter(step);
+    }
+
+    .c1 {
+        background-color: #233E8B;
+        color: white;
+    }
+    
+    .c2 {
+        background-color: #7da0fa;
+        color: white;
     }
 
     @media only screen and (min-width: 1199px) {
