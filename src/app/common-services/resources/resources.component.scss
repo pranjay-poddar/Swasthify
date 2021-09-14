@@ -129,3 +129,9 @@ hr {
         color: #9ea5ad;
     }
 }
+
+@media only screen and (max-width: 576px) {
+    .card .box .content p {
+        font-size: 1.258em;
+    }
+}
