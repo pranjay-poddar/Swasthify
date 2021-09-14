@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
         title: 'Thank You...',
         text: 'Login Succesfull!',
       });
-      //this.router.navigate(['hospital-dashboard',this.id]);
+      this.router.navigate(['hospital-dashboard',this.id]);
     },
       (Error) => {
         this.err = Error.error.message;
