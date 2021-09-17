@@ -38,7 +38,6 @@ Swasthify aims at mitigating the hardships people faced during this pandemic. We
 
 ## Tech Stack
 
-Dillinger uses a number of open source projects to work properly:
 
 -   Frontend : Angular, Typescript, HTML5, CSS3, Bootstrap
 
