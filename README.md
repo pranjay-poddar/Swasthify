@@ -10,6 +10,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e30784c5-9efd-4f20-8a47-13f3fb899613/deploy-status)](https://app.netlify.com/sites/allcontributors-org/deploys)
 [![Pull Reminders](https://pullreminders.com/badge.svg)](https://pullreminders.com?ref=badge)
 
+
 ## About Us 
 
 This pandemic has literally brought everyone on their knees, the despair and despondency that shrouded the country during covid gave us the motive to calibrate technology and help people out of these unprecedented times. Team Swasthify tries to provide its users with a service-based distinction of our partner hospitals from all across the country. What really keeps us going is a belief that one day we will make the notion of "hospitals at your fingertips" true.
