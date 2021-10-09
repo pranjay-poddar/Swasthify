@@ -18,6 +18,7 @@
  * BROWSER POLYFILLS
  */
 
+
 /**
  * IE11 requires the following for NgClass support on SVG elements
  */
