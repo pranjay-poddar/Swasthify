@@ -110,7 +110,7 @@ body {
 }
 
 .heightfix {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .marginHide2 {
@@ -178,6 +178,6 @@ body {
         line-height: 45px;
     }
     .heightfix {
-        height: 130vh;
+        max-height: 130vh;
     }
 }
