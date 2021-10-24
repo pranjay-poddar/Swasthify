@@ -3,13 +3,13 @@ $color-grey--1: #c1c1c1;
 $color-blue--1: #147efb;
 $color-blue--2: #5fc9f8;
 .chatr {
-    min-height: 100vh;
     padding: 0;
 }
 
 .chatbox {
     background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(0, 152, 155, 1) 0.1%, rgba(0, 94, 120, 1) 94.2%);
     background-image: url('../../../assets/images/bg.png');
+    min-height: 100vh;
 }
 
 p,
@@ -20,14 +20,14 @@ button {
 }
 
 .chatroom {
-    max-width: 60%;
-    width: 100%;
+    width: 60%;
     margin: 0px auto 0;
     background-color: gray;
     background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(0, 152, 155, 1) 0.1%, rgba(0, 94, 120, 1) 94.2%);
     // background-image: url('../../../assets/images/bg.png');
     border-radius: 10px;
     margin-top: 5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -67,8 +67,6 @@ button {
 .chatroom_history_list_item {
     margin-top: auto;
     margin-bottom: 10px;
-    max-width: 90%;
-    width: 100%;
     border-radius: 15px;
     padding: 10px 20px;
     color: $color-white;
@@ -213,9 +211,12 @@ button {
 }
 
 @media(max-width:576px) {
+    .row {
+        --bs-gutter-x: -0.5rem !important;
+    }
     .chatroom {
-        max-width: 100%;
-        width: 100%;
+        max-width: 95%;
+        width: 95%;
         margin-top: 0;
         border-radius: 0px;
     }
@@ -226,7 +227,7 @@ button {
         display: flex;
         border-radius: 0px;
         flex-direction: column;
-        height: 70vh;
+        min-height: 65vh;
         overflow: scroll;
     }
     #input-user {
@@ -244,6 +245,10 @@ button {
     }
     .chatbox {
         background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(0, 152, 155, 1) 0.1%, rgba(0, 94, 120, 1) 94.2%);
+        min-height: 100vh;
+    }
+    .chatr {
+        padding: 0;
     }
 }
 

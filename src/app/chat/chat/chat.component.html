@@ -5,8 +5,8 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 d-flex justify-content-center">
                     <div class="chatroom_section chatroom_history">
 
-                        <ul class="list-group list-group-flush chatroom_history_list">
-                            <div  *ngFor="let chatMessage of webSocketService.chatMessages">
+                        <ul class="list-group list-group-flush chatroom_history_list" #scrollMe>
+                            <div *ngFor="let chatMessage of webSocketService.chatMessages">
                                 <li *ngIf="chatMessage.emailId == emailId" class="list-group-item chatroom_history_list_item chatroom_history_list_right chatroom_history_list_item--grey">
                                     <strong>{{chatMessage.user}} : </strong>
                                     <span>{{chatMessage.message}}</span>
@@ -15,7 +15,7 @@
                                     <strong>{{chatMessage.user}} : </strong>
                                     <span>{{chatMessage.message}}</span>
                                 </li>
-                                
+
                             </div>
                         </ul>
                         <div class="chatroom_history_entering">
@@ -31,7 +31,7 @@
                                 <!-- <div class="col-md-4 col-sm-3 col-xs-3">
                                     <input type="text" class="form-control" Placeholder="Name" name="user" id="input-user" ngModel>
                                 </div> -->
-                                <div class="col-md-12 col-sm-7 col-xs-7">
+                                <div class="col-md-12 col-sm-12 col-xs-10">
                                     <input type="text" class="form-control" Placeholder="Type your message here" name="message" id="input-message" ngModel>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
