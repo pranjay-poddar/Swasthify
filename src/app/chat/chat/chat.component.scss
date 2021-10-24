@@ -217,14 +217,16 @@ button {
         max-width: 100%;
         width: 100%;
         margin-top: 0;
+        border-radius: 0px;
     }
     .chatroom_history_list {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
+        border-radius: 0px;
         flex-direction: column;
-        height: 50vh;
+        height: 70vh;
         overflow: scroll;
     }
     #input-user {
@@ -246,15 +248,16 @@ button {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
     overflow-y: scroll;
     background: transparent;
     box-shadow: none;
+    width: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgb(141, 141, 141);
     border-radius: 100px;
+    width: 10px;
     height: 10px !important;
     overflow-x: hidden;
 }
