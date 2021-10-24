@@ -1,33 +1,40 @@
-<div class="container chatr">
-    <div class="chatroom">
+<div class="chatbox">
+    <div class="container chatr">
+        <div class="row">
+            <div class="chatroom col-md-10 col-sm-12 col-xs-12 col-lg-10 d-flex justify-content-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 d-flex justify-content-center">
+                    <div class="chatroom_section chatroom_history">
 
-        <div class="chatroom_section chatroom_history">
-
-            <ul class="list-group list-group-flush chatroom_history_list">
-                <li class="list-group-item chatroom_history_list_item chatroom_history_list_left chatroom_history_list_item--grey" *ngFor="let chatMessage of webSocketService.chatMessages">
-                    <strong>{{chatMessage.user}}: </strong>
-                    <span>{{chatMessage.message}}</span>
-                </li>
-            </ul>
-            <div class="chatroom_history_entering">
-                <div class="chatroom_history_entering_spinner"></div>
-                <span class="chatroom_history_entering_label">Typing</span>
-            </div>
-        </div>
-        <div class="chatroom_section chatroom_form">
-            <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
-                <div class="chat-send row">
-                    <div class="col-md-2 col-sm-3 col-xs-3">
-                        <input type="text" class="form-control" Placeholder="Name" name="user" id="input-user" ngModel>
-                    </div>
-                    <div class="col-md-8 col-sm-7 col-xs-7">
-                        <input type="text" class="form-control" Placeholder="Type your message here" name="message" id="input-message" ngModel>
-                    </div>
-                    <div class="col-md-2 col-sm-12 col-xs-12 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <ul class="list-group list-group-flush chatroom_history_list">
+                            <li class="list-group-item chatroom_history_list_item chatroom_history_list_left chatroom_history_list_item--grey" *ngFor="let chatMessage of webSocketService.chatMessages">
+                                <strong>{{chatMessage.user}}: </strong>
+                                <span>{{chatMessage.message}}</span>
+                            </li>
+                        </ul>
+                        <div class="chatroom_history_entering">
+                            <div class="chatroom_history_entering_spinner"></div>
+                            <span class="chatroom_history_entering_label"> Typing</span>
+                        </div>
                     </div>
                 </div>
-            </form>
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 d-flex justify-content-center">
+                    <div class="chatroom_section chatroom_form">
+                        <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+                            <div class="chat-send row">
+                                <div class="col-md-4 col-sm-3 col-xs-3">
+                                    <input type="text" class="form-control" Placeholder="Name" name="user" id="input-user" ngModel>
+                                </div>
+                                <div class="col-md-8 col-sm-7 col-xs-7">
+                                    <input type="text" class="form-control" Placeholder="Type your message here" name="message" id="input-message" ngModel>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary submit  grow d-flex justify-content-center">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
