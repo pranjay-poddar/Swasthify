@@ -9,6 +9,7 @@ import { Subscription, timer } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Patients } from 'src/app/models/patients';
 import Swal from 'sweetalert2';
+import { ChatDataTransferService } from 'src/app/services/chat-data-transfer.service';
 
 @Component({
   selector: 'app-dashboard-patient',
@@ -60,7 +61,7 @@ export class DashboardPatientComponent implements OnInit {
   };
 
   totService : TotalService = new TotalService();
-  constructor(private PatientService : PatientService, public dialog: MatDialog, private route : ActivatedRoute) { }
+  constructor(private PatientService : PatientService, public dialog: MatDialog, private route : ActivatedRoute, private chatService : ChatDataTransferService) { }
 
   ngOnInit(): void {
     // Using Basic Interval for clock
@@ -70,6 +71,8 @@ export class DashboardPatientComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.PatientService.getPatient(this.id).subscribe((data) => {
       this.patient = data;
+      this.chatService.user = this.patient.name;
+      this.chatService.emailId= this.patient.emailId;
     },
     (Error) => {console.log(Error.error.message)}
     );

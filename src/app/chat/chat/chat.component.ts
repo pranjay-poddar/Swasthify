@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { WebSocketService } from '../../services/web-socket.service';
 import { ChatMessageDto } from '../../models/chatMessageDto';
+import { ChatDataTransferService } from 'src/app/services/chat-data-transfer.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -9,7 +10,8 @@ import { ChatMessageDto } from '../../models/chatMessageDto';
 })
 export class ChatComponent implements OnInit, OnDestroy {
 
-  constructor(public webSocketService: WebSocketService) { }
+  emailId ! : String;
+  constructor(public webSocketService: WebSocketService, private chatService : ChatDataTransferService) { }
 
   ngOnInit(): void {
     this.webSocketService.openWebSocket();
@@ -20,9 +22,10 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   sendMessage(sendForm: NgForm) {
-    const chatMessageDto = new ChatMessageDto(sendForm.value.user, sendForm.value.message);
+    this.emailId = this.chatService.emailId;
+    const chatMessageDto = new ChatMessageDto(this.chatService.user, this.chatService.emailId , sendForm.value.message);
     this.webSocketService.sendMessage(chatMessageDto);
     sendForm.controls.message.reset();
-    console.log(this.webSocketService)
+    console.log(this.emailId);
   }
 }
