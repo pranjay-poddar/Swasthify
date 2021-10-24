@@ -12,7 +12,8 @@ export class WebSocketService {
 
   public openWebSocket(){
   // this.webSocket = new WebSocket('ws://localhost:8080/chat');
-  this.webSocket = new WebSocket('ws://swasthify-chat-server.herokuapp.com/chat');
+  
+  this.webSocket = new WebSocket('wss://swasthify-chat-server.herokuapp.com/chat');
     
 
     this.webSocket.onopen = (event) => {
