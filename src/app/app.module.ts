@@ -30,6 +30,7 @@ import { OurProductsComponent } from './common-services/our-products/our-product
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharingService } from './services/sharing.service';
+import { ChatComponent } from './chat/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { SharingService } from './services/sharing.service';
     SelfAnalysisComponent,
     ResourcesComponent,
     OurProductsComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

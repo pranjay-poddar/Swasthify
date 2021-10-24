@@ -12,6 +12,7 @@ import { ForgetPasPatientComponent } from './Patients/forget-pas-patient/forget-
 import { SelfAnalysisComponent } from './common-services/self-analysis/self-analysis.component';
 import { ResourcesComponent } from './common-services/resources/resources.component';
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
+import { ChatComponent } from './chat/chat/chat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'p-forget-pas', component: ForgetPasPatientComponent },
   { path: 'self-analysis', component: SelfAnalysisComponent },
   { path: 'resources', component: ResourcesComponent },
-  { path: 'our-products', component: OurProductsComponent }
+  { path: 'our-products', component: OurProductsComponent },
+  { path: 'chat', component: ChatComponent }
 ];
 
 @NgModule({
