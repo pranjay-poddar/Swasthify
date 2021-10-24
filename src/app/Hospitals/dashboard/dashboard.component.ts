@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { SharingService } from 'src/app/services/sharing.service';
 
 import { flyInOut, expand } from '../../Utilities/animations/animation';
+import { ChatDataTransferService } from 'src/app/services/chat-data-transfer.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -29,7 +30,7 @@ export class DashboardComponent implements OnInit {
   intervalId:any;
   subscription: any;
   light ! : string;
-  constructor(private hospService: HospitalService, private router: ActivatedRoute, private sharingService:SharingService) { }
+  constructor(private hospService: HospitalService, private router: ActivatedRoute, private sharingService:SharingService, private chatService : ChatDataTransferService) { }
 
   ngOnInit(): void {
     this.light = this.sharingService.getData();
@@ -43,6 +44,8 @@ export class DashboardComponent implements OnInit {
     this.id = this.router.snapshot.params['id'];
     this.hospService.getHospById(this.id).subscribe((data) => {
       this.hospitals = data;
+      this.chatService.emailId = this.hospitals.emailId;
+      this.chatService.user = this.hospitals.hospitalName;
       console.log(this.hospitals);
     },
     (Error) => {

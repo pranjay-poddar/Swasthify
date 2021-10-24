@@ -85,6 +85,7 @@ button {
 .chatroom_history_list_item--grey {
     background: rgb(240, 240, 240, 0.9);
     color: black;
+    min-width: 30vw;
 }
 
 .chatroom_history_list_item--blue {
@@ -223,7 +224,7 @@ button {
         margin: 0;
         display: flex;
         flex-direction: column;
-        height: 60vh;
+        height: 50vh;
         overflow: scroll;
     }
     #input-user {
