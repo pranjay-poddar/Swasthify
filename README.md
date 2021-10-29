@@ -53,6 +53,11 @@ Swasthify aims at mitigating the hardships people faced during this pandemic. We
 
 -   Hosting Service Provider : Netlify
 
+<p align="center">
+<img src="https://github.com/pranjay-poddar/Swasthify/blob/main/Presentation%20Images/Swasthify%20Architecture%20Diagram.png" width="700" title="Swasthify Poster">
+</p >
+
+
 ## How is our solution different
 
 -   Our solution is different in an umpteen number of ways. It's a user-to-hospital interaction without any third-party involvement.
