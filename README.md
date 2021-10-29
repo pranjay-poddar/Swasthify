@@ -25,13 +25,16 @@ Swasthify aims at mitigating the hardships people faced during this pandemic. We
 -   Hospital Registration
 -   Hospital Login
 -   Data Entry 
--  Updation of services such as ICU Beds, Isolation Beds, Oxygen Cylinders, Vaccines offered by hospital.
+-   Updation of services such as ICU Beds, Isolation Beds, Oxygen Cylinders, Vaccines offered by hospital.
+-   Chat Forum for one to one interaction with patients.
 
 #### Patients
 
 -   Patient Registration
 -   Patient Login
 -   Fetch Hospitals, and Hospital Services such as ICU Beds, Oxygen Cylinders, and Vaccines.
+-   Chat forums that can be utilized by the patients to interact with each other and hospitals/doctors, and offer all kinds of advice and assistance to each other.
+
 #### Services Open To All
 
 -   Self-Analysis For Covid-Testing , Mental-Health , Physical Health , Eating Disorder
@@ -60,10 +63,20 @@ Swasthify aims at mitigating the hardships people faced during this pandemic. We
 
 ## Future Possible Enhancements
 -   Providing users the option to book a variety of services that the hospitals offer.
--   Creating chat forums using web socket. These chat forums can be utilized by the users to interact with each other, and offer all kinds of advice and assistance to each other.
 -   A prescription catalogue, from where a user can keep track of all his past prescriptions.
 -   A doctor's clinic where a user can consult any registered doctor from across the country.
 
+## Sample Login ID and Password
+
+Log On to - [https://swasthify.netlify.app/hospital-login](https://swasthify.netlify.app/hospital-login)
+
+Hospital login credentials: 
+- Id: apolloLko@gmail.com
+- Password: Apollo@123
+
+Patient login credentials:
+- Id: pranjay1@gmail.com
+- Password: Hellosrm@1
 
 ## Installation
 - npm install
