@@ -1,9 +1,9 @@
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Hospitals } from 'src/app/models/hospitals';
 import { HospitalService } from 'src/app/services/hospital.service';
 import { DashboardPatientComponent } from '../dashboard-patient/dashboard-patient.component';
-
 @Component({
   selector: 'app-hosp-details-dialog',
   templateUrl: './hosp-details-dialog.component.html',

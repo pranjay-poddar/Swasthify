@@ -9,7 +9,9 @@ import { Hospitals } from '../models/hospitals';
 })
 export class HospitalService {
 
-  private baseUrl = "https://swasthify-server.herokuapp.com/api/v1/";
+  // private baseUrl = "https://swasthify-server.herokuapp.com/api/v1/";
+  private baseUrl = "http://localhost:8080/api/v1/";
+  
   constructor(private httpClient : HttpClient) { }
   //sign up hospital
   signUpHospital(HSForm : any) : Observable<any>{

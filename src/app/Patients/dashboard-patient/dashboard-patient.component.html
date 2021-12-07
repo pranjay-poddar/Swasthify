@@ -125,13 +125,25 @@
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-1 grow">
                                     <h1 class="card-head text-center" [@expand]>Vaccines</h1>
-                                    <h1 class="card-head2 text-center" [@expand]>{{ totService.vaccine1+totService.vaccine2 }}</h1>
+                                    <h1 class="card-head2 text-center" [@expand] *ngIf="totService.vaccine1+totService.vaccine2">{{ totService.vaccine1+totService.vaccine2 }}</h1>
+
+                                    <div class="d-flex justify-content-center">
+                                        <div [hidden]="totService.vaccine1+totService.vaccine2">
+                                            <mat-spinner [diameter]="40" class="stats_spinner" mode="indeterminate"></mat-spinner>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-2 grow">
                                     <h1 class="card-head text-center" [@expand]>Beds</h1>
                                     <h1 class="card-head2 text-center" [@expand]>{{ totService.isolationBeds }}</h1>
+                                    <div class="d-flex justify-content-center">
+                                        <div [hidden]="totService.isolationBeds">
+                                            <mat-spinner [diameter]="40" class="stats_spinner" mode="indeterminate"></mat-spinner>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -142,12 +154,22 @@
                                         O<sup>2</sup> Cylinders
                                     </h1>
                                     <h1 class="card-head2 text-center" [@expand]>{{ totService.oxygenCylinders }}</h1>
+                                    <div class="d-flex justify-content-center">
+                                        <div [hidden]="totService.oxygenCylinders">
+                                            <mat-spinner [diameter]="40" class="stats_spinner" mode="indeterminate"></mat-spinner>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-4 grow">
                                     <h1 class="card-head text-center" [@expand]>ICUs</h1>
                                     <h1 class="card-head2 text-center" [@expand]>{{ totService.icuBeds }}</h1>
+                                    <div class="d-flex justify-content-center">
+                                        <div [hidden]="totService.icuBeds">
+                                            <mat-spinner [diameter]="40" mode="indeterminate"></mat-spinner>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +190,8 @@
                 <button type="button" class="btn btn-primary infobtn grow" (click)="findHospitals()">Search</button>
             </div>
 
-            <div class="table-responsive-sm tablem" *ngIf="hospitalDetails.length > 0">
+            <!-- <div class="table-responsive-sm tablem" *ngIf="hospitalDetails.length > 0"> -->
+            <div class="table-responsive-sm tablem" *ngIf="hospitalDetails">
                 <table class="table table-container ">
                     <thead>
                         <tr>
@@ -183,16 +206,16 @@
                             <td>{{ a.emailId}}</td>
                             <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
 
-                            <div class="d-flex justify-content-center">
-                                <div [hidden]=" a">
-                                    <mat-spinner mode="indeterminate"></mat-spinner>
-                                    <br>
-                                    <h4 class="text-center">Loading...</h4>
-                                </div>
-                            </div>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div [hidden]="hospitalDetails">
+                    <mat-spinner mode="indeterminate"></mat-spinner>
+                    <br>
+                    <h4 class="text-center">Loading...</h4>
+                </div>
             </div>
 
 
