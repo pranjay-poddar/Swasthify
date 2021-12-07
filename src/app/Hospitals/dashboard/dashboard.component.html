@@ -20,7 +20,7 @@
                             <label>State</label>
                             <input type="text" class="services" name="state" [(ngModel)]="hospitals.state"><br>
                             <label>City</label>
-                            <input type="text" class="services" name="city" [(ngModel)]="hospitals.city"><br>
+                            <input type="text" class="services" name="city" [(ngModel)]="hospitals.city" (keyup.enter)="submit()"><br>
                         </div>
                         <div *ngIf="step == 2">
                             <h2 class="text-center">Update Services</h2>
@@ -29,14 +29,14 @@
                             <label>ISOLATION BEDS</label>
                             <input type="text" class="services" name="isolationBeds" [(ngModel)]="hospitals.isolationBeds"><br>
                             <label> OXYGEN CYLINDERS</label>
-                            <input type="text" class="services" name="oxygenCylinders" [(ngModel)]="hospitals.oxygenCylinders"><br>
+                            <input type="text" class="services" name="oxygenCylinders" [(ngModel)]="hospitals.oxygenCylinders" (keyup.enter)="submit()"><br>
                         </div>
                         <div *ngIf="step == 3">
                             <h2 class="text-center">Vaccines Available</h2>
                             <label> Covaxin</label>
                             <input type="text" class="services" name="vaccine1" [(ngModel)]="hospitals.vaccine1"><br>
                             <label>Covishield</label>
-                            <input type="text" class="services" name="vaccine2" [(ngModel)]="hospitals.vaccine2"><br>
+                            <input type="text" class="services" name="vaccine2" [(ngModel)]="hospitals.vaccine2" (keyup.enter)="updateEntries()"><br>
                         </div>
                         <div class="clearfix">
                             <button type="button" class="prev-button pull-right" *ngIf="step != 1" (click)="previous()">Prev</button>

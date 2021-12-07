@@ -33,6 +33,11 @@ button {
     flex-direction: column;
 }
 
+#drift-frame-controller,
+.drift-conductor-item .drift-frame-chat .drift-frame-chat-align-right .drift-frame--mobile {
+    display: none !important;
+}
+
 .chatroom_section {
     padding: 10px 20px;
 }

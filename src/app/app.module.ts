@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
@@ -65,7 +66,8 @@ import { ChatComponent } from './chat/chat/chat.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatStepperModule
+    MatStepperModule,
+    MatProgressSpinnerModule
   ],
   providers: [SharingService],
   bootstrap: [AppComponent]
