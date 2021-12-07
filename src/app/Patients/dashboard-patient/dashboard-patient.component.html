@@ -186,7 +186,7 @@
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-12 text-center popularcity">Popular Cities:</div>
-                    <div class="col-md-2 col-sm-3 col-3 text-center city1 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Delhi')">Delhi</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city1 btn btn-sm citybtn3 grow" (click)="findHospitalByDefault('Delhi')">Delhi</div>
                     <div class="col-md-2 col-sm-3 col-3 text-center city2 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Mumbai')">Mumbai</div>
                     <div class="col-md-2 col-sm-3 col-3 text-center city3 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Bangalore')">Bangalore</div>
                     <div class="col-md-2 col-sm-3 col-3 text-center city4 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Chennai')">Chennai</div>
@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="row d-flex justify-content-center">
-                    <a (click)="findIcu()" class="col-md-2 col-sm-4 col-4 text-center city1 btn btn-sm grow citybtn2">
+                    <a (click)="findIcu()" class="col-md-2 col-sm-4 col-4 text-center city1 btn btn-sm grow citybtn4">
                         <span class="icon"><i class="fas fa-hospital serv"></i> </span>
                         <span class="{{ sidenavTitle }}  grow serv"> ICU BEDS</span>
                     </a>
@@ -220,24 +220,27 @@
                 </div>
 
                 <!-- <div class="table-responsive-sm tablem" *ngIf="hospitalDetails.length > 0"> -->
-                <div class="table-responsive-sm tablem" *ngIf="hospitalDetails">
-                    <table class="table table-container ">
-                        <thead>
-                            <tr>
-                                <td>Hospitals</td>
-                                <td>Email Id</td>
-                                <td>Details</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let a of hospitalDetails">
-                                <td>{{ a.hospitalName }}</td>
-                                <td>{{ a.emailId}}</td>
-                                <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
+                <div class="row d-flex justify-content-center tablem">
+                    <div class="col-12 col-md-6">
+                        <div class="table-responsive-sm  text-center" *ngIf="hospitalDetails">
+                            <table class="table table-container ">
+                                <thead>
+                                    <tr>
+                                        <th>Hospitals</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let a of hospitalDetails">
+                                        <td>{{ a.hospitalName }}</td>
 
-                            </tr>
-                        </tbody>
-                    </table>
+                                        <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <div class=" row">
                     <div class="col-12 d-flex justify-content-center">

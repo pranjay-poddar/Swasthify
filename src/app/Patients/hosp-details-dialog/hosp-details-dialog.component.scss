@@ -1,15 +1,19 @@
-.content-box{
+.content-box {
     height: 12em;
     width: 20em;
     font-size: 15px;
     font-weight: 800;
     line-height: 25px;
+    overflow-x: hidden;
 }
-.start-box{
+
+.start-box {
     background-color: #2e4ead;
     font-weight: 800;
     color: white;
 }
-.btn{
+
+.btn {
+    margin-top: 10px;
     background-color: #2e4ead;
 }
