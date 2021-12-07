@@ -10,8 +10,8 @@ import { TotalService } from '../models/total-service';
 export class PatientService {
 
   constructor(private httpClient : HttpClient) { }
-  // baseUrl = "https://swasthify-server.herokuapp.com/api/v2/";
-  baseUrl = "http://localhost:8080/api/v2/";
+  baseUrl = "https://swasthify-server.herokuapp.com/api/v2/";
+  // baseUrl = "http://localhost:8080/api/v2/";
   //get details
   public getTotalServices() : Observable<TotalService>{
     return this.httpClient.get<TotalService>(this.baseUrl+"all-services")
