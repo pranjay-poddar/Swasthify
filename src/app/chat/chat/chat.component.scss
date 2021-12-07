@@ -6,10 +6,28 @@ $color-blue--2: #5fc9f8;
     padding: 0;
 }
 
+.head {
+    font-size: 600;
+    color: white;
+    font-size: 18px;
+}
+
+.leave {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    padding: 10px;
+    text-decoration: none;
+    z-index: 100;
+}
+
 .chatbox {
-    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(0, 152, 155, 1) 0.1%, rgba(0, 94, 120, 1) 94.2%);
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(0, 152, 155, 0.5) 0.1%, rgba(0, 94, 120, 1) 94.2%);
     background-image: url('../../../assets/images/bg.png');
     min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 p,
@@ -65,7 +83,7 @@ button {
     margin: 0;
     display: flex;
     flex-direction: column;
-    height: 60vh;
+    height: 52vh;
     overflow: scroll;
 }
 
@@ -174,7 +192,7 @@ button {
     color: #fff;
     background-color: #2f8a8d;
     border-color: #2f8a8d;
-    border-radius: 50px !important;
+    border-radius: 5px !important;
     box-shadow: none;
 }
 
@@ -222,7 +240,7 @@ button {
     .chatroom {
         max-width: 95%;
         width: 95%;
-        margin-top: 0;
+        margin-top: 6vh;
         border-radius: 0px;
     }
     .chatroom_history_list {
@@ -232,7 +250,7 @@ button {
         display: flex;
         border-radius: 0px;
         flex-direction: column;
-        min-height: 65vh;
+        max-height: 50vh;
         overflow: scroll;
     }
     #input-user {

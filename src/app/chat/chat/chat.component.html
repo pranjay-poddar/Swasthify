@@ -1,10 +1,12 @@
+<a routerLink="/home" class="badge badge-danger leave">Leave Chat Room</a>
 <div class="chatbox">
     <div class="container chatr">
         <div class="row">
             <div class="chatroom col-md-10 col-sm-12 col-xs-12 col-lg-10 d-flex justify-content-center">
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 d-flex justify-content-center">
                     <div class="chatroom_section chatroom_history">
-
+                        <h3 class="text-center head">Swasthify Chat Forum</h3>
+                        <hr>
                         <ul class="list-group list-group-flush chatroom_history_list" #scrollMe>
                             <div *ngFor="let chatMessage of webSocketService.chatMessages">
                                 <li *ngIf="chatMessage.emailId == emailId" class="list-group-item chatroom_history_list_item chatroom_history_list_right chatroom_history_list_item--grey">
@@ -15,7 +17,6 @@
                                     <strong>{{chatMessage.user}} : </strong>
                                     <span>{{chatMessage.message}}</span>
                                 </li>
-
                             </div>
                         </ul>
                         <div class="chatroom_history_entering">
@@ -35,7 +36,7 @@
                                     <input type="text" class="form-control" Placeholder="Type your message here" name="message" id="input-message" ngModel>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary submit  grow d-flex justify-content-center">Send</button>
+                                    <button type="submit" class="btn btn-primary submit  grow ">Send <i class="fa fa-paper-plane" aria-hidden="true"> </i></button>
                                 </div>
                             </div>
                         </form>

@@ -80,6 +80,19 @@
             </button>
             </div>
         </div>
+        <hr />
+        <div *ngIf="mode != 'result'">
+            <div class="text-center">
+                <!-- <button class="btn grow btn-back btn-primary" (click)="mode = 'quiz'">Back</button> -->
+                <button class="btn grow btn-submit btn-primary" (click)="onSubmit()">
+              Submit
+            </button>
+                <button class="btn grow btn-review btn-info" (click)="mode = 'review'">
+              Review
+            </button>
+            </div>
+        </div>
+
         <div class="result" *ngIf="mode == 'result'">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -119,17 +132,9 @@
                 <a class="badge badge-info" href="/self-analysis">Take Another Self-Analysis </a>
             </div>
         </div>
-        <hr />
-        <div *ngIf="mode != 'result'">
-            <div class="text-center">
-                <!-- <button class="btn grow btn-back btn-primary" (click)="mode = 'quiz'">Back</button> -->
-                <button class="btn grow btn-submit btn-primary" (click)="onSubmit()">
-              Submit
-            </button>
-                <button class="btn grow btn-review btn-info" (click)="mode = 'review'">
-              Review
-            </button>
-            </div>
-        </div>
+        <br>
+        <br>
+
+
     </div>
 </div>
