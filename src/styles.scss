@@ -10,6 +10,11 @@ $pink: #f3797e;
     box-shadow: inset 0 0 4px #707070;
 }
 
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: rgb(26, 26, 26) !important;
+}
+
 ::-webkit-scrollbar-thumb {
     background: $blue;
     border-radius: 100px;

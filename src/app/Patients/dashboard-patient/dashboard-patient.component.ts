@@ -90,6 +90,12 @@ export class DashboardPatientComponent implements OnInit {
       this.subscription.unsubscribe();
     }
   }
+
+findHospitalByDefault(data:any){
+  this.city = data;
+  this.findHospitals();
+}
+
   findHospitals(){
     setTimeout(() => {
       this.PatientService.getDetailsOfHospitalsByCity(this.city).subscribe((data) => {

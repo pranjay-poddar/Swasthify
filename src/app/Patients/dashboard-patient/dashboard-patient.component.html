@@ -43,7 +43,7 @@
         </li> -->
 
                 <li class="text-center">
-                    <span class=" {{ sidenavTitle }} t grow text-center badge badge-light cat">Select Category</span>
+                    <span class=" {{ sidenavTitle }} t grow text-center badge badge-light cat">Select Service</span>
                 </li>
                 <li>
                     <a (click)="findIcu()">
@@ -95,7 +95,8 @@
                 <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ">
                     <div class="row">
                         <div class="col-8 ">
-                            <h1 class="head1">Welcome {{ patient.name }}</h1>
+                            <h1 class="head1">Welcome<span class="head1 badge userinfoname ">{{ patient.name }}</span>
+                            </h1>
                         </div>
                         <div class="col-4 ">
                             <span class="dateTime-mobile ">{{date| date : 'dd-MM-yyyy'}}</span>
@@ -138,7 +139,7 @@
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-2 grow">
                                     <h1 class="card-head text-center" [@expand]>Beds</h1>
-                                    <h1 class="card-head2 text-center" [@expand]>{{ totService.isolationBeds }}</h1>
+                                    <h1 class="card-head2 text-center" [@expand] *ngIf="totService.isolationBeds">{{ totService.isolationBeds }}</h1>
                                     <div class="d-flex justify-content-center">
                                         <div [hidden]="totService.isolationBeds">
                                             <mat-spinner [diameter]="40" class="stats_spinner" mode="indeterminate"></mat-spinner>
@@ -153,7 +154,7 @@
                                     <h1 class="card-head text-center" [@expand]>
                                         O<sup>2</sup> Cylinders
                                     </h1>
-                                    <h1 class="card-head2 text-center" [@expand]>{{ totService.oxygenCylinders }}</h1>
+                                    <h1 class="card-head2 text-center" [@expand] *ngIf="totService.oxygenCylinders">{{ totService.oxygenCylinders }}</h1>
                                     <div class="d-flex justify-content-center">
                                         <div [hidden]="totService.oxygenCylinders">
                                             <mat-spinner [diameter]="40" class="stats_spinner" mode="indeterminate"></mat-spinner>
@@ -164,7 +165,7 @@
                             <div class="col-6 d-flex justify-content-center">
                                 <div class="card stats c-4 grow">
                                     <h1 class="card-head text-center" [@expand]>ICUs</h1>
-                                    <h1 class="card-head2 text-center" [@expand]>{{ totService.icuBeds }}</h1>
+                                    <h1 class="card-head2 text-center" [@expand] *ngIf=" totService.icuBeds">{{ totService.icuBeds }}</h1>
                                     <div class="d-flex justify-content-center">
                                         <div [hidden]="totService.icuBeds">
                                             <mat-spinner [diameter]="40" mode="indeterminate"></mat-spinner>
@@ -176,81 +177,115 @@
                     </div>
                 </div>
             </div>
+            <section>
+                <div class="container guideline">
+                    <p class="text-muted"> 1) Search for hospitals in your city.</p>
+                    <p class="text-muted"> 2) Select required filters for hospital services from left list.</p>
+                    <!-- <p class="text-muted"> 3) Select details in the table below to know more.</p> -->
 
-            <div class="container guideline">
-                <p class="text-muted"> 1) Search for hospitals in your city.</p>
-                <p class="text-muted"> 2) Select required filters for hospital services from left list.</p>
-                <!-- <p class="text-muted"> 3) Select details in the table below to know more.</p> -->
-
-            </div>
-
-            <div class="check-hospitals text-center">
-                <label class="check-city">Check for Hospitals in your City: </label>
-                <input type="text" [(ngModel)]="city" name="city" (keyup.enter)="findHospitals()">
-                <button type="button" class="btn btn-primary infobtn grow" (click)="findHospitals()">Search</button>
-            </div>
-
-            <!-- <div class="table-responsive-sm tablem" *ngIf="hospitalDetails.length > 0"> -->
-            <div class="table-responsive-sm tablem" *ngIf="hospitalDetails">
-                <table class="table table-container ">
-                    <thead>
-                        <tr>
-                            <td>Hospitals</td>
-                            <td>Email Id</td>
-                            <td>Details</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let a of hospitalDetails">
-                            <td>{{ a.hospitalName }}</td>
-                            <td>{{ a.emailId}}</td>
-                            <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="d-flex justify-content-center">
-                <div [hidden]="hospitalDetails">
-                    <mat-spinner mode="indeterminate"></mat-spinner>
-                    <br>
-                    <h4 class="text-center">Loading...</h4>
                 </div>
-            </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 text-center popularcity">Popular Cities:</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city1 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Delhi')">Delhi</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city2 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Mumbai')">Mumbai</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city3 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Bangalore')">Bangalore</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city4 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Chennai')">Chennai</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city5 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Kolkata')">Kolkata</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city6 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Lucknow')">Lucknow</div>
+                </div>
+
+                <div class="check-hospitals text-center">
+                    <label class="check-city">Search Hospitals in your City: </label>
+                    <input type="text" placeholder="City Name" [(ngModel)]="city" name="city" (keyup.enter)="findHospitals()">
+                    <button type="button" class="btn btn-primary infobtn grow" (click)="findHospitals()">Search</button>
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <a (click)="findIcu()" class="col-md-2 col-sm-4 col-4 text-center city1 btn btn-sm grow citybtn2">
+                        <span class="icon"><i class="fas fa-hospital serv"></i> </span>
+                        <span class="{{ sidenavTitle }}  grow serv"> ICU BEDS</span>
+                    </a>
+                    <a (click)="findOxygencylinders()" class="col-md-2 col-sm-4 col-4 text-center city2 btn btn-sm grow citybtn2">
+                        <span class="icon"><i class="fas fa-fire-extinguisher grow serv"></i></span>
+                        <span class="{{ sidenavTitle }}  grow serv"> O2 Cylinders</span>
+                    </a>
+                    <a (click)="findVaccines()" class="col-md-2 col-sm-4 col-4 text-center city3 btn btn-sm grow citybtn2">
+                        <span class="icon"><i class="fas fa-syringe grow serv"></i></span>
+                        <span class="{{ sidenavTitle }}  grow serv"> Vaccine</span>
+                    </a>
+                    <a (click)="findIsolationBeds()" class="col-md-2 col-sm-4 col-4 text-center city4 btn btn-sm grow citybtn2">
+                        <span class="icon"><i class="fas fa-bed grow serv"></i></span>
+                        <span class="{{ sidenavTitle }}  grow serv"> Beds</span>
+                    </a>
+                </div>
+
+                <!-- <div class="table-responsive-sm tablem" *ngIf="hospitalDetails.length > 0"> -->
+                <div class="table-responsive-sm tablem" *ngIf="hospitalDetails">
+                    <table class="table table-container ">
+                        <thead>
+                            <tr>
+                                <td>Hospitals</td>
+                                <td>Email Id</td>
+                                <td>Details</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let a of hospitalDetails">
+                                <td>{{ a.hospitalName }}</td>
+                                <td>{{ a.emailId}}</td>
+                                <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class=" row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div [hidden]="city">
+                            <mat-spinner [diameter]="40" mode="indeterminate"></mat-spinner>
+                        </div>
+                    </div>
+
+                    <h4 [hidden]="city" class="text-center" style="margin-top: 10px; font-weight: 600;">Please Enter City</h4>
 
 
-            <div class="row" id="card3">
-                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
-                    <div class="card stats3 c-5">
-                        <h1 class="card-head text-center">Self Analysis</h1>
-                        <a routerLink="/self-analysis" class="text-center">
-                            <h1 class="card-head4 text-center btn btn-primary grow" [@expand]>
-                                Try Now
-                            </h1>
-                        </a>
+                </div>
+
+
+
+                <div class="row" id="card3">
+                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
+                        <div class="card stats3 c-5">
+                            <h1 class="card-head text-center">Self Analysis</h1>
+                            <a routerLink="/self-analysis" class="text-center">
+                                <h1 class="card-head4 text-center btn btn-primary grow" [@expand]>
+                                    Try Now
+                                </h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
+                        <div class="card stats3 c-6">
+                            <h1 class="card-head text-center">Emergency SOS</h1>
+                            <a href="tel: +91-1234567890" class="text-center">
+                                <h1 class="card-head3 text-center btn btn-danger grow" [@expand]>
+                                    Call
+                                </h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
+                        <div class="card stats3 c-7">
+                            <h1 class="card-head text-center">Resources</h1>
+                            <a routerLink="/resources" class="text-center">
+                                <h1 class="card-head4 text-center btn btn-primary grow" [@expand]>
+                                    Try Now
+                                </h1>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
-                    <div class="card stats3 c-6">
-                        <h1 class="card-head text-center">Emergency SOS</h1>
-                        <a href="tel: +91-1234567890" class="text-center">
-                            <h1 class="card-head3 text-center btn btn-danger grow" [@expand]>
-                                Call
-                            </h1>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 d-flex justify-content-center">
-                    <div class="card stats3 c-7">
-                        <h1 class="card-head text-center">Resources</h1>
-                        <a routerLink="/resources" class="text-center">
-                            <h1 class="card-head4 text-center btn btn-primary grow" [@expand]>
-                                Try Now
-                            </h1>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
     </div>
 
