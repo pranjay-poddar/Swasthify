@@ -3,13 +3,16 @@
 <p align="center">
 <img src="https://github.com/pranjay-poddar/Swasthify/blob/pranjay/src/assets/images/Swasthify_gif.gif" width="700" title="Swasthify Poster">
 </p >
-
+<div  align="center">
+  
 [![Build Status](https://img.shields.io/circleci/project/all-contributors/all-contributors/master.svg)](https://circleci.com/gh/all-contributors/workflows/all-contributors/tree/master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/all-contributors/localized.svg)](https://crowdin.com/project/all-contributors)
 [![Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e30784c5-9efd-4f20-8a47-13f3fb899613/deploy-status)](https://app.netlify.com/sites/allcontributors-org/deploys)
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/e30784c5-9efd-4f20-8a47-13f3fb899613/deploy-status)](https://app.netlify.com/sites/allcontributors-org/deploys) -->
 [![Pull Reminders](https://pullreminders.com/badge.svg)](https://pullreminders.com?ref=badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/pranjay-poddar/Swasthify?color=yellow)
+  
+  </div>
 
 ## About Us 
 
