@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="main-body">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb details2" class="main-breadcrumb">
+            <ol class="breadcrumb details2">
+                <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+                <li class="breadcrumb-item"> <a (click)="backroute()" class="link" style="text-decoration: underline;color: blue;cursor: pointer;">Dashboard</a></li>
+                <li class=" breadcrumb-item active " aria-current="page ">User Profile</li>
+            </ol>
+        </nav>
+        <!-- /Breadcrumb -->
+
+        <div class="row gutters-sm ">
+            <div class="col-md-4 mb-3 ">
+                <div class="card ">
+                    <div class="card-body ">
+                        <div class="d-flex flex-column align-items-center text-center ">
+                            <img src="../../assets/images/userimg.png " alt="Admin " class="rounded-circle " width="150 ">
+                            <div class="mt-3 ">
+                                <h3 class="black ">Patient Profile</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-sm-12 col-xl-12 col-lg-12 col-md-12 ">
+                        <div class="d-flex justify-content-center ">
+                            <img class="social-svg " src="../../assets/images/profile-details.svg ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 ">
+                <div class="card mb-3 details ">
+                    <div class="card-body ">
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 ">Name</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary text ">
+                                {{patient.name}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 ">Email</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary text ">
+                                {{patient.emailId}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 ">Phone</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary text ">
+                                {{patient.contact}}
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-6 col-md-6 d-flex justify-content-center ">
+                        <button class="badge badge-danger changepass" (click)="changePassword(patient.emailId)">Change Password</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row d-flex justify-content-center" *ngIf="cpass">
+                    <div class="col-10 col-md-6 col-lg-6 card">
+                        <form [formGroup]="ChangePassForm">
+
+                            <mat-form-field>
+                                <input matInput type="password" placeholder="Password" formControlName="pass">
+                                <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
+                                <mat-error *ngIf="pass?.invalid && pass?.touched">
+                                    Please enter Password in correct format
+                                </mat-error>
+                            </mat-form-field>
+                            <br>
+
+                            <mat-form-field>
+                                <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
+
+                                <mat-error *ngIf="conPass?.invalid && conPass?.touched">
+                                    Please enter Password in correct format
+                                </mat-error>
+                                <mat-error *ngIf="conPass?.errors?.confirmedValidator">
+                                    Passwords does not match
+                                </mat-error>
+                            </mat-form-field>
+
+
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="ChangePassForm.invalid" color="primary">Submit</button>
+                            </div>
+                            <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

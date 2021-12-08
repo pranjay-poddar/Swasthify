@@ -6,7 +6,7 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
 import {MatDialog} from '@angular/material/dialog';
 import { HospDetailsDialogComponent } from '../hosp-details-dialog/hosp-details-dialog.component';
 import { Subscription, timer } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Patients } from 'src/app/models/patients';
 import Swal from 'sweetalert2';
 import { ChatDataTransferService } from 'src/app/services/chat-data-transfer.service';
@@ -61,7 +61,7 @@ export class DashboardPatientComponent implements OnInit {
   };
 
   totService : TotalService = new TotalService();
-  constructor(private PatientService : PatientService, public dialog: MatDialog, private route : ActivatedRoute, private chatService : ChatDataTransferService) { }
+  constructor(private PatientService : PatientService, public dialog: MatDialog, private route : ActivatedRoute,private router: Router, private chatService : ChatDataTransferService) { }
 
   ngOnInit(): void {
     // Using Basic Interval for clock
@@ -91,6 +91,7 @@ export class DashboardPatientComponent implements OnInit {
     }
   }
 
+ 
 findHospitalByDefault(data:any){
   this.city = data;
   this.findHospitals();
@@ -182,6 +183,9 @@ findHospitalByDefault(data:any){
       });
     },2000);
     this.hospitalDetails = temp;
+  }
+  profile(){
+    this.router.navigate(['/p-profile',this.id]);
   }
 
   

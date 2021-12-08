@@ -13,6 +13,7 @@ import { SelfAnalysisComponent } from './common-services/self-analysis/self-anal
 import { ResourcesComponent } from './common-services/resources/resources.component';
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
 import { ChatComponent } from './chat/chat/chat.component';
+import { ProfilePatientComponent } from './Patients/profile-patient/profile-patient.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'self-analysis', component: SelfAnalysisComponent },
   { path: 'resources', component: ResourcesComponent },
   { path: 'our-products', component: OurProductsComponent },
+  { path: 'p-profile/:id', component: ProfilePatientComponent },
   { path: 'chat', component: ChatComponent }
 ];
 

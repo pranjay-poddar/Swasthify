@@ -10,8 +10,8 @@ import { TotalService } from '../models/total-service';
 export class PatientService {
 
   constructor(private httpClient : HttpClient) { }
-  baseUrl = "https://swasthify-server.herokuapp.com/api/v2/";
-  // baseUrl = "http://localhost:8080/api/v2/";
+  // baseUrl = "https://swasthify-server.herokuapp.com/api/v2/";
+  baseUrl = "http://localhost:8080/api/v2/";
   //get details
   public getTotalServices() : Observable<TotalService>{
     return this.httpClient.get<TotalService>(this.baseUrl+"all-services")
@@ -28,6 +28,10 @@ export class PatientService {
   public loginPatient(PLoginForm : any) : Observable<any>{
     return this.httpClient.post<any>(this.baseUrl+"login-patient", PLoginForm);
   }
+  //change password 
+  // public changePassPatient(email : any) : Observable<any>{
+  //   return this.httpClient.post<any>(this.baseUrl+"login-patient", email);
+  // }
   //get patitent details by id
   public getPatient(id : number) : Observable<Patients>{
     return this.httpClient.get<Patients>(this.baseUrl+"patient-details/"+id);

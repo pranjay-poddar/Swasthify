@@ -32,6 +32,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharingService } from './services/sharing.service';
 import { ChatComponent } from './chat/chat/chat.component';
+import { ProfilePatientComponent } from './Patients/profile-patient/profile-patient.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ChatComponent } from './chat/chat/chat.component';
     ResourcesComponent,
     OurProductsComponent,
     ChatComponent,
+    ProfilePatientComponent,
   ],
   imports: [
     BrowserModule,
