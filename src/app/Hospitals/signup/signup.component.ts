@@ -1,9 +1,11 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { SharingService } from 'src/app/services/sharing.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +22,7 @@ export class SignupComponent implements OnInit {
   HSForm !: FormGroup;
   err ! : String;
   light ! : string;
-  constructor(private fb: FormBuilder, private hospService : HospitalService, private sharingService:SharingService) { }
+  constructor(private fb: FormBuilder,private router:Router, private hospService : HospitalService, private sharingService:SharingService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -106,7 +108,7 @@ return this.HSForm.get('contact');
       Swal.fire({  
         icon: 'success',  
         title: 'Thank You...',  
-        text: 'Information Submitted Succesfully!',  
+        text: 'Signup Succesful!',  
         footer: '<a href="hospital-login">Login</a>'  
       })
     },
@@ -126,6 +128,7 @@ return this.HSForm.get('contact');
     password: '',
     cpassword: ''
   });
+  this.router.navigate(['/hospital-login']);
  
 }
   }

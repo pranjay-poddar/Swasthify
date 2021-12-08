@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patient.service';
 import Swal from 'sweetalert2';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
@@ -20,7 +20,7 @@ export class SignupPatientComponent implements OnInit {
   
   PSForm !: FormGroup;
   light ! : string;
-  constructor(private fb: FormBuilder, private patientService : PatientService, private sharingService:SharingService) { }
+  constructor(private fb: FormBuilder, private router: Router,private patientService : PatientService, private sharingService:SharingService) { }
 
   ngOnInit(): void {
     function ConfirmedValidator(controlName: string, matchingControlName: string){
@@ -106,15 +106,12 @@ return this.PSForm.get('contact');
       Swal.fire({  
         icon: 'success',  
         title: 'Thank You...',  
-        text: 'Information Submitted Succesfully!',  
+        text: 'Signup Succesful!',  
         footer: '<a href="patient-login">Login</a>'  
-      
   });
-    },
+},
     (Error) =>{alert(Error.error.message)}    
-    );
-
-      
+ );
     this.PSForm.reset({
       name: '',
       email: '',
@@ -122,7 +119,7 @@ return this.PSForm.get('contact');
       password: '',
       cpassword: ''
     });
-   
+   this.router.navigate(['/patient-login']);
   }
 
 }

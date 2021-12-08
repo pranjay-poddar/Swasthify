@@ -4,7 +4,8 @@ import { Patients } from 'src/app/models/patients';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
-
+import { ChangePassword } from 'src/app/models/changePass';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-profile-patient',
   templateUrl: './profile-patient.component.html',
@@ -15,12 +16,14 @@ import { flyInOut , expand} from '../../Utilities/animations/animation';
   ]
 })
 export class ProfilePatientComponent implements OnInit {
-
+  updatedpass : ChangePassword = new ChangePassword();
   id!:number;
   patient:Patients = new Patients();
-  cpass:boolean = false;
+  cpass:boolean = false; // for change password form toggle
+  dpass:boolean = false; // for delete profile toggle
   email!:any;
   ChangePassForm !: FormGroup;
+  DeleteForm !: FormGroup;
   constructor(private fb: FormBuilder,private route:ActivatedRoute,private router:Router,private patientservice:PatientService) { }
 
   ngOnInit(): void {
@@ -46,8 +49,33 @@ export class ProfilePatientComponent implements OnInit {
           }
       }
   }
+
+  // Change Password Form ----------------------------------------
+
     this.ChangePassForm  = this.fb.group({
+      currentPassword:['',[
+        Validators.required,
+        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
+        Validators.minLength(8)
+      ]],
+      newPassword:['',[
+        Validators.required,
+        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
+        Validators.minLength(8)
+      ]],
+      confirmNewPassword:['',[
+        Validators.required,
+        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
+        Validators.minLength(8),
+      ]]
     
+    }, { 
+      validator: ConfirmedValidator('newPassword', 'confirmNewPassword')
+    },
+    );
+
+    //Delete Form -------------------------------------------------
+    this.DeleteForm  = this.fb.group({
       pass:['',[
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
@@ -57,58 +85,115 @@ export class ProfilePatientComponent implements OnInit {
         Validators.required,
         Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
         Validators.minLength(8),
+      ]],
+      agree:[false,[
+        Validators.requiredTrue
       ]]
-    
     }, { 
       validator: ConfirmedValidator('pass', 'conPass')
-    });
+    }
+    
+    );
+  }
+  
+
+
+
+  get currentPassword(){
+    return this.ChangePassForm .get('currentPassword');
   }
 
+  get newPassword(){
+    return this.ChangePassForm .get('newPassword');
+  }
 
+  get confirmNewPassword(){
+    return this.ChangePassForm .get('confirmNewPassword');
+  }
+
+  // Delete FOrm Fields ---------------------
 
   get pass(){
-    return this.ChangePassForm .get('pass');
+    return this.DeleteForm.get('pass');
   }
 
   get conPass(){
-    return this.ChangePassForm .get('conPass');
+    return this.DeleteForm.get('conPass');
   }
-  submit(){
-    console.log(this.ChangePassForm .value);
-  //   this.patientService.registerPatient(this.ChangePassForm .value).subscribe((data) => {
-  //     Swal.fire({  
-  //       icon: 'success',  
-  //       title: 'Thank You...',  
-  //       text: 'Information Submitted Succesfully!',  
-  //       footer: '<a href="patient-login">Login</a>'  
-      
-  // });
-  //   },
-  //   (Error) =>{alert(Error.error.message)}    
-  //   );
 
+  get agree(){
+    return this.DeleteForm.get('agree');
+  }
+
+  // Change Password Submit ------------------------------- 
+  submit(){
+    this.patientservice.changePassPatient(this.ChangePassForm .value,this.id).subscribe(data=>{
+      Swal.fire({  
+        icon: 'success',  
+        title: 'Thank You...',  
+        text: 'Password Changed Succesfully!',  
+      })
+    },
+    (Error) =>{
+      Swal.fire({  
+        icon: 'error',  
+        title: 'Oops...Error',  
+        text: Error.error.message,  
+      })  
+    });
       
     this.ChangePassForm .reset({
-      name: '',
-      email: '',
-      contact: '',
-      password: '',
-      cpassword: ''
+      currentPassword: '',
+      NewPasswor: '',
+      confirmNewPasswor: '',
     });
    
   }
+
+  // Delete Patient Submit -----------------------------------
+  submitDelete(){
+    this.patientservice.deletePatient(this.id).subscribe(data=>{
+      Swal.fire({  
+        icon: 'success',  
+        title: 'Account Deleted Successfully',  
+      })
+    },
+    (Error) =>{
+      Swal.fire({  
+        icon: 'error',  
+        title: 'Oops...Error',  
+        text: Error.error.message,  
+      })  
+    });
+      
+   this.router.navigate(['/patient-login']);
+   
+  }
+
+  // breadcrum route to patient dashboard 
   backroute(){
     this.router.navigate(['/patient-dashboard',this.id]);
     }
 
-    changePassword(data:any){
+  // For Change Password Toggle-----------------
+  changePassword(data:any){
       if(this.cpass === false){
         this.cpass = true;
       }
       else{
         this.cpass=false;
+      }    
+this.email = data; // set email
+    }
+ // For Delete Profile Toggle-------------------
+    DeleteProfile(){
+      if(this.dpass === false){
+        this.dpass = true;
       }
-      
-this.email = data;
+      else{
+        this.dpass=false;
+      }   
     }
 }
+
+

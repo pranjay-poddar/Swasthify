@@ -67,30 +67,39 @@
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-6 col-md-6 d-flex justify-content-center ">
-                        <button class="badge badge-danger changepass" (click)="changePassword(patient.emailId)">Change Password</button>
+                        <button class="badge badge-info changepass" (click)="changePassword(patient.emailId)">Change Password</button>
+                    </div>
+                    <div class="col-6 col-md-6 d-flex justify-content-center ">
+                        <button class="badge badge-danger changepass" (click)="DeleteProfile()">Delete Profile</button>
                     </div>
                 </div>
                 <br>
-                <div class="row d-flex justify-content-center" *ngIf="cpass">
-                    <div class="col-10 col-md-6 col-lg-6 card">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 col-md-6 col-lg-6 card" *ngIf="cpass">
                         <form [formGroup]="ChangePassForm">
+                            <mat-form-field>
+                                <input matInput type="password" placeholder="Current Password" formControlName="currentPassword">
+                                <mat-error *ngIf="currentPassword?.invalid && currentPassword?.touched">
+                                    Please enter Password in correct format
+                                </mat-error>
+                            </mat-form-field>
 
                             <mat-form-field>
-                                <input matInput type="password" placeholder="Password" formControlName="pass">
+                                <input matInput type="password" placeholder="New Password" formControlName="newPassword">
                                 <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
-                                <mat-error *ngIf="pass?.invalid && pass?.touched">
+                                <mat-error *ngIf="newPassword?.invalid && newPassword?.touched">
                                     Please enter Password in correct format
                                 </mat-error>
                             </mat-form-field>
                             <br>
 
                             <mat-form-field>
-                                <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
+                                <input matInput type="password" placeholder="Confirm Password" formControlName="confirmNewPassword">
 
-                                <mat-error *ngIf="conPass?.invalid && conPass?.touched">
+                                <mat-error *ngIf="confirmNewPassword?.invalid && confirmNewPassword?.touched">
                                     Please enter Password in correct format
                                 </mat-error>
-                                <mat-error *ngIf="conPass?.errors?.confirmedValidator">
+                                <mat-error *ngIf="confirmNewPassword?.errors?.confirmedValidator">
                                     Passwords does not match
                                 </mat-error>
                             </mat-form-field>
@@ -101,6 +110,32 @@
                                 <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="ChangePassForm.invalid" color="primary">Submit</button>
                             </div>
                             <br>
+                        </form>
+                    </div>
+                    <div class="col-10 col-md-6 col-lg-6 card" *ngIf="dpass">
+                        <form [formGroup]="DeleteForm">
+
+                            <mat-form-field>
+                                <input matInput type="password" placeholder="Password" formControlName="pass">
+                                <mat-error *ngIf="pass?.invalid && pass?.touched">
+                                    Please enter Password in correct format
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
+                                <mat-error *ngIf="conPass?.invalid && conPass?.touched">
+                                    Please enter Password in correct format
+                                </mat-error>
+                                <mat-error *ngIf="conPass?.errors?.confirmedValidator">
+                                    Passwords does not match
+                                </mat-error>
+                            </mat-form-field>
+                            <small class="form-text text-muted">*Account will be permanently deleted.</small>
+                            <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to delete?</mat-checkbox>
+                            <br>
+
+                            <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submitDelete()" [disabled]="DeleteForm.invalid" color="primary">Submit</button>
                         </form>
                     </div>
                 </div>

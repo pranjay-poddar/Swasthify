@@ -108,15 +108,14 @@
 
 .changepass {
     padding: 15px 5px;
-    width: fit-content;
+    width: 130px;
     color: white !important;
     font-size: 14px;
     font-weight: 500;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 756px) {
     .social-svg {
-        width: 42vh;
-        height: 42vh;
+        display: none;
     }
 }
