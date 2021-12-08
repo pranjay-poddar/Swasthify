@@ -134,8 +134,9 @@
                             <small class="form-text text-muted">*Account will be permanently deleted.</small>
                             <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to delete?</mat-checkbox>
                             <br>
-
-                            <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submitDelete()" [disabled]="DeleteForm.invalid" color="primary">Submit</button>
+                            <div class="d-flex justify-content-center">
+                                <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submitDelete()" [disabled]="DeleteForm.invalid" color="primary">Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>

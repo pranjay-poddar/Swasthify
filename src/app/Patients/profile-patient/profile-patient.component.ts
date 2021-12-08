@@ -147,7 +147,7 @@ export class ProfilePatientComponent implements OnInit {
       NewPasswor: '',
       confirmNewPasswor: '',
     });
-   
+    this.router.navigate(['/patient-login']);
   }
 
   // Delete Patient Submit -----------------------------------
