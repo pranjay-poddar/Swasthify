@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { ChangePassword } from '../models/changePass';
 import { Hospitals } from '../models/hospitals';
 
 @Injectable({
@@ -25,7 +26,15 @@ export class HospitalService {
   getHospById(id : number) : Observable<Hospitals>{
     return this.httpClient.get<any>(this.baseUrl+"details/"+id);
   }
-  //update detaisl of hospitals
+  //change password 
+  public changePassHospital(changePass : ChangePassword,id:number) : Observable<any>{
+    return this.httpClient.put<any>(this.baseUrl+"details/"+id, changePass);
+  }
+   //Delete Hospital by id
+   deleteHospital(id:number):Observable <any>{
+    return this.httpClient.delete<any>(this.baseUrl+"hospital-details/"+id);
+  }
+  //update details of hospitals
   updateDetailsOfHospital(id : number, hospital : Hospitals) : Observable<Hospitals>{
     return this.httpClient.put<Hospitals>(this.baseUrl+"add-services/"+id, hospital);
   }

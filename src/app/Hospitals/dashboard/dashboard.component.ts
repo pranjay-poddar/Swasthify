@@ -1,6 +1,6 @@
 import { Component, OnInit , OnDestroy} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { Subscription, timer } from 'rxjs';
 import { Hospitals } from 'src/app/models/hospitals';
 import { HospitalService } from 'src/app/services/hospital.service';
@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
   intervalId:any;
   subscription: any;
   light ! : string;
-  constructor(private hospService: HospitalService, private router: ActivatedRoute, private sharingService:SharingService, private chatService : ChatDataTransferService) { }
+  constructor(private hospService: HospitalService,private route:Router, private router: ActivatedRoute, private sharingService:SharingService, private chatService : ChatDataTransferService) { }
 
   ngOnInit(): void {
     this.light = this.sharingService.getData();
@@ -82,7 +82,9 @@ export class DashboardComponent implements OnInit {
     this.step = this.step + 1;
   }
 
-
+  profile(){
+    this.route.navigate(['/h-profile',this.id]);
+  }
 
   previous() {
     if (this.step == 3) {

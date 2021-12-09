@@ -33,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SharingService } from './services/sharing.service';
 import { ChatComponent } from './chat/chat/chat.component';
 import { ProfilePatientComponent } from './Patients/profile-patient/profile-patient.component';
+import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ProfilePatientComponent } from './Patients/profile-patient/profile-pati
     OurProductsComponent,
     ChatComponent,
     ProfilePatientComponent,
+    ProfileHospitalComponent,
   ],
   imports: [
     BrowserModule,

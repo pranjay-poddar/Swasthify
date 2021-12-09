@@ -10,6 +10,10 @@
 <div class="h-dashboard {{light}}">
     <div class="container">
         <button type="button" class="prev-button pull-right chat-btn" routerLink="/chat" routerLinkActive="itemActive">Join Chat</button>
+        <a (click)="profile()" class="btn btn-primary">
+            <span class="icon"><i class="fas fa-user"></i> </span>
+            <span class="grow">Hospital Profile</span>
+        </a>
         <div class="row align-items-center rows">
             <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
                 <div class="col-12 left-side">
