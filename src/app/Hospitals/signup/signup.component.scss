@@ -42,6 +42,9 @@ $pink:#F3797E;
     #hs_heading {
         color: #fff;
     }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white;
+    }
     .card {
         background-color: #323f4b;
         box-shadow: none;

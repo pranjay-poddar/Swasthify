@@ -39,6 +39,9 @@ $pink:#F3797E;
     .patient-signup {
         background-color: #161625;
     }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white;
+    }
     #ps_heading {
         color: #fff;
     }

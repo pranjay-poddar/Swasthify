@@ -11,6 +11,10 @@ $pink:#F3797E;
     display: none;
 }
 
+.mat-input-element {
+    background-color: transparent;
+}
+
 .hospital-login {
     background-color: #f8f8f8;
     position: relative;
@@ -41,6 +45,9 @@ $pink:#F3797E;
     color: #fff;
     .hospital-login {
         background-color: #161625 !important;
+    }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white;
     }
     #hlogin_heading {
         color: #fff;
