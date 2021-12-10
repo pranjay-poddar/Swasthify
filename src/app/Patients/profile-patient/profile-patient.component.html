@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <div class="row ">
+                <div class="row " [@flyInOut]>
                     <div class="col-sm-12 col-xl-12 col-lg-12 col-md-12 ">
                         <div class="d-flex justify-content-center ">
                             <img class="social-svg " src="../../assets/images/profile-details.svg ">
@@ -38,7 +38,7 @@
                     <div class="card-body ">
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Name</h4>
+                                <h4 class="mb-0 " [@expand]>Name</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{patient.name}}
@@ -47,7 +47,7 @@
                         <hr>
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Email</h4>
+                                <h4 class="mb-0 " [@expand]>Email</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{patient.emailId}}
@@ -56,7 +56,7 @@
                         <hr>
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Contact No.</h4>
+                                <h4 class="mb-0 " [@expand]>Contact No.</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{patient.contact}}
@@ -75,7 +75,7 @@
                 </div>
                 <br>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-10 col-md-6 col-lg-6 card" *ngIf="cpass">
+                    <div [@expand] class="col-10 col-md-6 col-lg-6 card" *ngIf="cpass">
                         <form [formGroup]="ChangePassForm">
                             <mat-form-field>
                                 <span class="input-group-append" (click)="toggleFieldTextType()" style="float: right;position: absolute;margin-left: 95%;">
@@ -124,7 +124,7 @@
                             <br>
                         </form>
                     </div>
-                    <div class="col-10 col-md-6 col-lg-6 card" *ngIf="dpass">
+                    <div [@expand] class="col-10 col-md-6 col-lg-6 card" *ngIf="dpass">
                         <form [formGroup]="DeleteForm">
 
                             <mat-form-field>

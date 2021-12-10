@@ -10,7 +10,11 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-profile-hospital',
   templateUrl: './profile-hospital.component.html',
-  styleUrls: ['./profile-hospital.component.scss']
+  styleUrls: ['./profile-hospital.component.scss'],
+  animations: [
+    flyInOut(),
+    expand()
+  ]
 })
 export class ProfileHospitalComponent implements OnInit {
   updatedpass : ChangePassword = new ChangePassword();

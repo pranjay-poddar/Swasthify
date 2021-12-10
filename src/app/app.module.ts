@@ -35,6 +35,7 @@ import { ChatComponent } from './chat/chat/chat.component';
 import { ProfilePatientComponent } from './Patients/profile-patient/profile-patient.component';
 import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +73,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatDialogModule,
     MatStepperModule,
     MatProgressSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [SharingService],
   bootstrap: [AppComponent]

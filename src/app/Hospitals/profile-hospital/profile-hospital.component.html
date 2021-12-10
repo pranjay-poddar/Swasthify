@@ -18,7 +18,7 @@
                         <div class="d-flex flex-column align-items-center text-center ">
                             <img src="../../assets/images/hospitalimg.png " alt="Admin " class="rounded-circle " width="150 ">
                             <div class="mt-3 ">
-                                <h3 class="black ">Hospital Profile</h3>
+                                <h3 [@expand] class="black ">Hospital Profile</h3>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="card-body ">
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Hospital Name</h4>
+                                <h4 class="mb-0 " [@expand]>Hospital Name</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{hospital.hospitalName}}
@@ -47,7 +47,7 @@
                         <hr>
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Email</h4>
+                                <h4 class="mb-0 " [@expand]>Email</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{hospital.emailId}}
@@ -56,7 +56,7 @@
                         <hr>
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Contact No.</h4>
+                                <h4 class="mb-0 " [@expand]>Contact No.</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{hospital.contact}}
@@ -65,7 +65,7 @@
                         <hr>
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">State</h4>
+                                <h4 class="mb-0 " [@expand]>State</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{hospital.state}}
@@ -74,7 +74,7 @@
                         <hr>
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">City</h4>
+                                <h4 class="mb-0 " [@expand]>City</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
                                 {{hospital.city}}
@@ -84,13 +84,13 @@
                         <h2>Services:</h2>
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">ICU Beds</h4>
+                                <h4 class="mb-0 " [@expand]>ICU Beds</h4>
                             </div>
                             <div class="col-sm-3 text-secondary text ">
                                 {{hospital.icuBeds}}
                             </div>
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Isolation Beds</h4>
+                                <h4 class="mb-0 " [@expand]>Isolation Beds</h4>
                             </div>
                             <div class="col-sm-3 text-secondary text ">
                                 {{hospital.isolationBeds}}
@@ -100,13 +100,13 @@
 
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Covishield</h4>
+                                <h4 class="mb-0 " [@expand]>Covishield</h4>
                             </div>
                             <div class="col-sm-3 text-secondary text ">
                                 {{hospital.vaccine1}}
                             </div>
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Covaxin</h4>
+                                <h4 class="mb-0 " [@expand]>Covaxin</h4>
                             </div>
                             <div class="col-sm-3 text-secondary text ">
                                 {{hospital.vaccine2}}
@@ -116,7 +116,7 @@
 
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 ">Oxygen Cylinders</h4>
+                                <h4 class="mb-0 " [@expand]>Oxygen Cylinders</h4>
                             </div>
                             <div class="col-sm-3 text-secondary text ">
                                 {{hospital.oxygenCylinders}}
@@ -137,7 +137,7 @@
                 </div>
                 <br>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-10 col-md-6 col-lg-6 card" *ngIf="cpass">
+                    <div [@expand] class="col-10 col-md-6 col-lg-6 card" *ngIf="cpass">
                         <form [formGroup]="ChangePassForm">
                             <mat-form-field>
                                 <span class="input-group-append" (click)="toggleFieldTextType()" style="float: right;position: absolute;margin-left: 95%;">
@@ -186,7 +186,7 @@
                             <br>
                         </form>
                     </div>
-                    <div class="col-10 col-md-6 col-lg-6 card" *ngIf="dpass">
+                    <div [@expand] class="col-10 col-md-6 col-lg-6 card" *ngIf="dpass">
                         <form [formGroup]="DeleteForm">
 
                             <mat-form-field>
