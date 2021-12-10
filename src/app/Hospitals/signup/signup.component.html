@@ -54,7 +54,11 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Password" formControlName="pass">
+                            <span class="input-group-append" (click)="toggleFieldTextType()" style="float: right;position: absolute;margin-left: 95%;">
+                                <mat-icon *ngIf="fieldTextType">visibility</mat-icon>
+                                <mat-icon *ngIf="!fieldTextType">visibility_off</mat-icon>
+                             </span>
+                            <input matInput [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" formControlName="pass">
                             <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
                             <mat-error *ngIf="password?.invalid && password?.touched">
                                 Please enter Password in correct format
@@ -62,7 +66,11 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Confirm Password" formControlName="conPass">
+                            <span class="input-group-append" (click)="toggleFieldTextType2()" style="float: right;position: absolute;margin-left: 95%;">
+                                <mat-icon *ngIf="fieldTextType2">visibility</mat-icon>
+                                <mat-icon *ngIf="!fieldTextType2">visibility_off</mat-icon>
+                             </span>
+                            <input matInput matInput [type]="fieldTextType2 ? 'text' : 'password'" placeholder="Confirm Password" formControlName="conPass">
 
                             <mat-error *ngIf="cpassword?.invalid && cpassword?.touched">
                                 Please enter Password in correct format

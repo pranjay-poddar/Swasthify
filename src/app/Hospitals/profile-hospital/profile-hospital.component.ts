@@ -21,6 +21,11 @@ export class ProfileHospitalComponent implements OnInit {
   email!:any;
   ChangePassForm !: FormGroup;
   DeleteForm !: FormGroup;
+  fieldTextType: boolean = false;
+  fieldTextType2: boolean = false;
+  fieldTextType3: boolean = false;
+  fieldTextType4: boolean = false;
+  fieldTextType5: boolean = false;
   constructor(private fb: FormBuilder,private route:ActivatedRoute,private router:Router,private hospitalservice:HospitalService) { }
 
   ngOnInit(): void {
@@ -190,4 +195,20 @@ this.email = data; // set email
       }   
     }
 
+     // <!-- Switching method -->
+toggleFieldTextType() {
+  this.fieldTextType = !this.fieldTextType;
+  }
+  toggleFieldTextType2() {
+    this.fieldTextType2 = !this.fieldTextType2;
+    }
+    toggleFieldTextType3() {
+      this.fieldTextType3 = !this.fieldTextType3;
+      }
+      toggleFieldTextType4() {
+        this.fieldTextType4 = !this.fieldTextType4;
+        }
+        toggleFieldTextType5() {
+          this.fieldTextType5 = !this.fieldTextType5;
+          }
 }

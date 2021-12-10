@@ -20,14 +20,8 @@
                         <mat-form-field>
 
                             <span class="input-group-append" (click)="toggleFieldTextType()" style="float: right;position: absolute;margin-left: 95%;">
-                               
-                                <i class="fa"
-                                [ngClass]="{
-                                  'fa-eye-slash': !fieldTextType,
-                                  'fa-eye': fieldTextType
-                                }"></i>
-                                 
-                             
+                                <mat-icon *ngIf="fieldTextType">visibility</mat-icon>
+                                <mat-icon *ngIf="!fieldTextType">visibility_off</mat-icon>
                              </span>
                             <input matInput [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" formControlName="pass">
 

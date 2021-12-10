@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   light !: string;
   fieldTextType: boolean = false;
   
-  eye !:string ;
   constructor(private fb: FormBuilder, private hospService: HospitalService, private router: Router, private sharingService: SharingService) { }
 
   ngOnInit(): void {
@@ -90,9 +89,7 @@ export class LoginComponent implements OnInit {
 
   // <!-- Switching method -->
 toggleFieldTextType() {
-
   this.fieldTextType = !this.fieldTextType;
- 
   }
 }
 
