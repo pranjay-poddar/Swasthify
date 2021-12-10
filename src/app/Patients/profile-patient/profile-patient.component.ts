@@ -188,6 +188,9 @@ export class ProfilePatientComponent implements OnInit {
       else{
         this.cpass=false;
       }    
+      if(this.dpass){
+        this.dpass=!this.dpass;
+      } 
 this.email = data; // set email
     }
  // For Delete Profile Toggle-------------------
@@ -198,6 +201,9 @@ this.email = data; // set email
       else{
         this.dpass=false;
       }   
+      if(this.cpass){
+        this.cpass=!this.cpass;
+      }
     }
     
      // <!-- Switching method -->
