@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
   HLoginForm !: FormGroup;
   err !: String;
   light !: string;
+  fieldTextType: boolean = false;
+  
+  eye !:string ;
   constructor(private fb: FormBuilder, private hospService: HospitalService, private router: Router, private sharingService: SharingService) { }
 
   ngOnInit(): void {
@@ -44,8 +47,8 @@ export class LoginComponent implements OnInit {
 
     this.light = this.sharingService.getData();
     //console.log("light = "+this.light);
-  }
 
+  }
 
 
   get email() {
@@ -55,7 +58,6 @@ export class LoginComponent implements OnInit {
   get password() {
     return this.HLoginForm.get('password');
   }
-
 
 
   submit() {
@@ -84,6 +86,13 @@ export class LoginComponent implements OnInit {
       password: '',
     });
 
+  }
+
+  // <!-- Switching method -->
+toggleFieldTextType() {
+
+  this.fieldTextType = !this.fieldTextType;
+ 
   }
 }
 
