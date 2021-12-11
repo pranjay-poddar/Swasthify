@@ -8,8 +8,22 @@
     padding-top: 0vh;
 }
 
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 130px;
+    background-color: whitesmoke;
+}
+
+.sidenav a:hover {
+    background-color: #3f51b5;
+    color: white;
+}
+
 .container {
-    margin-top: 15vh;
+    margin-top: 1vh;
 }
 
 #datetime {
@@ -112,8 +126,10 @@ button.prev-button {
         flex-direction: column-reverse;
     }
     .right-side {
-        flex-basis: 100%;
-        margin-bottom: 50px;
+        display: none;
+    }
+    .h-dashboard {
+        padding-top: 13vh;
     }
     button.next-button,
     button.prev-button {
@@ -121,6 +137,12 @@ button.prev-button {
     }
     .know-btn {
         width: 100px;
+    }
+}
+
+@media(max-width:556px) {
+    .sidenav {
+        width: 200px;
     }
 }
 
@@ -138,8 +160,8 @@ button.prev-button {
     display: flex;
     justify-content: space-between;
     counter-reset: step;
-    margin-top: 12%;
-    margin-bottom: 15vh;
+    margin-top: -17%;
+    margin-bottom: 10vh;
 }
 
 .prog-bar::before {

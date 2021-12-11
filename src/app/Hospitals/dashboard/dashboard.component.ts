@@ -6,7 +6,9 @@ import { Hospitals } from 'src/app/models/hospitals';
 import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
 import { SharingService } from 'src/app/services/sharing.service';
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { flyInOut, expand } from '../../Utilities/animations/animation';
 import { ChatDataTransferService } from 'src/app/services/chat-data-transfer.service';
 @Component({
@@ -30,7 +32,7 @@ export class DashboardComponent implements OnInit {
   intervalId:any;
   subscription: any;
   light ! : string;
-  constructor(private hospService: HospitalService,private route:Router, private router: ActivatedRoute, private sharingService:SharingService, private chatService : ChatDataTransferService) { }
+  constructor(private breakpointObserver: BreakpointObserver,private hospService: HospitalService,private route:Router, private router: ActivatedRoute, private sharingService:SharingService, private chatService : ChatDataTransferService) { }
 
   ngOnInit(): void {
     this.light = this.sharingService.getData();
@@ -54,6 +56,12 @@ export class DashboardComponent implements OnInit {
 
     
   }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
+
   ngOnDestroy() {
     clearInterval(this.intervalId);
     if (this.subscription) {

@@ -38,7 +38,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { SideNavComponent } from './Utilities/side-nav/side-nav.component';
 import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
 
 @NgModule({
@@ -61,8 +60,7 @@ import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-h
     OurProductsComponent,
     ChatComponent,
     ProfilePatientComponent,
-    SideNavComponent,
-    ProfileHospitalComponent,
+    ProfileHospitalComponent
   ],
   imports: [
     BrowserModule,
