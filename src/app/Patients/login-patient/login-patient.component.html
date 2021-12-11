@@ -18,7 +18,11 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Password" formControlName="pass">
+                            <span class="input-group-append" (click)="toggleFieldTextType()" style="float: right;position: absolute;margin-left: 95%;">
+                                <mat-icon *ngIf="fieldTextType">visibility</mat-icon>
+                                <mat-icon *ngIf="!fieldTextType">visibility_off</mat-icon>
+                             </span>
+                            <input matInput [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" formControlName="pass">
 
                             <mat-error *ngIf="password?.invalid && password?.touched">
                                 Please enter Password in correct format

@@ -11,7 +11,7 @@
                 Swasthify
             </div>
             <ul>
-                <div class="row">
+                <div [@expand] class="row">
                     <div class="col-12">
                         <span class="dateTime justify-content-end">{{date| date : 'dd-MM-yyyy'}}</span>
                     </div>
@@ -98,7 +98,7 @@
                             <h1 class="head1">Welcome<span class="head1 badge userinfoname ">{{ patient.name }}</span>
                             </h1>
                         </div>
-                        <div class="col-4 ">
+                        <div [@expand] class="col-4 ">
                             <span class="dateTime-mobile ">{{date| date : 'dd-MM-yyyy'}}</span>
                             <br>
                             <span class="dateTime-mobile ">{{ time | date: 'hh:mm:ss a' }}</span>
@@ -232,8 +232,8 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let a of hospitalDetails">
-                                        <td>{{ a.hospitalName }}</td>
-                                        <td><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
+                                        <td [@expand]>{{ a.hospitalName }}</td>
+                                        <td [@expand]><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
                                     </tr>
                                 </tbody>
                             </table>

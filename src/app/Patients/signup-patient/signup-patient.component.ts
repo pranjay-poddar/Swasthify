@@ -20,6 +20,8 @@ export class SignupPatientComponent implements OnInit {
   
   PSForm !: FormGroup;
   light ! : string;
+  fieldTextType: boolean = false;
+  fieldTextType2: boolean = false;
   constructor(private fb: FormBuilder, private router: Router,private patientService : PatientService, private sharingService:SharingService) { }
 
   ngOnInit(): void {
@@ -121,5 +123,14 @@ return this.PSForm.get('contact');
     });
    this.router.navigate(['/patient-login']);
   }
+
+   // <!-- Switching method -->
+   toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
+    }
+
+    toggleFieldTextType2() {
+      this.fieldTextType2 = !this.fieldTextType2;
+      }
 
 }

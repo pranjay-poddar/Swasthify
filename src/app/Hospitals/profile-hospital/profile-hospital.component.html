@@ -6,7 +6,7 @@
             <ol class="breadcrumb details2">
                 <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
                 <li class="breadcrumb-item"> <a (click)="backroute()" class="link" style="text-decoration: underline;color: blue;cursor: pointer;">Dashboard</a></li>
-                <li class=" breadcrumb-item active " aria-current="page ">User Profile</li>
+                <li class=" breadcrumb-item active " aria-current="page ">Profile</li>
             </ol>
         </nav>
         <!-- /Breadcrumb -->
@@ -16,18 +16,18 @@
                 <div class="card ">
                     <div class="card-body ">
                         <div class="d-flex flex-column align-items-center text-center ">
-                            <img src="../../assets/images/userimg.png " alt="Admin " class="rounded-circle " width="150 ">
+                            <img src="../../assets/images/hospitalimg.png " alt="Admin " class="rounded-circle " width="150 ">
                             <div class="mt-3 ">
-                                <h3 class="black ">Patient Profile</h3>
+                                <h3 [@expand] class="black ">Hospital Profile</h3>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row " [@flyInOut]>
+                <div class="row ">
                     <div class="col-sm-12 col-xl-12 col-lg-12 col-md-12 ">
                         <div class="d-flex justify-content-center ">
-                            <img class="social-svg " src="../../assets/images/profile-details.svg ">
+                            <img class="social-svg " src="../../assets/images/h-profile.svg ">
                         </div>
                     </div>
                 </div>
@@ -38,10 +38,10 @@
                     <div class="card-body ">
                         <div class="row ">
                             <div class="col-sm-3 ">
-                                <h4 class="mb-0 " [@expand]>Name</h4>
+                                <h4 class="mb-0 " [@expand]>Hospital Name</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
-                                {{patient.name}}
+                                {{hospital.hospitalName}}
                             </div>
                         </div>
                         <hr>
@@ -50,7 +50,7 @@
                                 <h4 class="mb-0 " [@expand]>Email</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
-                                {{patient.emailId}}
+                                {{hospital.emailId}}
                             </div>
                         </div>
                         <hr>
@@ -59,15 +59,77 @@
                                 <h4 class="mb-0 " [@expand]>Contact No.</h4>
                             </div>
                             <div class="col-sm-9 text-secondary text ">
-                                {{patient.contact}}
+                                {{hospital.contact}}
                             </div>
                         </div>
                         <hr>
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>State</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary text ">
+                                {{hospital.state}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>City</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary text ">
+                                {{hospital.city}}
+                            </div>
+                        </div>
+                        <hr>
+                        <h2>Services:</h2>
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>ICU Beds</h4>
+                            </div>
+                            <div class="col-sm-3 text-secondary text ">
+                                {{hospital.icuBeds}}
+                            </div>
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>Isolation Beds</h4>
+                            </div>
+                            <div class="col-sm-3 text-secondary text ">
+                                {{hospital.isolationBeds}}
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>Covishield</h4>
+                            </div>
+                            <div class="col-sm-3 text-secondary text ">
+                                {{hospital.vaccine1}}
+                            </div>
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>Covaxin</h4>
+                            </div>
+                            <div class="col-sm-3 text-secondary text ">
+                                {{hospital.vaccine2}}
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row ">
+                            <div class="col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>Oxygen Cylinders</h4>
+                            </div>
+                            <div class="col-sm-3 text-secondary text ">
+                                {{hospital.oxygenCylinders}}
+                            </div>
+
+                        </div>
+                        <hr>
+
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-6 col-md-6 d-flex justify-content-center ">
-                        <button class="badge badge-info changepass" (click)="changePassword(patient.emailId)">Change Password</button>
+                        <button class="badge badge-info changepass" (click)="changePassword(hospital.emailId)">Change Password</button>
                     </div>
                     <div class="col-6 col-md-6 d-flex justify-content-center ">
                         <button class="badge badge-danger changepass" (click)="DeleteProfile()">Delete Profile</button>

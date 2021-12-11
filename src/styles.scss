@@ -15,6 +15,13 @@ $pink: #f3797e;
     stroke: rgb(26, 26, 26) !important;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 ::-webkit-scrollbar-thumb {
     background: $blue;
     border-radius: 100px;

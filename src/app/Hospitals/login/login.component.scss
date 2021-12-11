@@ -7,8 +7,20 @@ $pink:#F3797E;
     padding: 10px;
 }
 
+.hide {
+    display: none;
+}
+
+.unhide {
+    display: block;
+}
+
 .mobile_view {
     display: none;
+}
+
+.mat-input-element {
+    background-color: transparent;
 }
 
 .hospital-login {
@@ -41,6 +53,9 @@ $pink:#F3797E;
     color: #fff;
     .hospital-login {
         background-color: #161625 !important;
+    }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white;
     }
     #hlogin_heading {
         color: #fff;

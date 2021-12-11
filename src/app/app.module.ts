@@ -39,6 +39,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { SideNavComponent } from './Utilities/side-nav/side-nav.component';
+import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { SideNavComponent } from './Utilities/side-nav/side-nav.component';
     ChatComponent,
     ProfilePatientComponent,
     SideNavComponent,
+    ProfileHospitalComponent,
   ],
   imports: [
     BrowserModule,

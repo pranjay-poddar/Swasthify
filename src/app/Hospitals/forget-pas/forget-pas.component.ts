@@ -20,20 +20,7 @@ export class ForgetPasComponent implements OnInit {
   constructor(private fb: FormBuilder, private sharingService:SharingService) { }
 
   ngOnInit(): void {
-    function ConfirmedValidator(controlName: string, matchingControlName: string){
-      return (formGroup: FormGroup) => {
-          const control = formGroup.controls[controlName];
-          const matchingControl = formGroup.controls[matchingControlName];
-          if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
-              return;
-          }
-          if (control.value !== matchingControl.value) {
-              matchingControl.setErrors({ confirmedValidator: true });
-          } else {
-              matchingControl.setErrors(null);
-          }
-      }
-  }
+ 
     this.HForgotForm = this.fb.group({
     
       email: ['',[
@@ -41,22 +28,9 @@ export class ForgetPasComponent implements OnInit {
         Validators.email,
         Validators.maxLength(40)
       ]],
-      
-      password:['',[
-        Validators.required,
-        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
-        Validators.minLength(8)
-      ]],
-      cpassword:['',[
-        Validators.required,
-        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
-        Validators.minLength(8)
-      ]],
       agree:[false,[
         Validators.requiredTrue
-      ]]}, { 
-        validator: ConfirmedValidator('password', 'cpassword')
-      });
+      ]]});
     
       this.light = this.sharingService.getData();
   }
@@ -67,12 +41,6 @@ export class ForgetPasComponent implements OnInit {
     return this.HForgotForm.get('email');
   }
 
-  get password(){
-    return this.HForgotForm.get('password');
-  }
-  get cpassword(){
-    return this.HForgotForm.get('cpassword');
-  }
   get agree(){
     return this.HForgotForm.get('agree');
   }
@@ -82,8 +50,8 @@ export class ForgetPasComponent implements OnInit {
     console.log(this.HForgotForm.value);
     Swal.fire({  
       icon: 'success',  
-      title: 'Thank You...',  
-      text: 'Login Succesfull!',  
+      title: 'Email Sent',  
+      text: 'Please check your inbox',  
 });
   this.HForgotForm.reset({
     email: '',

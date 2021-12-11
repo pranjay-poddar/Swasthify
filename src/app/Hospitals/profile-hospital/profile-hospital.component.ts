@@ -1,24 +1,25 @@
-import { PatientService } from 'src/app/services/patient.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Patients } from 'src/app/models/patients';
+import { Hospitals } from './../../models/hospitals';
 import { Component, OnInit } from '@angular/core';
+import { HospitalService } from 'src/app/services/hospital.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { flyInOut , expand} from '../../Utilities/animations/animation';
 import { ChangePassword } from 'src/app/models/changePass';
 import Swal from 'sweetalert2';
+
 @Component({
-  selector: 'app-profile-patient',
-  templateUrl: './profile-patient.component.html',
-  styleUrls: ['./profile-patient.component.scss'],
+  selector: 'app-profile-hospital',
+  templateUrl: './profile-hospital.component.html',
+  styleUrls: ['./profile-hospital.component.scss'],
   animations: [
     flyInOut(),
     expand()
   ]
 })
-export class ProfilePatientComponent implements OnInit {
+export class ProfileHospitalComponent implements OnInit {
   updatedpass : ChangePassword = new ChangePassword();
   id!:number;
-  patient:Patients = new Patients();
+  hospital:Hospitals = new Hospitals();
   cpass:boolean = false; // for change password form toggle
   dpass:boolean = false; // for delete profile toggle
   email!:any;
@@ -29,12 +30,12 @@ export class ProfilePatientComponent implements OnInit {
   fieldTextType3: boolean = false;
   fieldTextType4: boolean = false;
   fieldTextType5: boolean = false;
-  constructor(private fb: FormBuilder,private route:ActivatedRoute,private router:Router,private patientservice:PatientService) { }
+  constructor(private fb: FormBuilder,private route:ActivatedRoute,private router:Router,private hospitalservice:HospitalService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.patientservice.getPatient(this.id).subscribe(data =>{
-      this.patient = data;
+    this.hospitalservice.getDetailsOfHospital(this.id).subscribe(data =>{
+      this.hospital = data;
     },
     error =>{
       console.log(error);
@@ -100,10 +101,8 @@ export class ProfilePatientComponent implements OnInit {
     
     );
   }
+
   
-
-
-
   get currentPassword(){
     return this.ChangePassForm .get('currentPassword');
   }
@@ -132,7 +131,7 @@ export class ProfilePatientComponent implements OnInit {
 
   // Change Password Submit ------------------------------- 
   submit(){
-    this.patientservice.changePassPatient(this.ChangePassForm .value,this.id).subscribe(data=>{
+    this.hospitalservice.changePassHospital(this.ChangePassForm .value,this.id).subscribe(data=>{
       Swal.fire({  
         icon: 'success',  
         title: 'Thank You...',  
@@ -152,12 +151,12 @@ export class ProfilePatientComponent implements OnInit {
       NewPasswor: '',
       confirmNewPasswor: '',
     });
-    this.router.navigate(['/patient-login']);
+    this.router.navigate(['/hospital-login']);
   }
 
   // Delete Patient Submit -----------------------------------
   submitDelete(){
-    this.patientservice.deletePatient(this.id).subscribe(data=>{
+    this.hospitalservice.deleteHospital(this.id).subscribe(data=>{
       Swal.fire({  
         icon: 'success',  
         title: 'Account Deleted Successfully',  
@@ -171,13 +170,13 @@ export class ProfilePatientComponent implements OnInit {
       })  
     });
       
-   this.router.navigate(['/patient-login']);
+   this.router.navigate(['/hospital-login']);
    
   }
 
   // breadcrum route to patient dashboard 
   backroute(){
-    this.router.navigate(['/patient-dashboard',this.id]);
+    this.router.navigate(['/hospital-dashboard',this.id]);
     }
 
   // For Change Password Toggle-----------------
@@ -187,10 +186,10 @@ export class ProfilePatientComponent implements OnInit {
       }
       else{
         this.cpass=false;
-      }    
+      }  
       if(this.dpass){
         this.dpass=!this.dpass;
-      } 
+      }  
 this.email = data; // set email
     }
  // For Delete Profile Toggle-------------------
@@ -204,8 +203,9 @@ this.email = data; // set email
       if(this.cpass){
         this.cpass=!this.cpass;
       }
+
     }
-    
+
      // <!-- Switching method -->
 toggleFieldTextType() {
   this.fieldTextType = !this.fieldTextType;
@@ -223,5 +223,3 @@ toggleFieldTextType() {
           this.fieldTextType5 = !this.fieldTextType5;
           }
 }
-
-

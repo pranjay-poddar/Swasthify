@@ -21,20 +21,6 @@ export class ForgetPasPatientComponent implements OnInit {
   constructor(private fb: FormBuilder, private sharingService:SharingService) { }
 
   ngOnInit(): void {
-    function ConfirmedValidator(controlName: string, matchingControlName: string){
-      return (formGroup: FormGroup) => {
-          const control = formGroup.controls[controlName];
-          const matchingControl = formGroup.controls[matchingControlName];
-          if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
-              return;
-          }
-          if (control.value !== matchingControl.value) {
-              matchingControl.setErrors({ confirmedValidator: true });
-          } else {
-              matchingControl.setErrors(null);
-          }
-      }
-  }
     this.PForgotForm = this.fb.group({
     
       email: ['',[
@@ -42,22 +28,9 @@ export class ForgetPasPatientComponent implements OnInit {
         Validators.email,
         Validators.maxLength(40)
       ]],
-      
-      password:['',[
-        Validators.required,
-        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
-        Validators.minLength(8)
-      ]],
-      cpassword:['',[
-        Validators.required,
-        Validators.pattern('^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$'),
-        Validators.minLength(8)
-      ]],
       agree:[false,[
         Validators.requiredTrue
-      ]]}, { 
-        validator: ConfirmedValidator('password', 'cpassword')
-      });
+      ]]});
     
       this.light = this.sharingService.getData(); 
   }
@@ -66,13 +39,6 @@ export class ForgetPasPatientComponent implements OnInit {
 
   get email(){
     return this.PForgotForm.get('email');
-  }
-
-  get password(){
-    return this.PForgotForm.get('password');
-  }
-  get cpassword(){
-    return this.PForgotForm.get('cpassword');
   }
   get agree(){
     return this.PForgotForm.get('agree');
@@ -83,12 +49,11 @@ export class ForgetPasPatientComponent implements OnInit {
     console.log(this.PForgotForm.value);
     Swal.fire({  
       icon: 'success',  
-      title: 'Thank You...',  
-      text: 'Login Succesfull!',  
+      title: 'Email Sent',  
+      text: 'Please check your inbox',  
 });
   this.PForgotForm.reset({
     email: '',
-    password: '',
   });
  
 }

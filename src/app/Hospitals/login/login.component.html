@@ -18,13 +18,21 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput type="password" placeholder="Password" formControlName="pass">
+
+                            <span class="input-group-append" (click)="toggleFieldTextType()" style="float: right;position: absolute;margin-left: 95%;">
+                                <mat-icon *ngIf="fieldTextType">visibility</mat-icon>
+                                <mat-icon *ngIf="!fieldTextType">visibility_off</mat-icon>
+                             </span>
+                            <input matInput [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" formControlName="pass">
+
 
                             <mat-error *ngIf="password?.invalid && password?.touched">
                                 Please enter Password in correct format
                             </mat-error>
                         </mat-form-field>
+
                         <br>
+
                         <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="HLoginForm.invalid" color="primary">Login</button>
 
                         <a style="float:right ;margin-right: 5%;" routerLink="/h-forget-pas">Forgot Password</a>

@@ -14,6 +14,7 @@ import { ResourcesComponent } from './common-services/resources/resources.compon
 import { OurProductsComponent } from './common-services/our-products/our-products.component';
 import { ChatComponent } from './chat/chat/chat.component';
 import { ProfilePatientComponent } from './Patients/profile-patient/profile-patient.component';
+import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'resources', component: ResourcesComponent },
   { path: 'our-products', component: OurProductsComponent },
   { path: 'p-profile/:id', component: ProfilePatientComponent },
+  { path: 'h-profile/:id', component: ProfileHospitalComponent },
   { path: 'chat', component: ChatComponent }
 ];
 

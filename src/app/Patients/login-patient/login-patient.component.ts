@@ -18,6 +18,7 @@ export class LoginPatientComponent implements OnInit {
   PLoginForm !: FormGroup;
   id ! : number;
   light ! : string;
+  fieldTextType: boolean = false;
   constructor(private fb: FormBuilder, private patientServ : PatientService, private router : Router, private sharingService:SharingService) { }
 
   ngOnInit(): void {
@@ -54,6 +55,10 @@ export class LoginPatientComponent implements OnInit {
   }
 
 
+     // <!-- Switching method -->
+     toggleFieldTextType() {
+      this.fieldTextType = !this.fieldTextType;
+      }
 
   submit(){
     this.patientServ.loginPatient(this.PLoginForm.value).subscribe((data) => {
