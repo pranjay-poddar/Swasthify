@@ -134,8 +134,7 @@ export class ProfileHospitalComponent implements OnInit {
     this.hospitalservice.changePassHospital(this.ChangePassForm .value,this.id).subscribe(data=>{
       Swal.fire({  
         icon: 'success',  
-        title: 'Thank You...',  
-        text: 'Password Changed Succesfully!',  
+        title: 'Password Changed Succesfully',   
       })
     },
     (Error) =>{

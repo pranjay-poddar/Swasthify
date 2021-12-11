@@ -109,8 +109,7 @@ return this.HSForm.get('contact');
     this.hospService.signUpHospital(this.HSForm.value).subscribe((data) => {
       Swal.fire({  
         icon: 'success',  
-        title: 'Thank You...',  
-        text: 'Signup Succesful!',  
+        title: 'Signup Succesful',   
         footer: '<a href="hospital-login">Login</a>'  
       })
     },

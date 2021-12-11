@@ -107,8 +107,7 @@ return this.PSForm.get('contact');
     this.patientService.registerPatient(this.PSForm.value).subscribe((data) => {
       Swal.fire({  
         icon: 'success',  
-        title: 'Thank You...',  
-        text: 'Signup Succesful!',  
+        title: 'Signup Succesful',    
         footer: '<a href="patient-login">Login</a>'  
   });
 },

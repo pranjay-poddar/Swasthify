@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-        <mat-toolbar>Menu</mat-toolbar>
+        <mat-toolbar class="grow logout" routerLink="/home"><i class="fas fa-sign-out-alt"></i> Logout</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item (click)="profile()" class="grow">
                 <span class="material-icons">
@@ -44,6 +44,11 @@
                                 <div *ngIf="step == 1">
                                     <h1 class="text-center">{{hospitals.hospitalName}}</h1>
                                     <h2 class="text-center">{{ hospitals.emailId }}</h2>
+                                    <div class="d-flex justify-content-center">
+                                        <div [hidden]="hospitals.hospitalName">
+                                            <mat-spinner [diameter]="40" class="stats_spinner" mode="indeterminate"></mat-spinner>
+                                        </div>
+                                    </div>
                                     <label>State</label>
                                     <input type="text" class="services" name="state" [(ngModel)]="hospitals.state"><br>
                                     <label>City</label>

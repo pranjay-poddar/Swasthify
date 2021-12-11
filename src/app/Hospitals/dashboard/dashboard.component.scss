@@ -6,6 +6,7 @@
 
 .h-dashboard {
     padding-top: 0vh;
+    min-height: 100vh;
 }
 
 .sidenav-container {
@@ -20,6 +21,11 @@
 .sidenav a:hover {
     background-color: #3f51b5;
     color: white;
+}
+
+.logout:hover {
+    color: red;
+    cursor: pointer;
 }
 
 .container {
@@ -140,12 +146,6 @@ button.prev-button {
     }
 }
 
-@media(max-width:556px) {
-    .sidenav {
-        width: 200px;
-    }
-}
-
 @media only screen and (max-width: 400px) {
     img.controller {
         height: 250px;
@@ -160,7 +160,7 @@ button.prev-button {
     display: flex;
     justify-content: space-between;
     counter-reset: step;
-    margin-top: -17%;
+    margin-top: 12%;
     margin-bottom: 10vh;
 }
 
@@ -271,5 +271,15 @@ button.prev-button {
 @media only screen and (min-width: 994px) {
     .card {
         transform: translateY(50px) !important;
+    }
+}
+
+@media(max-width:556px) {
+    .sidenav {
+        width: 200px;
+    }
+    .prog-bar {
+        margin-top: -14%;
+        margin-bottom: 10vh;
     }
 }

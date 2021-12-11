@@ -135,8 +135,7 @@ export class ProfilePatientComponent implements OnInit {
     this.patientservice.changePassPatient(this.ChangePassForm .value,this.id).subscribe(data=>{
       Swal.fire({  
         icon: 'success',  
-        title: 'Thank You...',  
-        text: 'Password Changed Succesfully!',  
+        title: 'Password Changed Succesfully',  
       })
     },
     (Error) =>{

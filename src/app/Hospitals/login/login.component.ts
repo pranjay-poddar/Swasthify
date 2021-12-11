@@ -64,8 +64,7 @@ export class LoginComponent implements OnInit {
       this.id = data.id;
       Swal.fire({
         icon: 'success',
-        title: 'Thank You...',
-        text: 'Login Succesful!',
+        title: 'Login Succesful',
       });
       this.router.navigate(['hospital-dashboard',this.id]);
     },
