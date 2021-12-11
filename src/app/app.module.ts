@@ -33,9 +33,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SharingService } from './services/sharing.service';
 import { ChatComponent } from './chat/chat/chat.component';
 import { ProfilePatientComponent } from './Patients/profile-patient/profile-patient.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { SideNavComponent } from './Utilities/side-nav/side-nav.component';
 import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +61,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     OurProductsComponent,
     ChatComponent,
     ProfilePatientComponent,
+    SideNavComponent,
     ProfileHospitalComponent,
   ],
   imports: [
@@ -73,8 +79,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatDialogModule,
     MatStepperModule,
     MatProgressSpinnerModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
     MatIconModule,
-    MatSidenavModule
+    MatListModule
   ],
   providers: [SharingService],
   bootstrap: [AppComponent]
