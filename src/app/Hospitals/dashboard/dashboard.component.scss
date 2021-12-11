@@ -5,7 +5,7 @@
 }
 
 .h-dashboard {
-    padding-top: 5vh;
+    padding-top: 0vh;
 }
 
 .container {
@@ -17,11 +17,13 @@
     top: 80px;
     right: 15px;
 }
-.chat-btn{
+
+.chat-btn {
     position: absolute;
     top: 10%;
     left: 1%;
 }
+
 .dateTime {
     float: right;
     font-weight: 500;
@@ -126,7 +128,7 @@ button.prev-button {
     img.controller {
         height: 250px;
     }
-    .chat-btn{
+    .chat-btn {
         top: 12%;
     }
 }
@@ -198,7 +200,6 @@ button.prev-button {
         counter-reset: step;
         margin-top: 12%;
     }
-    
     .prog-bar2::before {
         content: "";
         position: absolute;
@@ -209,7 +210,6 @@ button.prev-button {
         background-color: #7da0fa;
         z-index: 0;
     }
-
     .stepper-1 {
         width: 35px;
         height: 35px;
@@ -221,22 +221,18 @@ button.prev-button {
         font-weight: 500;
         z-index: 1;
     }
-    
     .stepper-1::before {
         counter-increment: step;
         content: counter(step);
     }
-
     .c1 {
         background-color: #233E8B;
         color: white;
     }
-    
     .c2 {
         background-color: #7da0fa;
         color: white;
     }
-
     @media only screen and (min-width: 1199px) {
         .prog-bar::before {
             width: 90%;
