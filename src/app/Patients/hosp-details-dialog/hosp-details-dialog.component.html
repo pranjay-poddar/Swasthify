@@ -8,8 +8,8 @@
         <br> OXYGEN CYLINDERS : {{ hospital.oxygenCylinders }}
         <br> COVAXIN : {{ hospital.vaccine1 }}
         <br> COVISHIELD : {{ hospital.vaccine2 }}
-        <br> CONTACT NUMBER : {{ hospital.contact }}
-        <br> EMAIL : {{ hospital.emailId}}
+        <br> CONTACT NUMBER : <a href="tel:+91{{hospital.contact}}" style="text-decoration: none;">{{ hospital.contact }}</a>
+        <br> EMAIL : <a href="mailto:{{hospital.emailId}}" style="text-decoration: none;">{{hospital.emailId}}</a>
     </div>
 </div>
 <div class="row">

@@ -33,98 +33,104 @@
                 </div>
             </div>
 
-            <div class="col-md-8 ">
-                <div class="card mb-3 details ">
+            <div class="col-md-8">
+                <div class="card mb-3 details" [hidden]="!hospital.hospitalName">
                     <div class="card-body ">
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Hospital Name</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
+                            <div class="col-6 col-sm-9 text-secondary text ">
                                 {{hospital.hospitalName}}
                             </div>
                         </div>
                         <hr>
-                        <div class="row ">
-                            <div class="col-sm-3 ">
+                        <div class="row em">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Email</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
-                                {{hospital.emailId}}
+                            <div class="col-6 col-sm-9 text-secondary text email">
+                                <a href="mailto:{{hospital.emailId}}" style="text-decoration: none;color: rgb(138, 253, 247);">{{hospital.emailId}}</a>
                             </div>
                         </div>
                         <hr>
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Contact No.</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
-                                {{hospital.contact}}
+                            <div class="col-6 col-sm-9 text-secondary text ">
+                                <a href="tel:+91{{hospital.contact}}" style="text-decoration: none;color: rgb(138, 253, 247);">  {{hospital.contact}}</a>
                             </div>
                         </div>
                         <hr>
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>State</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
+                            <div class="col-6 col-sm-9 text-secondary text ">
                                 {{hospital.state}}
                             </div>
                         </div>
                         <hr>
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>City</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
+                            <div class="col-6 col-sm-9 text-secondary text ">
                                 {{hospital.city}}
                             </div>
                         </div>
                         <hr>
                         <h2>Services:</h2>
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>ICU Beds</h4>
                             </div>
-                            <div class="col-sm-3 text-secondary text ">
+                            <div class="col-6 col-sm-3 text-secondary text ">
                                 {{hospital.icuBeds}}
                             </div>
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Isolation Beds</h4>
                             </div>
-                            <div class="col-sm-3 text-secondary text ">
+                            <div class="col-6 col-sm-3 text-secondary text ">
                                 {{hospital.isolationBeds}}
                             </div>
                         </div>
                         <hr>
 
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Covishield</h4>
                             </div>
-                            <div class="col-sm-3 text-secondary text ">
+                            <div class="col-6 col-sm-3 text-secondary text ">
                                 {{hospital.vaccine1}}
                             </div>
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Covaxin</h4>
                             </div>
-                            <div class="col-sm-3 text-secondary text ">
+                            <div class="col-6 col-sm-3 text-secondary text ">
                                 {{hospital.vaccine2}}
                             </div>
                         </div>
                         <hr>
 
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-6 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Oxygen Cylinders</h4>
                             </div>
-                            <div class="col-sm-3 text-secondary text ">
+                            <div class="col-6 col-sm-3 text-secondary text ">
                                 {{hospital.oxygenCylinders}}
                             </div>
 
                         </div>
                         <hr>
-
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div [hidden]="hospital.hospitalName">
+                        <mat-spinner [diameter]="80" class="stats_spinner" mode="indeterminate"></mat-spinner>
+                        <br>
+                        <mat-label>Loading...</mat-label>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">

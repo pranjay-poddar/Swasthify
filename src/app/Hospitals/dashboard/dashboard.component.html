@@ -43,7 +43,7 @@
                             <div class="card" [@flyInOut]>
                                 <div *ngIf="step == 1">
                                     <h1 class="text-center">{{hospitals.hospitalName}}</h1>
-                                    <h2 class="text-center">{{ hospitals.emailId }}</h2>
+                                    <h2 class="text-center"><a href="mailto:{{hospitals.emailId}}" style="text-decoration: none;">{{hospitals.emailId}}</a></h2>
                                     <div class="d-flex justify-content-center">
                                         <div [hidden]="hospitals.hospitalName">
                                             <mat-spinner [diameter]="40" class="stats_spinner" mode="indeterminate"></mat-spinner>

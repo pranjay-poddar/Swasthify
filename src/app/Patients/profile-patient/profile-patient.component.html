@@ -34,35 +34,43 @@
             </div>
 
             <div class="col-md-8 ">
-                <div class="card mb-3 details ">
+                <div class="card mb-3 details" [hidden]="!patient.name">
                     <div class="card-body ">
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-4 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Name</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
+                            <div class="col-8 col-sm-9 text-secondary text ">
                                 {{patient.name}}
                             </div>
                         </div>
                         <hr>
                         <div class="row ">
-                            <div class="col-sm-3 ">
+                            <div class="col-4 col-sm-3 ">
                                 <h4 class="mb-0 " [@expand]>Email</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
-                                {{patient.emailId}}
+                            <div class="col-8 col-sm-9 text-secondary text ">
+                                <a href="mailto:{{patient.emailId}}" style="text-decoration: none;color: rgb(138, 253, 247);"> {{patient.emailId}}</a>
                             </div>
                         </div>
                         <hr>
                         <div class="row ">
-                            <div class="col-sm-3 ">
-                                <h4 class="mb-0 " [@expand]>Contact No.</h4>
+                            <div class="col-4 col-sm-3 ">
+                                <h4 class="mb-0 " [@expand]>
+                                    Contact No.</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary text ">
-                                {{patient.contact}}
+                            <div class="col-8 col-sm-9 text-secondary text ">
+                                <a href="tel:+91{{patient.contact}}" style="text-decoration: none;color: rgb(138, 253, 247);"> {{patient.contact}} </a>
                             </div>
                         </div>
                         <hr>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div [hidden]="patient.name">
+                        <mat-spinner [diameter]="80" class="stats_spinner" mode="indeterminate"></mat-spinner>
+                        <br>
+                        <mat-label>Loading...</mat-label>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
