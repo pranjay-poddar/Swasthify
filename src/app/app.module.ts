@@ -39,6 +39,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
+import { ErrorPageComponent } from './Utilities/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-h
     OurProductsComponent,
     ChatComponent,
     ProfilePatientComponent,
-    ProfileHospitalComponent
+    ProfileHospitalComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
