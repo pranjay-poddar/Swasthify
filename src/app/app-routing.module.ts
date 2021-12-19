@@ -15,6 +15,7 @@ import { OurProductsComponent } from './common-services/our-products/our-product
 import { ChatComponent } from './chat/chat/chat.component';
 import { ProfilePatientComponent } from './Patients/profile-patient/profile-patient.component';
 import { ProfileHospitalComponent } from './Hospitals/profile-hospital/profile-hospital.component';
+import { ErrorPageComponent } from './Utilities/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'our-products', component: OurProductsComponent },
   { path: 'p-profile/:id', component: ProfilePatientComponent },
   { path: 'h-profile/:id', component: ProfileHospitalComponent },
-  { path: 'chat', component: ChatComponent }
+  { path: 'chat', component: ChatComponent },
+  { path: 'error-page', component: ErrorPageComponent }
 ];
 
 @NgModule({
