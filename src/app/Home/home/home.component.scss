@@ -11,6 +11,10 @@
     background-color: #fff;
 }
 
+.case {
+    font-size: 45px;
+}
+
 .dark-mode-toggle .fa-sun {
     color: #ffbb52;
     display: inline-block;
@@ -296,5 +300,9 @@
 @media only screen and (max-width: 576px) {
     .rows {
         padding-top: 12%;
+    }
+    .case {
+        font-size: 30px;
+        margin-bottom: 5px;
     }
 }
