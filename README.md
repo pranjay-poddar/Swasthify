@@ -143,7 +143,6 @@ npm run build --prod
 4.  Push to the branch (`git push origin feature/xyz`)
 5.  Create a new Pull Request
 
-
 ## Contributors
 <table>
   <tr>
