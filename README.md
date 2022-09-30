@@ -2,6 +2,7 @@
 <p> A compassionate effort to aid people out of difficult times, we are resolutely committed to provide our users with hospitals and their services at their fingertips.</p>
 
 Link - <a href="https://swasthify.netlify.app/home"> https://swasthify.netlify.app/home</a>
+Link - <a href="https://swasthify.netlify.app/home"> https://swasthify.netlify.app/home</a>
 <br>
 <p align="center">
 <img src="https://github.com/pranjay-poddar/Swasthify/blob/pranjay/src/assets/images/Swasthify_gif.gif" width="700" title="Swasthify Poster">
@@ -14,7 +15,7 @@ Link - <a href="https://swasthify.netlify.app/home"> https://swasthify.netlify.a
 <!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/e30784c5-9efd-4f20-8a47-13f3fb899613/deploy-status)](https://app.netlify.com/sites/allcontributors-org/deploys) -->
 ![GitHub repo size](https://img.shields.io/github/repo-size/pranjay-poddar/Swasthify?color=yellow)
   
-  </div>
+</div>
 
 ## About Us 
 
