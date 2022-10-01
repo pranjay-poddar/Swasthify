@@ -45,8 +45,6 @@ export class LoginComponent implements OnInit {
     });
 
     this.light = this.sharingService.getData();
-    //console.log("light = "+this.light);
-
   }
 
 
