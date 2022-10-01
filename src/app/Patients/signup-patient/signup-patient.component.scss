@@ -21,9 +21,14 @@ $pink:#F3797E;
 
 .card {
     padding: 1%;
-    margin: 5% 0;
+    margin: 5% 1rem;
     background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
+}
+
+.form-container,
+.confirm-div {
+  padding: 1rem .625rem;
 }
 
 #ps_heading {

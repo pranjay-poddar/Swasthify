@@ -9,9 +9,9 @@
                     <h1 id="hlogin_heading" class="mobile_view">Hospital Login</h1>
                 </div>
                 <div class="card" [@flyInOut]>
-                    <form [formGroup]="HLoginForm">
+                    <form [formGroup]="HLoginForm" class="card_container">
                         <mat-form-field>
-                            <input matInput placeholder="Email" type="email" formControlName="emailId">
+                            <input class="ip_field"  matInput placeholder="Email" type="email" formControlName="emailId">
                             <mat-error *ngIf="email?.invalid && email?.touched">
                                 Please, enter valid email address
                             </mat-error>
@@ -23,7 +23,7 @@
                                 <mat-icon *ngIf="fieldTextType">visibility</mat-icon>
                                 <mat-icon *ngIf="!fieldTextType">visibility_off</mat-icon>
                              </span>
-                            <input matInput [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" formControlName="pass">
+                            <input class="ip_field" matInput [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" formControlName="pass">
 
 
                             <mat-error *ngIf="password?.invalid && password?.touched">
@@ -35,7 +35,7 @@
 
                         <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="HLoginForm.invalid" color="primary">Login</button>
 
-                        <a style="float:right ;margin-right: 5%;" routerLink="/h-forget-pas">Forgot Password</a>
+                        <a class="forgot_pass" routerLink="/h-forget-pas">Forgot Password</a>
                     </form>
                 </div>
                 <div class="col-md-12 col-12 ">

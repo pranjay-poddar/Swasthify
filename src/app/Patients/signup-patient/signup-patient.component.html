@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-5 col-lg-5 col-sm-11 col-xs-8">
                 <div class="card" [@flyInOut]>
-                    <form [formGroup]="PSForm">
+                    <form [formGroup]="PSForm" class="form-container">
 
                         <mat-form-field>
                             <input matInput type="text" placeholder="Patient Name" formControlName="name">
@@ -81,8 +81,11 @@
                                 Passwords does not match
                             </mat-error>
                         </mat-form-field>
-                        <small class="form-text text-muted">We'll never share your details with anyone else.</small>
-                        <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to submit?</mat-checkbox>
+
+                        <div class="confirm-div">
+                          <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+                          <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to submit?</mat-checkbox>
+                        </div>
                         <br>
                         <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PSForm.invalid" color="primary">Register</button>
                         <br>

@@ -41,11 +41,25 @@ $pink:#F3797E;
     box-shadow: 0 4px 8px 0 rgba(136, 136, 136, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.19);
 }
 
+.card_container {
+  padding: 1rem;
+}
+
 #hlogin_heading {
     margin-top: 5%;
     font-size: 300%;
     font-weight: 550;
     color: rgb(43, 43, 43);
+}
+
+.forgot_pass {
+  float: right;
+  padding-top: 0.5rem;
+  text-decoration: none;
+}
+
+.ip_field {
+  padding: 0.35rem 0 !important;
 }
 
 .dark {
@@ -113,6 +127,6 @@ $pink:#F3797E;
         color: rgb(43, 43, 43);
     }
     .card {
-        margin: 7vh 0;
+        margin: 7vh 1rem;
     }
 }
