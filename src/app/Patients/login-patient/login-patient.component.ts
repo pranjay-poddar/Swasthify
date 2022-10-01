@@ -82,7 +82,4 @@ export class LoginPatientComponent implements OnInit {
 }
 
 }
-function ms(arg0: number, ms: any) {
-  throw new Error('Function not implemented.');
-}
 
