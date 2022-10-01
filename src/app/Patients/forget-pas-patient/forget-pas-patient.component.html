@@ -9,17 +9,17 @@
                     <h1 id="plogin_heading" class="mobile_view">Forgot Password</h1>
                 </div>
                 <div class="card" [@flyInOut]>
-                    <form [formGroup]="PForgotForm">
+                    <form [formGroup]="PForgotForm" class="password-reset-form p-3">
                         <small class="form-text text-muted text-center">We will be sending a reset link to your email</small>
-                        <mat-form-field>
+                        <mat-form-field class="form-field">
                             <input matInput placeholder="Email" type="email" formControlName="email">
                             <mat-error *ngIf="email?.invalid && email?.touched">
                                 Please, enter valid email address
                             </mat-error>
                         </mat-form-field>
-                        <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to reset?</mat-checkbox>
+                        <mat-checkbox class="form-field" formControlName="agree" color="primary">Are you sure, you want to reset?</mat-checkbox>
                         <br>
-                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="PForgotForm.invalid" color="primary">Send Reset Link</button>
+                        <button mat-raised-button type="submit" (click)="submit()" [disabled]="PForgotForm.invalid" color="primary">Send Reset Link</button>
                     </form>
                 </div>
 

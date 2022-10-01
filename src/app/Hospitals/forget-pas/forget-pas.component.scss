@@ -7,9 +7,11 @@ $pink:#F3797E;
     height: 100vh;
 }
 
-.mat-form-field {
-    width: 100%;
-    padding: 10px;
+.password-reset-form {
+    .form-field {
+        width: 100%;
+        padding: 5px 0;
+    }
 }
 
 .mobile_view {
@@ -98,10 +100,6 @@ $pink:#F3797E;
 }
 
 @media (max-width:576px) {
-    .mat-form-field {
-        border-top: 1.9em !important;
-        padding: 10px;
-    }
     #hlogin_heading {
         margin-top: 5%;
         font-size: 260%;
