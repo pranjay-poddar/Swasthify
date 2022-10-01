@@ -45,17 +45,15 @@ export class LoginComponent implements OnInit {
     });
 
     this.light = this.sharingService.getData();
-    //console.log("light = "+this.light);
-
   }
 
 
   get email() {
-    return this.HLoginForm.get('email');
+    return this.HLoginForm.get('emailId');
   }
 
   get password() {
-    return this.HLoginForm.get('password');
+    return this.HLoginForm.get('pass');
   }
 
 
@@ -80,8 +78,8 @@ export class LoginComponent implements OnInit {
         })
       });
     this.HLoginForm.reset({
-      email: '',
-      password: '',
+      emailId: '',
+      pass: '',
     });
 
   }
