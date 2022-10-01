@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-5 col-lg-5 col-sm-11 col-xs-8">
                 <div class="card" [@flyInOut]>
-                    <form [formGroup]="HSForm">
+                    <form [formGroup]="HSForm" class="form-container">
 
                         <mat-form-field>
                             <input matInput type="text" placeholder="Hospital Name" formControlName="hospitalName">
@@ -59,7 +59,7 @@
                                 <mat-icon *ngIf="!fieldTextType">visibility_off</mat-icon>
                              </span>
                             <input matInput [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" formControlName="pass">
-                            <mat-hint align="end">Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
+                            <mat-hint>Must have atleast one uppercase letter, one number and atleast 8 characters long</mat-hint>
                             <mat-error *ngIf="password?.invalid && password?.touched">
                                 Please enter Password in correct format
                             </mat-error>
@@ -79,8 +79,10 @@
                                 Passwords does not match
                             </mat-error>
                         </mat-form-field>
-                        <small class="form-text text-muted">We'll never share your details with anyone else.</small>
-                        <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to submit?</mat-checkbox>
+                        <div class="confirm-div">
+                          <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+                          <mat-checkbox formControlName="agree" color="primary">Are you sure, you want to submit?</mat-checkbox>
+                        </div>
                         <br>
                         <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="HSForm.invalid" color="primary">Register</button>
                         <br>
