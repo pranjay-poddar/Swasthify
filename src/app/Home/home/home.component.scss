@@ -75,12 +75,12 @@
 }
 
 .button-image {
-    width: 30px;
-    display: none;
+    width: 0px;
+    transition: width 0.25s;
 }
 
 .know-button:hover .button-image {
-    display: block;
+    width: 30px;
 }
 
 .know-button:hover {
