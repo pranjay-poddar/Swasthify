@@ -42,9 +42,9 @@
           </a>
         </li> -->
 
-                <li class="text-center">
+                <!-- <li class="text-center">
                     <span class=" {{ sidenavTitle }} t grow text-center badge badge-light cat">Select Service</span>
-                </li>
+                </li> -->
                 <li>
                     <a (click)="profile()">
                         <span class="icon"><i class="fas fa-user"></i> </span>
@@ -91,11 +91,11 @@
             </ul>
         </div>
         <div class="{{ main_container }}">
-            <div class="row">
+            <div class="row my-3">
                 <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ">
                     <div class="row">
                         <div class="col-8 ">
-                            <h1 class="head1">Welcome<span class="head1 badge userinfoname ">{{ patient.name }}</span>
+                            <h1 class="head1">Welcome {{ patient.name }}
                             </h1>
                         </div>
                         <div [@expand] class="col-4 ">
@@ -177,21 +177,21 @@
                     </div>
                 </div>
             </div>
-            <section>
+            <section class="mx-3">
                 <div class="container guideline">
-                    <p class="text-muted"> 1) Search for hospitals in your city.</p>
-                    <p class="text-muted"> 2) Select required filters for hospital services from left list.</p>
+                    <p class="text-muted"> 1) Search for hospitals in your city</p>
+                    <p class="text-muted"> 2) Select required filters for hospital services from left list</p>
                     <!-- <p class="text-muted"> 3) Select details in the table below to know more.</p> -->
 
                 </div>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-12 text-center popularcity">Popular Cities:</div>
-                    <div class="col-md-2 col-sm-3 col-3 text-center city1 btn btn-sm citybtn3 grow" (click)="findHospitalByDefault('Delhi')">Delhi</div>
-                    <div class="col-md-2 col-sm-3 col-3 text-center city2 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Mumbai')">Mumbai</div>
-                    <div class="col-md-2 col-sm-3 col-3 text-center city3 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Bangalore')">Bangalore</div>
-                    <div class="col-md-2 col-sm-3 col-3 text-center city4 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Chennai')">Chennai</div>
-                    <div class="col-md-2 col-sm-3 col-3 text-center city5 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Kolkata')">Kolkata</div>
-                    <div class="col-md-2 col-sm-3 col-3 text-center city6 btn btn-sm citybtn grow" (click)="findHospitalByDefault('Lucknow')">Lucknow</div>
+                    <div class="col-12 text-center popular-city">Popular Cities:</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city1 btn btn-sm city-btn grow" (click)="findHospitalByDefault('Delhi')">Delhi</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city2 btn btn-sm city-btn grow" (click)="findHospitalByDefault('Mumbai')">Mumbai</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city3 btn btn-sm city-btn grow" (click)="findHospitalByDefault('Bangalore')">Bangalore</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city4 btn btn-sm city-btn grow" (click)="findHospitalByDefault('Chennai')">Chennai</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city5 btn btn-sm city-btn grow" (click)="findHospitalByDefault('Kolkata')">Kolkata</div>
+                    <div class="col-md-2 col-sm-3 col-3 text-center city6 btn btn-sm city-btn grow" (click)="findHospitalByDefault('Lucknow')">Lucknow</div>
                 </div>
 
                 <div class="check-hospitals text-center">
@@ -201,29 +201,29 @@
                 </div>
 
                 <div class="row d-flex justify-content-center">
-                    <a (click)="findIcu()" class="col-md-2 col-sm-4 col-4 text-center city1 btn btn-sm grow citybtn4">
+                    <a (click)="findIcu()" class="col-md-2 col-sm-4 col-4 text-center city1 btn btn-sm grow city-btn">
                         <span class="icon"><i class="fas fa-hospital serv"></i> </span>
                         <span class="{{ sidenavTitle }}  grow serv"> ICU BEDS</span>
                     </a>
-                    <a (click)="findOxygencylinders()" class="col-md-2 col-sm-4 col-4 text-center city2 btn btn-sm grow citybtn2">
+                    <a (click)="findOxygencylinders()" class="col-md-2 col-sm-4 col-4 text-center city2 btn btn-sm grow city-btn">
                         <span class="icon"><i class="fas fa-fire-extinguisher grow serv"></i></span>
                         <span class="{{ sidenavTitle }}  grow serv"> O2 Cylinders</span>
                     </a>
-                    <a (click)="findVaccines()" class="col-md-2 col-sm-4 col-4 text-center city3 btn btn-sm grow citybtn2">
+                    <a (click)="findVaccines()" class="col-md-2 col-sm-4 col-4 text-center city3 btn btn-sm grow city-btn">
                         <span class="icon"><i class="fas fa-syringe grow serv"></i></span>
                         <span class="{{ sidenavTitle }}  grow serv"> Vaccine</span>
                     </a>
-                    <a (click)="findIsolationBeds()" class="col-md-2 col-sm-4 col-4 text-center city4 btn btn-sm grow citybtn2">
+                    <a (click)="findIsolationBeds()" class="col-md-2 col-sm-4 col-4 text-center city4 btn btn-sm grow city-btn">
                         <span class="icon"><i class="fas fa-bed grow serv"></i></span>
                         <span class="{{ sidenavTitle }}  grow serv"> Beds</span>
                     </a>
                 </div>
 
                 <!-- <div class="table-responsive-sm tablem" *ngIf="hospitalDetails.length > 0"> -->
-                <div class="row d-flex justify-content-center tablem">
+                <div class="row d-flex justify-content-center mt-5 mb-3">
                     <div class="col-12 col-md-6">
                         <div class="table-responsive-sm  text-center" *ngIf="hospitalDetails">
-                            <table class="table table-container ">
+                            <table class="table table-container hospital-details-table">
                                 <thead>
                                     <tr>
                                         <th>Hospitals</th>
@@ -232,8 +232,8 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let a of hospitalDetails">
-                                        <td [@expand]>{{ a.hospitalName }}</td>
-                                        <td [@expand]><button type="button" class="btn btn-primary detailsbtn grow" (click)="openDialog(a.id)">Details</button></td>
+                                        <td [@expand] class="hospital-name">{{ a.hospitalName }}</td>
+                                        <td [@expand]><button type="button" class="btn btn-primary details-btn grow" (click)="openDialog(a.id)">Details</button></td>
                                     </tr>
                                 </tbody>
                             </table>
