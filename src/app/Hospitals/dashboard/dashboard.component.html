@@ -1,20 +1,20 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-        <mat-toolbar class="grow logout" routerLink="/home"><i class="fas fa-sign-out-alt"></i> Logout</mat-toolbar>
+        <mat-toolbar class="grow logout" routerLink="/home"><i class="fas fa-sign-out-alt mx-1"></i> Logout</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item (click)="profile()" class="grow">
-                <span class="material-icons">
+                <span class="material-icons mx-1">
                 person
                 </span> Profile
             </a>
-            <a mat-list-item routerLink="/" class="grow"><span class="material-icons" >
+            <a mat-list-item routerLink="/" class="grow"><span class="material-icons mx-1" >
               shopping_cart
               </span>
               Products</a>
-            <a mat-list-item routerLink="/" class="grow"><span class="material-icons">
+            <a mat-list-item routerLink="/" class="grow"><span class="material-icons mx-1">
               medical_services
               </span>Services</a>
-            <a mat-list-item routerLink="/chat"><span class="material-icons">
+            <a mat-list-item routerLink="/chat"><span class="material-icons mx-1">
               message
               </span>Join Chat</a>
         </mat-nav-list>
@@ -26,19 +26,15 @@
       </button>
             <span>Swasthify</span>
         </mat-toolbar>
-
-        <div class="row {{light}}" id="datetime">
-            <div class="col-12">
-                <span class="dateTime ">{{date| date : 'dd-MM-yyyy'}}</span>
-            </div>
-            <div class="col-12">
-                <span class="dateTime ">{{ time | date: 'hh:mm:ss a' }}</span>
-            </div>
-        </div>
         <div class="h-dashboard {{light}}">
-            <div class="container">
-                <div class="row align-items-center rows">
+            <div class="wrapper">
+                <div class="row">
                     <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <div class="container prog-bar prog-bar2 my-5">
+                            <div class="{{one}} stepper-1"></div>
+                            <div class="{{two}} stepper-1"></div>
+                            <div class="{{three}} stepper-1"></div>
+                        </div>
                         <div class="col-12 left-side">
                             <div class="card" [@flyInOut]>
                                 <div *ngIf="step == 1">
@@ -76,14 +72,14 @@
                                     <button type="button" *ngIf="step == 3" class="know-btn pull-left grow" (click)="updateEntries()">Submit</button>
                                 </div>
                             </div>
-                            <div class="container prog-bar prog-bar2">
-                                <div class="{{one}} stepper-1"></div>
-                                <div class="{{two}} stepper-1"></div>
-                                <div class="{{three}} stepper-1"></div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12" [@expand]>
+                        <div class="row {{light}} mx-0 ml-auto my-3" id="datetime">
+                            <div class="col-12">
+                                <span class="dateTime ">{{date| date : 'dd-MM-yyyy'}} {{ time | date: 'hh:mm:ss a' }}</span>
+                            </div>
+                        </div>
                         <div class="col-12 right-side">
                             <img src="../../../assets/images/hospital-login.svg" class="controller" />
                         </div>

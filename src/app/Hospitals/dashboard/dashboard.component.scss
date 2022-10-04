@@ -9,12 +9,17 @@
     min-height: 100vh;
 }
 
+.wrapper {
+    max-width: 1320px;
+    padding: 8px 16px;
+}
+
 .sidenav-container {
     height: 100%;
 }
 
 .sidenav {
-    width: 130px;
+    width: 150px;
     background-color: whitesmoke;
 }
 
@@ -30,12 +35,6 @@
 
 .container {
     margin-top: 1vh;
-}
-
-#datetime {
-    position: absolute;
-    top: 80px;
-    right: 15px;
 }
 
 .chat-btn {
@@ -59,7 +58,7 @@
     flex-basis: 60%;
     display: flex;
     align-items: center;
-    margin-bottom: 25vh;
+    margin: 15vh 0;
 }
 
 .right-side img.controller {
@@ -67,7 +66,7 @@
 }
 
 .card {
-    padding: 4%;
+    padding: 16px;
     margin-bottom: 15vh;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgb(136 136 136 / 20%), 0 6px 20px 0 rgb(138 138 138 / 19%);
@@ -127,15 +126,12 @@ button.prev-button {
     float: left !important;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 767px) {
     .rows {
         flex-direction: column-reverse;
     }
     .right-side {
         display: none;
-    }
-    .h-dashboard {
-        padding-top: 13vh;
     }
     button.next-button,
     button.prev-button {
@@ -160,8 +156,6 @@ button.prev-button {
     display: flex;
     justify-content: space-between;
     counter-reset: step;
-    margin-top: 12%;
-    margin-bottom: 10vh;
 }
 
 .prog-bar::before {
@@ -265,12 +259,6 @@ button.prev-button {
 @media only screen and (min-width: 1186px) {
     .prog-bar::before {
         width: 88%;
-    }
-}
-
-@media only screen and (min-width: 994px) {
-    .card {
-        transform: translateY(50px) !important;
     }
 }
 
