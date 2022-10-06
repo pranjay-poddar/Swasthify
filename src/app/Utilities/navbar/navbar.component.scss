@@ -30,8 +30,8 @@ li :hover {
 
 .itemActive {
     background-color: #7da0fa93 !important;
-    border-radius: 4px;
-    transition: 0.1s ease;
+    border-radius: 4px !important;
+    transition: 0.1s ease !important;
 }
 
 .nav-link {
@@ -43,6 +43,10 @@ li :hover {
     text-align: center;
 }
 
+/* Added Hover Effect on Navigation links */
+.nav-link:hover{
+    color: #CD104D !important;
+}
 button.navbar-toggler {
     border: 0;
 }
