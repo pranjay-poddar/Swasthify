@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
@@ -12,24 +12,37 @@ import { SharingService } from 'src/app/services/sharing.service';
 export class HomeComponent implements OnInit {
 
 
-  light :any;
+  light: any;
+  @ViewChild("about", { static: true }) aboutElement!: ElementRef;
 
-  toggleNav(){
-    if(this.light == "light"){
+  toggleNav() {
+    if (this.light == "light") {
       this.light = "dark";
     }
-    else{
+    else {
       this.light = "light";
     }
-    
+
     this.sharingService.setData(this.light);
   }
-  constructor(private router:Router,
-    private sharingService:SharingService){}
+  constructor(private activeRoute: ActivatedRoute,
+    private sharingService: SharingService) { }
 
 
   ngOnInit(): void {
     this.light = "light";
     this.light = this.sharingService.getData();
+  }
+
+  ngAfterViewInit() {
+    let params = this.activeRoute.snapshot.params;
+    //Check if the parameter comes for the about
+    if (params !== null && typeof params === 'object' && params.goAbout) {
+
+      if (this.aboutElement != undefined) {        
+        this.aboutElement.nativeElement.scrollIntoView();
+      }
+
+    }
   }
 }

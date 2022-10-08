@@ -8,7 +8,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <!-- <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="itemActive">Home</a> -->
-                <a class="nav-link" href="/home/#w" routerLinkActive="itemActive">About Us</a>
+                <!-- <a class="nav-link" href="home#w" routerLinkActive="itemActive">About Us</a> -->
+                <a class="nav-link" style="cursor: pointer;" (click)="navToElement('w')">About Us</a>
                 <a class="nav-link" routerLink="/hospital-login" routerLinkActive="itemActive">Hospital Login</a>
 
                 <!-- <a class="nav-link" routerLink="/hospital-dashboard" routerLinkActive="itemActive">H-Dashboard</a> -->
