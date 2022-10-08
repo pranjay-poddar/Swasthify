@@ -37,15 +37,18 @@
                         </mat-form-field>
 
                         <br>
+                        <div class="confirm-div ml-2 mb-3">
+                            <mat-checkbox formControlName="agree" color="primary">Remember me?</mat-checkbox>
+                          </div>
 
-                        <button mat-raised-button type="submit" style="margin-left: 2%;" (click)="submit()" [disabled]="HLoginForm.invalid" color="primary">Login</button>
+                        <button mat-raised-button type="submit" style="width:100px;margin-left: 2%;" (click)="submit()" [disabled]="HLoginForm.invalid" color="primary">Login</button>
 
                         <a class="forgot_pass" routerLink="/h-forget-pas">Forgot Password</a>
                     </form>
                 </div>
                 <div class="col-md-12 col-12 ">
 
-                    <h3 class="text-center">Don't have an account? <a routerLink="/hospital-signup">Signup</a></h3>
+                    <h3 class="signup text-center">Don't have an account? <a routerLink="/hospital-signup">Signup</a></h3>
 
                 </div>
             </div>
