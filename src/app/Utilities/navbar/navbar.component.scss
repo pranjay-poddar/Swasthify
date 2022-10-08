@@ -10,6 +10,8 @@ $pink:#F3797E;
     z-index: 10;
 }
 
+
+
 li :hover {
     background-color: $blue !important;
     border-radius: 4px;
@@ -65,7 +67,18 @@ button.navbar-toggler {
     }
     a {
         color: #fff !important;
+
     }
+    a:hover{
+        background-color: #CD104D !important;
+        border-radius: 4px !important;
+        transition: 0.1s ease !important;
+    
+    }
+
+
+    
+
 }
 
 @media (max-width:991px) {
