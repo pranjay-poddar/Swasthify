@@ -1,5 +1,5 @@
 <h1 align="center"><b> SWASTHIFY </b></h1> 
-<p> A compassionate effort to aid people out of difficult times, we are resolutely committed to provide our users with hospitals and their services at their fingertips.</p>
+<p> A compassionate effort to aid people out of difficult times, we are resolutely committed to provide our users with hospitals and their serices at their fingertips.</p>
 
 
 Link - <a href="https://swasthify.netlify.app/home"> https://swasthify.netlify.app/home</a>
@@ -8,6 +8,7 @@ Link - <a href="https://swasthify.netlify.app/home"> https://swasthify.netlify.a
 <img src="https://github.com/pranjay-poddar/Swasthify/blob/pranjay/src/assets/images/Swasthify_gif.gif" width="700" title="Swasthify Poster">
 </p >
 <div  align="center">
+  
   
 [![Build Status](https://img.shields.io/circleci/project/all-contributors/all-contributors/master.svg)](https://circleci.com/gh/all-contributors/workflows/all-contributors/tree/master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/all-contributors/localized.svg)](https://crowdin.com/project/all-contributors)
