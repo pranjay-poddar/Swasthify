@@ -16,5 +16,10 @@ export class SharingService {
     //return "dark";
   }
 
+  navToElement(el: any): void {    
+    const element = document.getElementById(el);
+    element ? element.scrollIntoView({block: "center", behavior: "smooth" }) : null;
+  }
+
   constructor() { }
 }
