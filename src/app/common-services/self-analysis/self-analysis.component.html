@@ -97,7 +97,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="/self-analysis">Self-Analysis</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a (click)="resetVars()" tabindex="0" role="button">Self-Analysis</a></li>
                 </ol>
             </nav>
             <h2>Analysis Responses</h2>
@@ -129,7 +129,7 @@
                 All the generated analysis results are tentative and do not carry any guarantee
             </p>
             <div class="text-center">
-                <a class="badge badge-info" href="/self-analysis">Take Another Self-Analysis </a>
+                <a class="badge badge-info" (click)="resetVars()" tabindex="0" role="button">Take Another Self-Analysis </a>
             </div>
         </div>
         <br>

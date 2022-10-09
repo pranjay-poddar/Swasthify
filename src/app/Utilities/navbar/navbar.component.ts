@@ -38,7 +38,7 @@ export class NavbarComponent implements OnInit {
       this.sharingService.navToElement(el);
     } else {
       //navigate to home from another component with the parameters to select the about
-      this.router.navigate(['home', { light: this.light, goAbout: true }], { skipLocationChange: true });
+      this.router.navigate(['home', { goAbout: true }], { skipLocationChange: true });
     }
   }
 
