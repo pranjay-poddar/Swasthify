@@ -39,10 +39,17 @@ export class HomeComponent implements OnInit {
     //Check if the parameter comes for the about
     if (params !== null && typeof params === 'object' && params.goAbout) {
 
-      if (this.aboutElement != undefined) {        
-        this.aboutElement.nativeElement.scrollIntoView();
+      if (this.aboutElement != undefined) {
+        this.aboutElement.nativeElement.scrollIntoView({block: "center", behavior: "smooth" });
       }
 
     }
+  }
+
+  navToElement(el: any): void {
+    //Scroll into Home componet
+    // const element = document.getElementById(el);
+    // element ? element.scrollIntoView({ behavior: "smooth" }) : null;
+    this.sharingService.navToElement(el);
   }
 }

@@ -35,8 +35,7 @@ export class NavbarComponent implements OnInit {
   navToElement(el: any): void {
     if (this.isHome) {
       //Scroll into Home componet
-      const element = document.getElementById(el);
-      element ? element.scrollIntoView({ behavior: "smooth" }) : null;
+      this.sharingService.navToElement(el);
     } else {
       //navigate to home from another component with the parameters to select the about
       this.router.navigate(['home', { light: this.light, goAbout: true }], { skipLocationChange: true });
