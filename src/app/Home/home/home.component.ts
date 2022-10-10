@@ -47,9 +47,7 @@ export class HomeComponent implements OnInit {
   }
 
   navToElement(el: any): void {
-    //Scroll into Home componet
-    // const element = document.getElementById(el);
-    // element ? element.scrollIntoView({ behavior: "smooth" }) : null;
+    //Scroll into Home componet   
     this.sharingService.navToElement(el);
   }
 }
