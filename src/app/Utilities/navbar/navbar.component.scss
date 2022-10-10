@@ -12,10 +12,10 @@ $pink:#F3797E;
 
 
 
-li :hover {
-    background-color: $blue !important;
-    border-radius: 4px;
-    transition: 0.1s ease;
+a:hover {
+    background-color: $lpurple !important;
+    border-radius: 4px !important;
+    transition: 0.1s ease !important;
 }
 
 .navbar {
