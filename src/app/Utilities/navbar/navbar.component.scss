@@ -13,7 +13,7 @@ $pink:#F3797E;
 
 
 a:hover {
-    background-color: $lpurple !important;
+    background-color: #CD104DBB !important;
     border-radius: 4px !important;
     transition: 0.1s ease !important;
 }
@@ -30,11 +30,7 @@ a:hover {
     background-color: #f3f3f3 !important;
 }
 
-.itemActive {
-    background-color: #7da0fa93 !important;
-    border-radius: 4px !important;
-    transition: 0.1s ease !important;
-}
+
 
 .nav-link {
     color: black !important;
@@ -44,10 +40,16 @@ a:hover {
     justify-content: center;
     text-align: center;
 }
+.itemActive {
+    color:#fff !important;
+    background-color: #CD104DBB !important;
+    border-radius: 4px !important;
+    transition: 0.1s ease !important;
+}
 
 /* Added Hover Effect on Navigation links */
 .nav-link:hover{
-    color: #CD104D !important;
+    color: #fff !important;
 }
 button.navbar-toggler {
     border: 0;
