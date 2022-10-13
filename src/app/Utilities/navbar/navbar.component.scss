@@ -1,6 +1,7 @@
 $blue: #7DA0FA;
 $purple:#4747A1;
 $lpurple:#7978E9;
+$hpurple:#6f42c1;
 $pink:#F3797E;
 .container {
     background-color: #f3f3f3 !important;
@@ -13,7 +14,7 @@ $pink:#F3797E;
 
 
 a:hover {
-    background-color: $lpurple !important;
+    background-color: $hpurple !important;
     border-radius: 4px !important;
     transition: 0.1s ease !important;
 }
