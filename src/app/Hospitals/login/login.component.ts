@@ -68,12 +68,16 @@ export class LoginComponent implements OnInit {
     },
       (Error) => {
         this.err = Error.error.message;
-        alert(this.err);
 
+        if(Error.error.status === 500){
+          this.err = "Incorrect Email Id or Password !";
+        }
+        alert(this.err);
+        
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: ('${this.err}'),
+          text: (`${this.err}`),
           footer: '<a href>Why do I have this issue?</a>'
         })
       });
