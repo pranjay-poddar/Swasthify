@@ -80,13 +80,6 @@ Swasthify aims at mitigating the hardships people faced during this pandemic. We
 
 Log On to - [https://swasthify.netlify.app/hospital-login](https://swasthify.netlify.app/hospital-login)
 
-Hospital login credentials: 
-- Id: apollodelhi@gmail.com
-- Password: Apollo@1
-
-Patient login credentials:
-- Id: pranjay@gmail.com
-- Password: Pranjay@1
 
 ## Backend (Spring Boot and MySql)
 [Repository-https://github.com/pranjay-poddar/Swasthify-Backend](https://github.com/pranjay-poddar/Swasthify-Backend)
