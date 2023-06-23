@@ -18,6 +18,7 @@ export class LoginPatientComponent implements OnInit {
   PLoginForm !: FormGroup;
   id ! : number;
   light ! : string;
+  err !: String;
   fieldTextType: boolean = false;
   constructor(private fb: FormBuilder, private patientServ : PatientService, private router : Router, private sharingService:SharingService) { }
 
@@ -71,8 +72,16 @@ export class LoginPatientComponent implements OnInit {
         this.router.navigate(['patient-dashboard',this.id]);
       },1000);
     },
-    (Error) =>{alert(Error.error.message)}
-    );
+    (Error) =>{
+      this.err = "Incorrect Email Id or Password !";
+      alert(this.err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: (`${this.err}`),
+        footer: '<a href>Why do I have this issue?</a>'
+      })
+    });
     
   this.PLoginForm.reset({
     emailId: '',
