@@ -1,4 +1,8 @@
-<app-navbar></app-navbar>
+<script src="https://kit.fontawesome.com/4428f99891.js" crossorigin="anonymous"></script>
+
+<app-navbar>
+
+</app-navbar>
 
 <div class="hospital-login {{light}}">
     <div class="container">
@@ -8,9 +12,10 @@
                 <div class="col-md-12 col-12 text-center">
                     <h1 id="hlogin_heading" class="mobile_view">Hospital Login</h1>
                 </div>
-                <div class="card" [@flyInOut]>
+                <div class="card m-0 mar-top" [@flyInOut]>
                     <form [formGroup]="HLoginForm" class="card_container">
                         <mat-form-field>
+                            <!-- <i class="fa-solid fa-user"></i> -->
                             <input class="ip_field"  matInput placeholder="Email" type="email" formControlName="emailId">
                             <mat-error *ngIf="email?.invalid && email?.touched">
                                 Please, enter valid email address
